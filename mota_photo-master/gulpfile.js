@@ -2,13 +2,14 @@ const { src, dest, watch, series } = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
 
 function compileSass() {
-  return src('src/scss/style.scss')
+  return src('sass/custom.scss')
     .pipe(sass().on('error', sass.logError))
-    .pipe(dest('dist/css'));
+    .pipe(dest('assets/css/custom.css'));
 }
 
 function watchFiles() {
-  watch('src/scss/**/*.scss', compileSass);
+  watch('sass/scss/**/custom.scss', compileSass);
 }
 
 exports.default = series(compileSass, watchFiles);
+exports.watchFiles = watchFiles;
