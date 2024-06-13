@@ -1,0 +1,15 @@
+@import 'colors';
+
+body,
+html {
+    background-color: white;
+}
+
+$menu-mobile_nav-bg: map-get($colors, "primary-dark-red");
+
+button.cta {
+    background-color: map-get($colors, "tertiary-medium-gray");
+    &:hover {
+        background-color: map-get($colors, "secondary-black");
+    }
+}
