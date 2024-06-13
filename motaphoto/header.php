@@ -22,9 +22,22 @@
         <header id="masthead" class="site-header">
             <!------- Logo ------->
             <div class="logo-conteneur">
-                <a href="<?php echo get_site_url() ?>"><img id="logo" class="header-logo main-nav navbar" src="<?php wp_get_attachment_image('/assets/images/logo.png') ; ?>"></a>
+                <a href="<?php echo esc_url(home_url('/')); ?>">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/nav/logo.svg" alt="<?php wp_title('name'); ?>">
+                </a>
             </div><!-- .site-branding -->
-            <nav id="primary-menu" class="main-nav navbar">
+            <nav id="primary-menu" class="main-nav navbar burger-menu">
+                <ul id="header-nav-menu" class="nav-menu">
+                    <li class="menu-item">
+                        <a href="<?php echo esc_url(home_url('/')); ?>">Accueil</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="<?php echo esc_url(home_url('/')); ?>about">À Propos</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="<?php echo esc_url(home_url('/')); ?>contact">Contact</a>
+                    </li>
+                </ul>
             </nav><!-- #site-navigation -->
         </header><!-- #masthead -->
 
