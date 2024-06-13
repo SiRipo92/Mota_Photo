@@ -1,0 +1,6 @@
+files:
+  include: 'sass/**/*.scss'
+rules:
+  no-ids: 1
+  no-mergeable-selectors: 1
+  property-sort-order: 0
