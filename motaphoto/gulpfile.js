@@ -21,7 +21,7 @@ function compileSass() {
 }
 
 function watchFiles() {
-  watch('sass/custom.scss', series(lintSass, compileSass));
+  watch('sass/**/*.scss', series(lintSass, compileSass));
 }
 
 exports.default = series(lintSass, compileSass, watchFiles);
