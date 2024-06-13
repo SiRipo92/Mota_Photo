@@ -1,0 +1,25 @@
+{
+  "name": "motaphoto",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/SiRipo92/Mota_Photo.git"
+  },
+  "author": "Sierra Ripoche",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SiRipo92/Mota_Photo/issues"
+  },
+  "homepage": "https://github.com/SiRipo92/motaphoto#readme",
+  "devDependencies": {
+    "gulp": "^5.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-sass-lint": "^1.4.0",
+    "sass": "^1.77.4"
+  }
+}
