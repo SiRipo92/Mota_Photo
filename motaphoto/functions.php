@@ -11,18 +11,19 @@
 * License URI: http://www.gnu.org/licenses/gpl-2.0.html
 * Tags: photography, responsive, custom-header, custom-menu, featured-images, future-blog, dynamic-filter
 */
+?>
 
+<?php 
+// Add theme support for custom header 
 // Load theme's styles and scripts
 
 function add_motaphoto_styles(){
     // Load photo styles
     wp_enqueue_style('motaphoto_styles', get_template_directory_uri() . '/style.css');
     wp_enqueue_style('motaphoto_custom_styles', get_template_directory_uri() . '/assets/css/custom.css');
-    // Load Google Fonts
-    wp_enqueue_style('motaphoto_gfonts', get_template_directory_uri(). '/assets/fonts/stylesheet.css');
     // Load jQuery & custom scripts
     wp_enqueue_script('jquery', array('jquery'), null, true);
-    wp_enqueue_script('motaphoto_scripts', get_template_directory_uri() . '/js/index.js', array('jquery'), null, true);
+    wp_enqueue_script('motaphoto_scripts', get_template_directory_uri() . '/assets/js/index.js', array('jquery'), null, true);
 }
 add_action('wp_enqueue_scripts', 'add_motaphoto_styles');
 
