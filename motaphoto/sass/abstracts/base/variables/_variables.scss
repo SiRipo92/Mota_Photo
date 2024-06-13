@@ -1,0 +1,25 @@
+@import 'colors';
+
+$colors: (
+  "primary-dark-red": #E00000,
+  "primary-light-red": #FE5858,
+  "primary-light-pink": #FFD6D6,
+  "secondary-black": #000000,
+  "secondary-dark-blue": #313144,
+  "secondary-dark-grey": #C4C4C4,
+  "tertiary-medium-grey": #D8D8D8,
+  "tertiary-light-grey": #E5E5E5
+);
+
+body {
+    background-color: white;
+}
+
+$menu-mobile_nav-bg: map-get($colors, "primary-dark-red");
+
+button.cta {
+    background-color: map-get($colors, "tertiary-medium-gray");
+    &:hover {
+        background-color: map-get($colors, "secondary-black");
+    }
+}
