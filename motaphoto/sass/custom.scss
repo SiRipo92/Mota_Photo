@@ -1,9 +1,7 @@
-// IMPORT MAIN COMPONENTS
-@import 'abstracts/base/variables/colors';
-
-@import 'abstracts/base/variables/variables';
-
-@import 'abstracts/base/components/typography';
+// IMPORT MAIN VARIABLES
+@import 'base/base';
+// IMPORT COMPONENTS
+@import 'components/components';
 
 // To be moved later to a separate file but it confirmed
 // that gulp is operating and having an effect
