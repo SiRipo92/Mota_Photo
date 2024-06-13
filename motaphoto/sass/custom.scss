@@ -4,3 +4,13 @@
 @import 'abstracts/base/variables/variables';
 
 @import 'abstracts/base/components/typography';
+
+// To be moved later to a separate file but it confirmed
+// that gulp is operating and having an effect
+// on the visual output of the site
+ul,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
