@@ -1,0 +1,56 @@
+@import '../variables/colors';
+// Import the colors
+body,
+a {
+    font-family: 'Space-Mono', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    color: black;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+p,
+span > p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 14px;
+}
+
+h1, h2, h3, h4, h5, h6 > span {
+    font-family: 'Space-Mono';
+} 
+
+h1 {
+    font-size: 36px;
+    font-weight: 700;
+    font-style: italic;
+    @media screen and (max-width: 768px) {
+        font-size: 26px ;
+    }
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: 400;
+    font-style: italic;
+    @media screen and (max-width: 768px) {
+        font-size: 20px ;
+    }
+}
+
+h3 {
+    font-size: 18px;
+    font-weight: 400;
+    font-style: normal;
+    @media screen and (max-width: 768px) {
+        font-size: 18px ;
+    }
+}
+
+h4, h5 {
+    font-size: 14px;
+    font-weight: 400;
+    font-style: normal;
+}

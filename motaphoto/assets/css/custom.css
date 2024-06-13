@@ -1,0 +1,81 @@
+/**
+* Theme Name: motaphoto
+* Version: 1.0
+* Author: Sierra Ripoche
+* Description: motophoto is designed as a photography portfolio theme for artist Nathalie Mota, who does event photography, portraits, and more. The theme is designed to be simple and clean, with a focus on the images. It includes a custom post type for photo galleries, and a custom taxonomy for categorizing photos. The theme is fully compatible with the site editor, and takes advantage of new design tools introduced in WordPress 6.4.
+* Tested up to: 6.5
+* Requires PHP: 7.0
+* Version: 1.1
+* License: GNU General Public License v2 or later
+* License URI: http://www.gnu.org/licenses/gpl-2.0.html
+* Text Domain: motaphoto
+* Tags: photography, clean, elegant, responsive, two-columns, custom-background, custom-header, custom-menu, featured-images
+*/
+body {
+  background-color: white;
+}
+
+button.cta:hover {
+  background-color: #000000;
+}
+
+body,
+a {
+  font-family: "Space-Mono", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  color: black;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+p,
+span > p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 14px;
+}
+
+h1, h2, h3, h4, h5, h6 > span {
+  font-family: "Space-Mono";
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: 700;
+  font-style: italic;
+}
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 26px;
+  }
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 400;
+  font-style: italic;
+}
+@media screen and (max-width: 768px) {
+  h2 {
+    font-size: 20px;
+  }
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: 400;
+  font-style: normal;
+}
+@media screen and (max-width: 768px) {
+  h3 {
+    font-size: 18px;
+  }
+}
+
+h4, h5 {
+  font-size: 14px;
+  font-weight: 400;
+  font-style: normal;
+}
