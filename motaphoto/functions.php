@@ -17,6 +17,7 @@
 function add_motaphoto_styles(){
     // Load photo styles
     wp_enqueue_style('motaphoto_styles', get_template_directory_uri() . '/style.css');
+    wp_enqueue_style('motaphoto_custom_styles', get_template_directory_uri() . '/assets/css/custom.css');
     // Load Google Fonts
     wp_enqueue_style('motaphoto_gfonts', get_template_directory_uri(). '/assets/fonts/stylesheet.css');
     // Load jQuery & custom scripts
