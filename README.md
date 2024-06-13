@@ -1,4 +1,4 @@
-Mota Photo Theme
+# Mota Photo
 Overview
 Welcome to the "Mota Photo" custom WordPress theme! This theme is designed specifically for Nathalie Mota, a photographer, to showcase her work in a beautiful and dynamic way. The theme includes custom content types and fields to ensure that Nathalie can easily manage and display her photography.
 
