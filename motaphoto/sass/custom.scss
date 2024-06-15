@@ -12,3 +12,12 @@ li {
   padding: 0;
   margin: 0;
 }
+
+.site-main {
+  width: 90%;
+  margin: auto;
+  padding: 0;
+  @media-screen and (min-width: 1400px) {
+    margin: 0 2%;
+  }
+}
