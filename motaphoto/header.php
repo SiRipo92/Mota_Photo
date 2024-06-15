@@ -20,44 +20,31 @@
     <div id="page" class="site-main">
         <a class="skip-link screen-reader-text" href="#content"></a>
         <header id="masthead" class="site-header">
-            <!------- Logo ------->
-            <div class="logo-conteneur">
-                <?php echo get_custom_logo('custom-logo') ; ?>
+            <div class="site-branding">
+                <!------- Logo ------->
+                <div class="logo-container">
+                    <?php the_custom_logo() ; ?>
+                </div>
             </div><!-- .site-branding -->
-            <nav role="navigation" aria-label ="<?php _e('Menu principal', 'main-menu'); ?>">
-                <?php wp_nav_menu(
-                    array(
-                    'theme_location' => 'main-menu', 
-                    'menu_id' => 'main-menu',
-                    'menu_class' => 'header-nav',
-                    'container' => false,
-                    'walker' => new Motaphoto_Nav_Walker()
-                )); 
-                ?>
-            </nav><!-- #site-navigation -->
-
+            <nav role="navigation" aria-label ="<?php _e('Menu principal', 'main-menu'); ?>" class="header-nav">
+            <?php wp_nav_menu(
+                array(
+                'theme_location' => 'main-menu', 
+                'menu_id' => 'main-menu',
+                'menu_class' => 'header-nav',
+                'container' => false,
+                'walker' => new Motaphoto_Nav_Walker()
+            )); 
+            ?>
             <!-- Mobile Menu ? -->
-             <nav role="navigation" aria-label="<?php _e('Menu mobile', 'mobile-menu'); ?>">
-                <div class="burger">
-                    <div class="burger__patty">
-                        <button class="mobile-menu-button" aria-expanded="false" aria-controls="burger-menu" aria-label="Menu">
-                            <span class="burger__patty-container">
-                                <span class="line"></span>
-                                <span class="line"></span>
-                                <span class="line"></span>
-                            </span>
-                        </button>
-                    </div>
-                <?php wp_nav_menu(
-                    array(
-                    'theme_location' => 'mobile-menu', 
-                    'menu_id' => 'burger-menu',
-                    'menu_class' => 'mobile',
-                    'container' => false,
-                    'walker' => new Motaphoto_Nav_Walker()
-                ));
-                ?>
-
+            <div class="burger">
+                <button class="mobile-menu-button" aria-expanded="false" aria-controls="burger-menu" aria-label="Menu">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </button>
+            </div>
+        </nav><!-- #site-navigation -->
         </header><!-- #masthead -->
 
         <div id="content" class="site-content">
