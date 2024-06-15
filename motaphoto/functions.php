@@ -27,5 +27,61 @@ function add_motaphoto_styles(){
 }
 add_action('wp_enqueue_scripts', 'add_motaphoto_styles');
 
-// Insert custom post type for photo galleries
-// Insert filter to add filter to nav menu to add custom cta contact modal
+//  Add theme menus
+add_action( 'after_setup_theme', 'motaphoto_theme_setup' );
+
+function motaphoto_theme_setup() {
+	add_theme_support( 'wp-block-styles' );
+    add_theme_support('menus');
+}
+add_action('init', 'motaphoto_theme_setup');
+
+// Register custom navigation menus
+function register_motaphoto_menus() {
+    register_nav_menus(
+        array(
+            'primary' => __('Primary Menu'),
+            'footer' => __('Footer Menu')
+        )
+    );
+}
+add_action('after_setup_theme', 'register_motaphoto_menus');
+
+////////   Load Nav-Walker menus.php file   ////////
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
+
+// Include the custom walker file
+require get_template_directory() . '/inc/menus.php';
+
+// Register Nav Walker
+function register_navwalker(){
+    if ( ! file_exists( get_template_directory() . '/inc/menus.php' ) ) {
+        return;
+    }
+
+    require_once get_template_directory() . '/inc/menus.php';
+}
+add_action( 'after_setup_theme', 'register_navwalker' );
+
+add_theme_support( 'custom-logo' );
+// Custom Logo Setup
+function motaphoto_custom_logo_setup() {
+	$defaults = array(
+		'height'               => 'auto',
+		'width'                => 200,
+		'flex-height'          => true,
+		'flex-width'           => true,
+		'header-text'          => array( 'site-title', 'site-description' ),
+		'unlink-homepage-logo' => true, 
+	);
+	add_theme_support( 'custom-logo', $defaults );
+    $custom_logo_id = get_theme_mod( 'custom-logo' );
+    $image = wp_get_attachment_image_src( $custom_logo_id , 'medium' );
+    echo $image;
+}
+add_action( 'after_setup_theme', 'motaphoto_custom_logo_setup' );
+
+?>
