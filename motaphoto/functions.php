@@ -71,7 +71,7 @@ add_theme_support( 'custom-logo' );
 function motaphoto_custom_logo_setup() {
 	$defaults = array(
 		'height'               => 'auto',
-		'width'                => 200,
+		'width'                => 'auto',
 		'flex-height'          => true,
 		'flex-width'           => true,
 		'header-text'          => array( 'site-title', 'site-description' ),
@@ -79,7 +79,7 @@ function motaphoto_custom_logo_setup() {
 	);
 	add_theme_support( 'custom-logo', $defaults );
     $custom_logo_id = get_theme_mod( 'custom-logo' );
-    $image = wp_get_attachment_image_src( $custom_logo_id , 'medium' );
+    $image = wp_get_attachment_image_src( $custom_logo_id , 'small' );
     echo $image;
 }
 add_action( 'after_setup_theme', 'motaphoto_custom_logo_setup' );
