@@ -212,6 +212,7 @@ a {
   padding: 0;
   list-style: none;
   text-decoration: none;
+  font-family: "Space Mono", monospace;
 }
 ul:hover, ul:focus,
 li:hover,
@@ -349,6 +350,7 @@ a:focus {
 
 /* Footer menu styling */
 .footer-nav {
+  border-top: 1px solid black;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -357,7 +359,7 @@ a:focus {
 .footer-nav ul {
   display: flex;
   flex-shrink: 1;
-  margin: 0 auto;
+  margin: auto;
 }
 .footer-nav ul li {
   margin: 0 15px;
@@ -434,6 +436,7 @@ a:focus {
   }
   .footer-nav {
     height: auto;
+    border-top: 1px solid black;
   }
   .footer-nav ul#footer-menu {
     display: flex;
@@ -441,6 +444,7 @@ a:focus {
     justify-content: center;
     align-items: center;
     max-height: 100px;
+    margin-top: 30px;
   }
 }
 ul,
