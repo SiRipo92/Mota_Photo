@@ -29,12 +29,23 @@
                 ?>
             </nav>
             <div class="mobile-menu-container">
-                <button class="burger-btn btn-close">
+                <button class="burger-btn" aria-controls="primary-menu" aria-expanded="false">
                         <span></span>
                         <span></span>
                         <span></span>
                 </button> 
             </div>
+            <div class="mobile-menu">
+                <?php
+                wp_nav_menu(
+                    array(
+                        'theme_location' => 'main-menu',
+                        'menu_id' => 'primary-menu',
+                        'menu_class' => 'primary-menu'
+                    )
+                ); 
+                ?>
+            </div>
         </header><!-- #masthead -->
-
+            
         <div id="content" class="site-content">
