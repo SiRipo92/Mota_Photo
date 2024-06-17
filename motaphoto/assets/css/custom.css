@@ -204,27 +204,31 @@ h4, h5 {
   font-style: italic;
 }
 /* End of Poppins Fonts */
+a,
+ul,
+li {
+  text-decoration: none;
+}
+
 #masthead {
   height: 80px;
   background-color: white;
-  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
 }
 
-.site-header {
+.nav-menu {
   height: 100%;
-  display: flex;
+  display: inline-flex;
   justify-content: space-between;
-  position: relative;
   align-items: center;
+  width: 100%;
 }
 
 .site-branding {
-  width: 45%;
-  margin-left: 20px;
+  width: 30%;
 }
 .site-branding .logo-container {
-  width: 80%;
-  flex-grow: 1;
   margin: 0 20px;
 }
 
@@ -232,28 +236,30 @@ h4, h5 {
   display: inline-block;
 }
 .custom-logo-link img {
-  width: 65%;
+  max-width: 250px;
   height: auto;
 }
 
-.header-nav {
-  display: flex;
-  justify-content: space-around;
-  width: 50%;
-  overflow: none;
+nav#main-menu {
+  display: inline-block;
+  margin-right: 20px;
+  width: 60%;
 }
-.header-nav #main-menu {
-  align-items: center;
-  justify-content: space-evenly;
+nav#main-menu #primary-menu {
   width: 100%;
-  box-sizing: border-box;
+  justify-content: space-evenly;
+  display: flex;
+  gap: 10px;
+  overflow: hidden;
 }
-.header-nav #main-menu li {
-  margin: 0 10px;
+nav#main-menu #primary-menu .menu-item {
   flex-shrink: 1;
+  min-width: fit-content;
+  flex-wrap: nowrap;
+  padding: 0 10px;
 }
-.header-nav #main-menu li a {
-  font-size: calc(10px + 1vw);
+nav#main-menu #primary-menu .menu-item a {
+  font-size: 1em;
   font-weight: 400;
   text-transform: uppercase;
   color: black;
@@ -261,52 +267,129 @@ h4, h5 {
   line-height: 80px;
   text-align: center;
 }
-.header-nav #main-menu li a:hover {
+nav#main-menu #primary-menu .menu-item a:hover {
   font-weight: 700;
 }
-.header-nav .burger {
+
+.burger {
   display: none;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+}
+.burger span {
+  width: 30px;
+  height: 3px;
+  background-color: black;
+  margin: 2px 0;
+  display: block;
+  transition: all 0.3s ease;
 }
 
-.footer-nav {
-  display: flex;
+.burger span:nth-of-type(1) {
+  width: 30px;
+  height: 3px;
+  background-color: black;
+  margin: 2px 0;
+  display: block;
+}
+
+.burger span:nth-of-type(2) {
+  width: 30px;
+  height: 3px;
+  background-color: black;
+  margin: 2px 0;
+  display: block;
+}
+
+.burger span:nth-of-type(3) {
+  width: 30px;
+  height: 3px;
+  background-color: black;
+  margin: 2px 0;
+  display: block;
+}
+
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  padding: 10px 0;
+  position: absolute;
+  top: 0;
+  left: 0;
   height: 80px;
   width: 100%;
-  box-sizing: border-box;
+  z-index: 100;
+  transition: all 0.3s ease;
 }
-.footer-nav #footer-menu {
-  justify-content: space-around;
-  align-items: center;
+.mobile-menu > .mobile-header {
   position: relative;
+  width: 100%;
   display: flex;
-  align-self: center;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  margin: 0;
 }
-.footer-nav #footer-menu li {
-  margin: 0 40px;
-  text-align: center;
+.mobile-menu > .mobile-menu-container {
+  display: none;
 }
-.footer-nav #footer-menu li a {
-  font-size: 1em;
-  font-weight: 400;
-  text-transform: uppercase;
-  color: black;
-  text-decoration: none;
-  line-height: 20px;
+.mobile-menu > .mobile-menu-container .mobile-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 20vh;
 }
-.footer-nav #footer-menu li a:hover {
-  font-weight: 700;
+.mobile-menu > .mobile-menu-container .mobile-nav li {
+  margin: 6% 0;
 }
-
-a,
-ul,
-li {
-  list-style-type: none;
-  text-decoration: none;
-  color: black;
+.mobile-menu > .mobile-menu-container .mobile-nav li a {
+  font-size: 1.5em;
+  line-height: 60px;
 }
 
+.mobile-menu.open {
+  display: flex;
+}
+
+.burger.close-button span:nth-of-type(1) {
+  transform: rotate(45deg);
+  position: absolute;
+}
+
+.burger.close-button span:nth-of-type(2) {
+  opacity: 0;
+}
+
+.burger.close-button span:nth-of-type(3) {
+  transform: rotate(-45deg);
+  position: absolute;
+}
+
+@media screen and (max-width: 768px) {
+  nav#main-menu {
+    display: none;
+  }
+  .burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 40px;
+    width: 30px;
+  }
+  .mobile-menu-container.open {
+    display: block;
+    height: 100vh;
+    width: 100%;
+    background-color: red;
+  }
+}
 ul,
 li {
   list-style: none;

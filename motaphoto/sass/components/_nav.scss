@@ -1,49 +1,57 @@
-// Header Nav Styling
+// Main Nav Link Styling
+a, 
+ul,
+li {
+    text-decoration: none;
+}
+
+// Header Styling
 #masthead {
     height: 80px;
     background-color: white;
-    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
 }
-.site-header {
+.nav-menu {
     height: 100%;
-    display: flex;
+    display: inline-flex;
     justify-content: space-between;
-    position: relative;
     align-items: center;
+    width: 100%;
 }
+// Logo Styling
 .site-branding {
-    width: 45%;
-    margin-left: 20px;
+    width: 30%;
     .logo-container {
-    width: 80%;
-    flex-grow: 1;
-    margin: 0 20px;
+        margin: 0 20px;
     }
 }
 .custom-logo-link {
     display: inline-block;
     img {
-    width: 65%;
-    height: auto;
+        max-width: 250px;
+        height: auto;
     }
 }
 
-// Header Nav Styling
-.header-nav {
-    display: flex; 
-    justify-content: space-around;
-    width: 50%;
-    overflow: none;
-    #main-menu {
-        align-items: center;
-        justify-content: space-evenly;
+// Nav Styling
+nav#main-menu {
+    display: inline-block;
+    margin-right: 20px;
+    width: 60%;
+    #primary-menu {
         width: 100%;
-        box-sizing: border-box;
-        li {
-            margin: 0 10px;
+        justify-content: space-evenly;
+        display: flex;
+        gap: 10px;
+        overflow:hidden;
+        .menu-item {
             flex-shrink: 1;
+            min-width: fit-content;
+            flex-wrap: nowrap;
+            padding: 0 10px;
             a {
-                font-size: calc(10px + 1vw);
+                font-size: 1em;
                 font-weight: 400;
                 text-transform: uppercase;
                 color: black;
@@ -54,53 +62,120 @@
                     font-weight: 700;
                 }
             }
-        
         }
-    }
-    .burger {
-        display: none;
     }
 }
 
-
-// Footer Nav Styling
-.footer-nav {
-    display: flex;
+// Burger Styling
+.burger {
+    display: none; // Default state for larger screens
+    flex-direction: column;
     justify-content: center;
-    padding: 10px 0;
+    cursor: pointer;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+
+    span {
+        width: 30px;
+        height: 3px;
+        background-color: black;
+        margin: 2px 0;
+        display: block;
+        transition: all 0.3s ease;
+    }
+}
+
+@for $i from 1 through 3 {
+    .burger span:nth-of-type(#{$i}) {
+        width: 30px;
+        height: 3px;
+        background-color: black;
+        margin: 2px 0;
+        display: block;
+    }
+}
+
+// Mobile Menu Styling
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
     height: 80px;
     width: 100%;
-    box-sizing: border-box;
-    #footer-menu {
-        justify-content: space-around;
-        align-items: center;
+    z-index: 100;
+    transition: all 0.3s ease;
+
+    > .mobile-header {
         position: relative;
+        width: 100%;
         display: flex;
-        align-self: center;
-        li {
-            margin: 0 40px;
-            text-align: center;
-            a {
-                font-size: 1em;
-                font-weight: 400;
-                text-transform: uppercase;
-                color: black;
-                text-decoration: none;
-                line-height: 20px;
-                &:hover {
-                    font-weight: 700;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+        margin: 0;
+    }
+
+    > .mobile-menu-container {
+        display: none;
+        .mobile-nav {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 20vh;
+            li {
+                margin: 6% 0;
+                a {
+                    font-size: 1.5em;
+                    line-height: 60px;
                 }
             }
         }
     }
 }
 
+.mobile-menu.open {
+    display: flex;
+}
 
+// Transform Burger into Close Button
+.burger.close-button span:nth-of-type(1) {
+    transform: rotate(45deg);
+    position: absolute;
+}
 
-a, 
-ul,
-li {
-    list-style-type: none;
-    text-decoration: none;
-    color: black;
+.burger.close-button span:nth-of-type(2) {
+    opacity: 0;
+}
+
+.burger.close-button span:nth-of-type(3) {
+    transform: rotate(-45deg);
+    position: absolute;
+}
+
+// Media Queries
+@media screen and (max-width: 768px) {
+    nav#main-menu {
+        display: none;
+    }
+    .burger {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 40px;
+        width: 30px;
+    }
+    .mobile-menu-container.open {
+        display: block;
+        height: 100vh;
+        width: 100%;
+        background-color: red;
+    }
+
 }
