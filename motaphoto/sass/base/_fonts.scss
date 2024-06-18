@@ -1,25 +1,25 @@
 /* Space Mono Fonts */
 
 @font-face {
-    font-family: 'Space Mono';
+    font-family: 'Space Mono', monospace;
     src: 
-        url('Space_Mono/spacemono-bold-mota-photo-font.eot') format('eot'),
-        url('Space_Mono/spacemono-bold-mota-photo-font.woff2') format('woff2'),
-        url('Space_Mono/spacemono-bold-mota-photo-font.woff') format('woff'),
-        url('Space_Mono/spacemono-bold-mota-photo-font.ttf') format('truetype'),
-        url('Space_Mono/spacemono-bold-mota-photo-font.svg') format('svg');
+        url('../../assets/fonts/Space_Mono/spacemono-bold-mota-photo-font.eot') format('eot'),
+        url('../../assets/fonts/Space_Mono/spacemono-bold-mota-photo-font.woff2') format('woff2'),
+        url('../../assets/fonts/Space_Mono/spacemono-bold-mota-photo-font.woff') format('woff'),
+        url('../../assets/fonts/Space_Mono/spacemono-bold-mota-photo-font.ttf') format('truetype'),
+        url('../../assets/fonts/Space_Mono/spacemono-bold-mota-photo-font.svg') format('svg');
     font-weight: bold;
     font-style: normal;
     }
 
 @font-face {
-    font-family: 'Space Mono';
+    font-family: 'Space Mono', ;
     src:
-        url('Space_Mono/spacemono-bolditalic-mota-photo-font.eot') format('eot'), 
-        url('Space_Mono/spacemono-bolditalic-mota-photo-font.woff2') format('woff2'),
-        url('Space_Mono/spacemono-bolditalic-mota-photo-font.woff') format('woff'),
-        url('Space_Mono/spacemono-bolditalic-mota-photo-font.ttf') format('truetype'),
-        url('Space_Mono/spacemono-bolditalic-mota-photo-font.svg') format('svg');
+        url('../../assets/fonts/Space_Mono/spacemono-bolditalic-mota-photo-font.eot') format('eot'), 
+        url('../../assets/fonts/Space_Mono/spacemono-bolditalic-mota-photo-font.woff2') format('woff2'),
+        url('../../assets/fonts/Space_Mono/spacemono-bolditalic-mota-photo-font.woff') format('woff'),
+        url('../../assets/fonts/Space_Mono/spacemono-bolditalic-mota-photo-font.ttf') format('truetype'),
+        url('../../assets/fonts/Space_Mono/spacemono-bolditalic-mota-photo-font.svg') format('svg');
     font-weight: bold;
     font-style: italic;
 
@@ -28,11 +28,11 @@
 @font-face {
     font-family: 'Space Mono';
     src: 
-        url('Space_Mono/spacemono-italic-mota-photo-font.eot') format('eot'),
-        url('Space_Mono/spacemono-italic-mota-photo-font.woff2') format('woff2'),
-        url('Space_Mono/spacemono-italic-mota-photo-font.woff') format('woff'),
-        url('Space_Mono/spacemono-italic-mota-photo-font.ttf') format('truetype'),
-        url('Space_Mono/spacemono-italic-mota-photo-font.svg#space_monoitalic') format('svg');
+        url('../../assets/fonts/Space_Mono/spacemono-italic-mota-photo-font.eot') format('eot'),
+        url('../../assets/fonts/Space_Mono/spacemono-italic-mota-photo-font.woff2') format('woff2'),
+        url('../../assets/fonts/Space_Mono/spacemono-italic-mota-photo-font.woff') format('woff'),
+        url('../../assets/fonts/Space_Mono/spacemono-italic-mota-photo-font.ttf') format('truetype'),
+        url('../../assets/fonts/Space_Mono/spacemono-italic-mota-photo-font.svg#space_monoitalic') format('svg');
     font-weight: normal;
     font-style: italic;
 }
@@ -40,11 +40,11 @@
 @font-face {
     font-family: 'Space Mono';
     src: 
-        url('Space_Mono/spacemono-regular-mota-photo-font.eot') format('eot'),
-        url('Space_Mono/spacemono-regular-mota-photo-font.woff2') format('woff2'),
-        url('Space_Mono/spacemono-regular-mota-photo-font.woff') format('woff'),
-        url('Space_Mono/spacemono-regular-mota-photo-font.ttf') format('truetype'),
-        url('Space_Mono/spacemono-regular-mota-photo-font.svg#space_monoregular') format('svg');
+        url('../../assets/fonts/Space_Mono/spacemono-regular-mota-photo-font.eot') format('eot'),
+        url('../../assets/fonts/Space_Mono/spacemono-regular-mota-photo-font.woff2') format('woff2'),
+        url('../../assets/fonts/Space_Mono/spacemono-regular-mota-photo-font.woff') format('woff'),
+        url('../../assets/fonts/Space_Mono/spacemono-regular-mota-photo-font.ttf') format('truetype'),
+        url('../../assets/fonts/Space_Mono/spacemono-regular-mota-photo-font.svg#space_monoregular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -55,22 +55,22 @@
 @font-face {
     font-family: 'Poppins';
     src:
-        url('Poppins/poppins-black-mota-photo-font.eot') format('eot'), 
-        url('Poppins/poppins-black-mota-photo-font.woff2') format('woff2'),
-        url('Poppins/poppins-black-mota-photo-font.woff') format('woff'),
-        url('Poppins/poppins-black-mota-photo-font.ttf') format('truetype'),
-        url('Poppins/poppins-black-mota-photo-font.svg') format('svg');
+        url('../../assets/fonts/Poppins/poppins-black-mota-photo-font.eot') format('eot'), 
+        url('../../assets/fonts/Poppins/poppins-black-mota-photo-font.woff2') format('woff2'),
+        url('../../assets/fonts/Poppins/poppins-black-mota-photo-font.woff') format('woff'),
+        url('../../assets/fonts/Poppins/poppins-black-mota-photo-font.ttf') format('truetype'),
+        url('../../assets/fonts/Poppins/poppins-black-mota-photo-font.svg') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Poppins';
-    src: url('poppins-blackitalic-mota-photo-font.eot') format('eot'),
-         url('Poppins/poppins-blackitalic-mota-photo-font.woff2') format('woff2'),
-         url('Poppins/poppins-blackitalic-mota-photo-font.woff') format('woff'),
-         url('Poppins/poppins-blackitalic-mota-photo-font.ttf') format('truetype'),
-         url('Poppins/poppins-blackitalic-mota-photo-font.svg#poppinsblack_italic') format('svg');
+    src: url('../../assets/fonts/Poppins/poppins-blackitalic-mota-photo-font.eot') format('eot'),
+         url('../../assets/fonts/Poppins/poppins-blackitalic-mota-photo-font.woff2') format('woff2'),
+         url('../../assets/fonts/Poppins/poppins-blackitalic-mota-photo-font.woff') format('woff'),
+         url('../../assets/fonts/Poppins/poppins-blackitalic-mota-photo-font.ttf') format('truetype'),
+         url('../../assets/fonts/Poppins/poppins-blackitalic-mota-photo-font.svg#poppinsblack_italic') format('svg');
     font-weight: normal;
     font-style: italic;
 
@@ -79,11 +79,11 @@
 @font-face {
     font-family: 'Poppins';
     src: 
-        url('Poppins/poppins-bold-mota-photo-font.eot') format('eot'),
-        url('Poppins/poppins-bold-mota-photo-font.woff2') format('woff2'),
-        url('Poppins/poppins-bold-mota-photo-font.woff') format('woff'),
-        url('Poppins/poppins-bold-mota-photo-font.ttf') format('truetype'),
-        url('Poppins/poppins-bold-mota-photo-font.svg#poppinsbold') format('svg');
+        url('../../assets/fonts/Poppins/poppins-bold-mota-photo-font.eot') format('eot'),
+        url('../../assets/fonts/Poppins/poppins-bold-mota-photo-font.woff2') format('woff2'),
+        url('../../assets/fonts/Poppins/poppins-bold-mota-photo-font.woff') format('woff'),
+        url('../../assets/fonts/Poppins/poppins-bold-mota-photo-font.ttf') format('truetype'),
+        url('../../assets/fonts/Poppins/poppins-bold-mota-photo-font.svg#poppinsbold') format('svg');
     font-weight: bold;
     font-style: normal;
 
@@ -92,11 +92,11 @@
 @font-face {
     font-family: 'Poppins';
     src: 
-        url('Poppins/poppins-bolditalic-mota-photo-font.eot') format('eot'),
-        url('Poppins/poppins-bolditalic-mota-photo-font.woff2') format('woff2'),
-        url('Poppins/poppins-bolditalic-mota-photo-font.woff') format('woff'),
-        url('Poppins/poppins-bolditalic-mota-photo-font.ttf') format('truetype'),
-        url('Poppins/poppins-bolditalic-mota-photo-font.svg') format('svg');
+        url('../../assets/fonts/Poppins/poppins-bolditalic-mota-photo-font.eot') format('eot'),
+        url('../../assets/fonts/Poppins/poppins-bolditalic-mota-photo-font.woff2') format('woff2'),
+        url('../../assets/fonts/Poppins/poppins-bolditalic-mota-photo-font.woff') format('woff'),
+        url('../../assets/fonts/Poppins/poppins-bolditalic-mota-photo-font.ttf') format('truetype'),
+        url('../../assets/fonts/Poppins/poppins-bolditalic-mota-photo-font.svg') format('svg');
     font-weight: bold;
     font-style: italic;
 
@@ -105,11 +105,11 @@
 @font-face {
     font-family: 'Poppins';
     src: 
-        url('Poppins/poppins-extrabold-mota-photo-font.eot') format('eot)'),
-        url('Poppins/poppins-extrabold-mota-photo-font.woff2') format('woff2'),
-        url('Poppins/poppins-extrabold-mota-photo-font.woff') format('woff'),
-        url('Poppins/poppins-extrabold-mota-photo-font.ttf') format('truetype'),
-        url('Poppins/poppins-extrabold-mota-photo-font.svg') format('svg');
+        url('../../assets/fonts/Poppins/poppins-extrabold-mota-photo-font.eot') format('eot)'),
+        url('../../assets/fonts/Poppins/poppins-extrabold-mota-photo-font.woff2') format('woff2'),
+        url('../../assets/fonts/Poppins/poppins-extrabold-mota-photo-font.woff') format('woff'),
+        url('../../assets/fonts/Poppins/poppins-extrabold-mota-photo-font.ttf') format('truetype'),
+        url('../../assets/fonts/Poppins/poppins-extrabold-mota-photo-font.svg') format('svg');
     font-weight: bold;
     font-style: normal;
 
@@ -118,11 +118,11 @@
 @font-face {
     font-family: 'Poppins';
     src: 
-        url('Poppins/poppins-extrabolditalic-mota-photo-font.eot') format('eot'),
-        url('Poppins/poppins-extrabolditalic-mota-photo-font.woff2') format('woff2'),
-        url('Poppins/poppins-extrabolditalic-mota-photo-font.woff') format('woff'),
-        url('Poppins/poppins-extrabolditalic-mota-photo-font.ttf') format('truetype'),
-        url('Poppins/poppins-extrabolditalic-mota-photo-font.svg') format('svg');
+        url('../../assets/fonts/Poppins/poppins-extrabolditalic-mota-photo-font.eot') format('eot'),
+        url('../../assets/fonts/Poppins/poppins-extrabolditalic-mota-photo-font.woff2') format('woff2'),
+        url('../../assets/fonts/Poppins/poppins-extrabolditalic-mota-photo-font.woff') format('woff'),
+        url('../../assets/fonts/Poppins/poppins-extrabolditalic-mota-photo-font.ttf') format('truetype'),
+        url('../../assets/fonts/Poppins/poppins-extrabolditalic-mota-photo-font.svg') format('svg');
     font-weight: bold;
     font-style: italic;
 
@@ -131,11 +131,11 @@
 @font-face {
     font-family: 'Poppins';
     src: 
-        url('Poppins/poppins-extralight-mota-photo-font.eot') format('eot'),
-        url('Poppins/poppins-extralight-mota-photo-font.woff2') format('woff2'),
-        url('Poppins/poppins-extralight-mota-photo-font.woff') format('woff'),
-        url('Poppins/poppins-extralight-mota-photo-font.ttf') format('truetype'),
-        url('Poppins/poppins-extralight-mota-photo-font.svg#poppinsextralight') format('svg');
+        url('../../assets/fonts/Poppins/poppins-extralight-mota-photo-font.eot') format('eot'),
+        url('../../assets/fonts/Poppins/poppins-extralight-mota-photo-font.woff2') format('woff2'),
+        url('../../assets/fonts/Poppins/poppins-extralight-mota-photo-font.woff') format('woff'),
+        url('../../assets/fonts/Poppins/poppins-extralight-mota-photo-font.ttf') format('truetype'),
+        url('../../assets/fonts/Poppins/poppins-extralight-mota-photo-font.svg#poppinsextralight') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -145,10 +145,10 @@
 @font-face {
     font-family: 'Poppins';
     src: 
-        url('Poppins/poppins-extralightitalic-mota-photo-font.woff2') format('woff2'),
-         url('Poppins/poppins-extralightitalic-mota-photo-font.woff') format('woff'),
-         url('Poppins/poppins-extralightitalic-mota-photo-font.ttf') format('truetype'),
-         url('Poppins/poppins-extralightitalic-mota-photo-font.ttf') format('svg');
+        url('../../assets/fonts/Poppins/poppins-extralightitalic-mota-photo-font.woff2') format('woff2'),
+         url('../../assets/fonts/Poppins/poppins-extralightitalic-mota-photo-font.woff') format('woff'),
+         url('../../assets/fonts/Poppins/poppins-extralightitalic-mota-photo-font.ttf') format('truetype'),
+         url('../../assets/fonts/Poppins/poppins-extralightitalic-mota-photo-font.ttf') format('svg');
     font-weight: normal;
     font-style: italic;
 
@@ -156,11 +156,11 @@
 @font-face {
     font-family: 'Poppins';
     src: 
-        url('Poppins/poppins-italic-mota-photo-font.eot') format('eot'),
-         url('Poppins/poppins-italic-mota-photo-font.woff2') format('woff2'),
-        url('Poppins/poppins-italic-mota-photo-font.woff') format('woff'),
-         url('Poppins/poppins-italic-mota-photo-font.ttf') format('truetype'),
-         url('Poppins/poppins-italic-mota-photo-font.svg') format('svg');
+        url('../../assets/fonts/Poppins/poppins-italic-mota-photo-font.eot') format('eot'),
+         url('../../assets/fonts/Poppins/poppins-italic-mota-photo-font.woff2') format('woff2'),
+        url('../../assets/fonts/Poppins/poppins-italic-mota-photo-font.woff') format('woff'),
+         url('../../assets/fonts/Poppins/poppins-italic-mota-photo-font.ttf') format('truetype'),
+         url('../../assets/fonts/Poppins/poppins-italic-mota-photo-font.svg') format('svg');
     font-weight: normal;
     font-style: italic;
 
@@ -170,11 +170,11 @@
 @font-face {
     font-family: 'Poppins';
     src: 
-        url('Poppins/poppins-light-mota-photo-font.eot') format('eot'),
-        url('Poppins/poppins-light-mota-photo-font.woff2') format('woff2'),
-        url('Poppins/poppins-light-mota-photo-font.woff') format('woff'),
-        url('Poppins/poppins-light-mota-photo-font.ttf') format('truetype'),
-        url('Poppins/poppins-light-mota-photo-font.svg') format('svg');
+        url('../../assets/fonts/Poppins/poppins-light-mota-photo-font.eot') format('eot'),
+        url('../../assets/fonts/Poppins/poppins-light-mota-photo-font.woff2') format('woff2'),
+        url('../../assets/fonts/Poppins/poppins-light-mota-photo-font.woff') format('woff'),
+        url('../../assets/fonts/Poppins/poppins-light-mota-photo-font.ttf') format('truetype'),
+        url('../../assets/fonts/Poppins/poppins-light-mota-photo-font.svg') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -183,11 +183,11 @@
 @font-face {
     font-family: 'Poppins';
     src: 
-        url('Poppins/poppins-lightitalic-mota-photo-font.eot') format('eot'),
-        url('Poppins/poppins-lightitalic-mota-photo-font.woff2') format('woff2'),
-        url('Poppins/poppins-lightitalic-mota-photo-font.woff') format('woff'),
-        url('Poppins/poppins-lightitalic-mota-photo-font.ttf') format('truetype'),
-        url('Poppins/poppins-lightitalic-mota-photo-font.svg#poppinslight_italic') format('svg');
+        url('../../assets/fonts/Poppins/poppins-lightitalic-mota-photo-font.eot') format('eot'),
+        url('../../assets/fonts/Poppins/poppins-lightitalic-mota-photo-font.woff2') format('woff2'),
+        url('../../assets/fonts/Poppins/poppins-lightitalic-mota-photo-font.woff') format('woff'),
+        url('../../assets/fonts/Poppins/poppins-lightitalic-mota-photo-font.ttf') format('truetype'),
+        url('../../assets/fonts/Poppins/poppins-lightitalic-mota-photo-font.svg#poppinslight_italic') format('svg');
     font-weight: normal;
     font-style: italic;
 
@@ -196,12 +196,12 @@
 @font-face {
     font-family: 'Poppins';
     src: 
-        url('Poppins/poppins-medium-mota-photo-font.eot') format('eot'),
-        url('Poppins/poppins-medium-mota-photo-font.eot') format('eot'),
-        url('Poppins/poppins-medium-mota-photo-font.woff2') format('woff2'),
-        url('Poppins/poppins-medium-mota-photo-font.woff') format('woff'),
-        url('Poppins/poppins-medium-mota-photo-font.ttf') format('truetype'),
-        url('Poppins/poppins-medium-mota-photo-font.svg#poppinsmedium') format('svg');
+        url('../../assets/fonts/Poppins/poppins-medium-mota-photo-font.eot') format('eot'),
+        url('../../assets/fonts/Poppins/poppins-medium-mota-photo-font.eot') format('eot'),
+        url('../../assets/fonts/Poppins/poppins-medium-mota-photo-font.woff2') format('woff2'),
+        url('../../assets/fonts/Poppins/poppins-medium-mota-photo-font.woff') format('woff'),
+        url('../../assets/fonts/Poppins/poppins-medium-mota-photo-font.ttf') format('truetype'),
+        url('../../assets/fonts/Poppins/poppins-medium-mota-photo-font.svg#poppinsmedium') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -210,11 +210,11 @@
 @font-face {
     font-family: 'Poppins';
     src: 
-        url('Poppins/poppins-mediumitalic-mota-photo-font.eot') format('eot'),
-        url('Poppins/poppins-mediumitalic-mota-photo-font.woff2') format('woff2'),
-        url('Poppins/poppins-mediumitalic-mota-photo-font.woff') format('woff'),
-        url('Poppins/poppins-mediumitalic-mota-photo-font.ttf') format('truetype'),
-        url('Poppins/poppins-mediumitalic-mota-photo-font.svg#poppinsmedium_italic') format('svg');
+        url('../../assets/fonts/Poppins/poppins-mediumitalic-mota-photo-font.eot') format('eot'),
+        url('../../assets/fonts/Poppins/poppins-mediumitalic-mota-photo-font.woff2') format('woff2'),
+        url('../../assets/fonts/Poppins/poppins-mediumitalic-mota-photo-font.woff') format('woff'),
+        url('../../assets/fonts/Poppins/poppins-mediumitalic-mota-photo-font.ttf') format('truetype'),
+        url('../../assets/fonts/Poppins/poppins-mediumitalic-mota-photo-font.svg#poppinsmedium_italic') format('svg');
     font-weight: normal;
     font-style: italic;
 
@@ -223,11 +223,11 @@
 @font-face {
     font-family: 'Poppins';
     src: 
-        url('Poppins/poppins-regular-mota-photo-font.eot') format('eot'),
-        url('Poppins/poppins-regular-mota-photo-font.woff2') format('woff2'),
-        url('Poppins/poppins-regular-mota-photo-font.woff') format('woff'),
-        url('Poppins/poppins-regular-mota-photo-font.ttf') format('truetype'),
-        url('Poppins/poppins-regular-mota-photo-font.svg') format('svg');
+        url('../../assets/fonts/Poppins/poppins-regular-mota-photo-font.eot') format('eot'),
+        url('../../assets/fonts/Poppins/poppins-regular-mota-photo-font.woff2') format('woff2'),
+        url('../../assets/fonts/Poppins/poppins-regular-mota-photo-font.woff') format('woff'),
+        url('../../assets/fonts/Poppins/poppins-regular-mota-photo-font.ttf') format('truetype'),
+        url('../../assets/fonts/Poppins/poppins-regular-mota-photo-font.svg') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -236,11 +236,11 @@
 @font-face {
     font-family: 'Poppins';
     src: 
-        url('Poppins/poppins-semibold-mota-photo-font.eot') format('eot'),
-        url('Poppins/poppins-semibold-mota-photo-font.woff2') format('woff2'),
-        url('Poppins/poppins-semibold-mota-photo-font.woff') format('woff'),
-        url('Poppins/poppins-semibold-mota-photo-font.ttf') format('truetype'),
-        url('Poppins/poppins-semibold-mota-photo-font.svg') format('svg');
+        url('../../assets/fonts/Poppins/poppins-semibold-mota-photo-font.eot') format('eot'),
+        url('../../assets/fonts/Poppins/poppins-semibold-mota-photo-font.woff2') format('woff2'),
+        url('../../assets/fonts/Poppins/poppins-semibold-mota-photo-font.woff') format('woff'),
+        url('../../assets/fonts/Poppins/poppins-semibold-mota-photo-font.ttf') format('truetype'),
+        url('../../assets/fonts/Poppins/poppins-semibold-mota-photo-font.svg') format('svg');
     font-weight: bold;
     font-style: normal;
 
@@ -249,11 +249,11 @@
 @font-face {
     font-family: 'Poppins';
     src: 
-        url('Poppins/poppins-semibolditalic-mota-photo-font.eot') format('eot'),
-        url('Poppins/poppins-semibolditalic-mota-photo-font.woff2') format('woff2'),
-        url('Poppins/poppins-semibolditalic-mota-photo-font.woff') format('woff'),
-        url('Poppins/poppins-semibolditalic-mota-photo-font.ttf') format('truetype'),
-        url('Poppins/poppins-semibolditalic-mota-photo-font.svg#poppinssemibold_italic') format('svg');
+        url('../../assets/fonts/Poppins/poppins-semibolditalic-mota-photo-font.eot') format('eot'),
+        url('../../assets/fonts/Poppins/poppins-semibolditalic-mota-photo-font.woff2') format('woff2'),
+        url('../../assets/fonts/Poppins/poppins-semibolditalic-mota-photo-font.woff') format('woff'),
+        url('../../assets/fonts/Poppins/poppins-semibolditalic-mota-photo-font.ttf') format('truetype'),
+        url('../../assets/fonts/Poppins/poppins-semibolditalic-mota-photo-font.svg#poppinssemibold_italic') format('svg');
     font-weight: bold;
     font-style: italic;
 
@@ -262,11 +262,11 @@
 @font-face {
     font-family: 'Poppins';
     src: 
-        url('Poppins/poppins-thin-mota-photo-font.eot') format('eot'),
-        url('Poppins/poppins-thin-mota-photo-font.woff2') format('woff2'),
-        url('Poppins/poppins-thin-mota-photo-font.woff') format('woff'),
-        url('Poppins/poppins-thin-mota-photo-font.ttf') format('truetype'),
-        url('Poppins/poppins-thin-mota-photo-font.svg#poppinsthin') format('svg');
+        url('../../assets/fonts/Poppins/poppins-thin-mota-photo-font.eot') format('eot'),
+        url('../../assets/fonts/Poppins/poppins-thin-mota-photo-font.woff2') format('woff2'),
+        url('../../assets/fonts/Poppins/poppins-thin-mota-photo-font.woff') format('woff'),
+        url('../../assets/fonts/Poppins/poppins-thin-mota-photo-font.ttf') format('truetype'),
+        url('../../assets/fonts/Poppins/poppins-thin-mota-photo-font.svg#poppinsthin') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -275,11 +275,11 @@
 @font-face {
     font-family: 'Poppins';
     src: 
-        url('Poppins/poppins-thinitalic-mota-photo-font.eot') format('eot'),
-        url('Poppins/poppins-thinitalic-mota-photo-font.woff2') format('woff2'),
-        url('Poppins/poppins-thinitalic-mota-photo-font.woff') format('woff'),
-        url('Poppins/poppins-thinitalic-mota-photo-font.ttf') format('truetype'),
-        url('Poppins/poppins-thinitalic-mota-photo-font.svg') format('svg');
+        url('../../assets/fonts/Poppins/poppins-thinitalic-mota-photo-font.eot') format('eot'),
+        url('../../assets/fonts/Poppins/poppins-thinitalic-mota-photo-font.woff2') format('woff2'),
+        url('../../assets/fonts/Poppins/poppins-thinitalic-mota-photo-font.woff') format('woff'),
+        url('../../assets/fonts/Poppins/poppins-thinitalic-mota-photo-font.ttf') format('truetype'),
+        url('../../assets/fonts/Poppins/poppins-thinitalic-mota-photo-font.svg') format('svg');
     font-weight: normal;
     font-style: italic;
 
