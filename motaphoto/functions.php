@@ -14,8 +14,9 @@
 ?>
 
 <?php 
-// Add theme support for custom header 
-// Load theme's styles and scripts
+/* 
+******************* Add theme stylesheets and scripts 
+*/
 
 function add_motaphoto_styles(){
     // Load photo styles
@@ -27,7 +28,30 @@ function add_motaphoto_styles(){
 }
 add_action('wp_enqueue_scripts', 'add_motaphoto_styles');
 
-//  Add theme menus
+/*
+******************* Add theme support for custom header
+*/
+// Custom Logo Setup
+function motaphoto_custom_logo_setup() {
+	$defaults = array(
+		'height'               => 'auto',
+		'width'                => 'auto',
+		'flex-height'          => true,
+		'flex-width'           => true,
+		'header-text'          => array( 'site-title', 'site-description' ),
+		'unlink-homepage-logo' => true, 
+	);
+	add_theme_support( 'custom-logo', $defaults );
+    $custom_logo_id = get_theme_mod( 'custom-logo' );
+    $image = wp_get_attachment_image_src( $custom_logo_id , 'small' );
+    echo $image;
+}
+add_action( 'after_setup_theme', 'motaphoto_custom_logo_setup' );
+/*
+******************* Add theme menus
+*/
+
+// Add theme support for custom header
 add_action( 'after_setup_theme', 'motaphoto_theme_setup' );
 
 function motaphoto_theme_setup() {
@@ -48,7 +72,10 @@ function register_motaphoto_menus() {
 }
 add_action('after_setup_theme', 'register_motaphoto_menus');
 
-////////   Load Nav-Walker menus.php file   ////////
+/*
+*******************   Load Nav-Walker menus.php file
+*/
+
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) {
     exit;
@@ -68,21 +95,5 @@ function register_navwalker(){
 add_action( 'after_setup_theme', 'register_navwalker' );
 
 add_theme_support( 'custom-logo' );
-// Custom Logo Setup
-function motaphoto_custom_logo_setup() {
-	$defaults = array(
-		'height'               => 'auto',
-		'width'                => 'auto',
-		'flex-height'          => true,
-		'flex-width'           => true,
-		'header-text'          => array( 'site-title', 'site-description' ),
-		'unlink-homepage-logo' => true, 
-	);
-	add_theme_support( 'custom-logo', $defaults );
-    $custom_logo_id = get_theme_mod( 'custom-logo' );
-    $image = wp_get_attachment_image_src( $custom_logo_id , 'small' );
-    echo $image;
-}
-add_action( 'after_setup_theme', 'motaphoto_custom_logo_setup' );
 
 ?>
