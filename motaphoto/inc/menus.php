@@ -21,12 +21,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 class Motaphoto_Nav_Walker extends Walker_Nav_Menu {
-	// Add classes to ul sub-menus
+    // Add classes to ul sub-menus
     public function start_lvl( &$output, $depth = 0, $args = array() ) {
         $indent = str_repeat("\t", $depth);
         $output .= "\n$indent<ul class=\"sub-menu\">\n";
     }
-	// Add classes to li items and links
+
+    // Add classes to li items and links
     public function start_el( &$output, $data_object, $depth = 0, $args = array(), $current_object_id = 0 ) {
         $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
         $class_names = $value = '';
@@ -48,7 +49,12 @@ class Motaphoto_Nav_Walker extends Walker_Nav_Menu {
 
         // Add title attribute if the link opens in a new tab
         if ( '_blank' === $data_object->target && empty( $data_object->xfn ) ) {
-            $atts['title'] = $data_object->title . __( ' (s\'ouvre dans un nouvel onglet)', 'text-domain' );
+            $atts['title'] = $data_object->title . __( ' (opens in a new tab)', 'text-domain' );
+        }
+
+        // Add specific class to the contact link
+        if ( 'Contact' === $data_object->title ) {
+            $atts['id'] = 'contactLink'; // Add an ID
         }
 
         $atts = apply_filters( 'nav_menu_link_attributes', $atts, $data_object, $args, $depth );
@@ -60,7 +66,7 @@ class Motaphoto_Nav_Walker extends Walker_Nav_Menu {
                 $attributes .= ' ' . $attr . '="' . $value . '"';
             }
         }
-        // Add classes to links
+
         $item_output = is_object($args) && property_exists($args, 'before') ? $args->before : '';
         $item_output .= '<a'. $attributes .'>';
         $item_output .= is_object($args) && property_exists($args, 'link_before') ? $args->link_before : '';
