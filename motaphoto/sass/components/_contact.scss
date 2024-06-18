@@ -1,0 +1,127 @@
+// [contact-form-7 id="68dcfdf" title="Modal contact"]
+
+// /sass/modal.scss
+#contact-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: auto;
+
+    .modal-container {
+        position: relative;
+        width: 80%;
+        max-width: 600px;
+        margin: 5% auto;
+        background: #fff;
+        border: 5px solid #000;
+
+        .modal-contact_btn-close {
+            display: flex;
+            min-height: 30%;
+            width: 100%;
+            justify-content: center;
+            border-bottom: 5px solid #000;
+            
+            button.btn-close {
+                display: inline-flex;
+                width: auto;
+                height: 50px;
+                position: relative;
+                cursor: pointer;
+                background: transparent;
+                border: none;
+
+                >.close-bar {
+                    position: absolute;
+                    width: 100%;
+                    height: 3px;
+                    background-color: #000;
+                    top: 50%;
+                    left: 50%;
+                    transform: rotate(45deg);
+                }
+
+                .close-bar:nth-child(2) {
+                    transform: rotate(-45deg);
+                }
+
+                &:hover {
+                    transform: rotate(360deg);
+                    transition: transform 0.3s ease;
+                }
+            }
+        }
+
+        >.modal-content {
+            padding: 0;
+            height: 80%;
+
+            .modal-content__header {
+                margin: 40px 0;
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                height: 20%;
+                overflow: hidden;
+                background-image: cover;
+            }
+
+            .modal-content__form {
+                width: 100%;
+                height: 80%;
+                justify-content: center;
+                display: flex;
+            }
+        }
+    }
+}
+    .wpcf7 {
+        display: flex;
+        justify-content: center;
+        form.wpcf7-form {
+            max-width: 70%;
+            align-items: left;
+            div.contact-form-entries {
+            text-align: left;
+            label{
+                line-height: 20px;
+                font-size: 14px;
+                font-weight: 500;
+            }
+                .wpcf7-form-control {
+                    line-height: 20px;
+                    width: 100%;
+                }
+            }
+            div.contact-form-button {
+                display: flex;
+                justify-content: center;
+                margin: 10px 0;
+                width: 100%;
+                
+                p {
+                    input {
+                    display: flex;
+                    justify-content: center;
+                    width: 260px;
+                    height: 50px;
+                    padding: 10px 20px;
+                    color: black;
+                    border: none;
+                    cursor: pointer;
+                    font-size: 12px;
+                    font-weight: 400;
+                    border-radius: 5px;
+                    &:hover {
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+    }
+}
