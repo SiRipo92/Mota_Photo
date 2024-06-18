@@ -490,12 +490,13 @@ a:focus {
   background-color: #000;
   top: 50%;
   left: 50%;
-  transform: rotate(45deg);
+  transform: translate(-50%, -50%) rotate(45deg);
 }
 #contact-modal .modal-container .modal-contact_btn-close button.btn-close .close-bar:nth-child(2) {
-  transform: rotate(-45deg);
+  transform: translate(-50%, -50%) rotate(-45deg);
 }
 #contact-modal .modal-container .modal-contact_btn-close button.btn-close:hover {
+  transform-origin: center;
   transform: rotate(360deg);
   transition: transform 0.3s ease;
 }
@@ -518,34 +519,33 @@ a:focus {
   justify-content: center;
   display: flex;
 }
-
-.wpcf7 {
+#contact-modal .wpcf7 {
   display: flex;
   justify-content: center;
 }
-.wpcf7 form.wpcf7-form {
+#contact-modal .wpcf7 form.wpcf7-form {
   max-width: 70%;
   align-items: left;
 }
-.wpcf7 form.wpcf7-form div.contact-form-entries {
+#contact-modal .wpcf7 form.wpcf7-form div.contact-form-entries {
   text-align: left;
 }
-.wpcf7 form.wpcf7-form div.contact-form-entries label {
+#contact-modal .wpcf7 form.wpcf7-form div.contact-form-entries label {
   line-height: 20px;
   font-size: 14px;
   font-weight: 500;
 }
-.wpcf7 form.wpcf7-form div.contact-form-entries .wpcf7-form-control {
+#contact-modal .wpcf7 form.wpcf7-form div.contact-form-entries .wpcf7-form-control {
   line-height: 20px;
   width: 100%;
 }
-.wpcf7 form.wpcf7-form div.contact-form-button {
+#contact-modal .wpcf7 form.wpcf7-form div.contact-form-button {
   display: flex;
   justify-content: center;
   margin: 10px 0;
   width: 100%;
 }
-.wpcf7 form.wpcf7-form div.contact-form-button p input {
+#contact-modal .wpcf7 form.wpcf7-form div.contact-form-button p input {
   display: flex;
   justify-content: center;
   width: 260px;
@@ -558,7 +558,7 @@ a:focus {
   font-weight: 400;
   border-radius: 5px;
 }
-.wpcf7 form.wpcf7-form div.contact-form-button p input:hover {
+#contact-modal .wpcf7 form.wpcf7-form div.contact-form-button p input:hover {
   font-weight: 700;
 }
 
