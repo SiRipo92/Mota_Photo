@@ -1,16 +1,28 @@
 // IMPORT MAIN VARIABLES
 @import 'base/base';
+
 // IMPORT COMPONENTS
 @import 'components/components';
+
+// IMPORT LAYOUTS
+@import 'layout/layout';
 
 // To be moved later to a separate file but it confirmed
 // that gulp is operating and having an effect
 // on the visual output of the site
+
 ul,
-li {
+li,
+a {
   list-style: none;
+  text-decoration: none;
+  font-family: 'Space Mono', monospace;
   padding: 0;
   margin: 0;
+  &:hover,
+  &:focus {
+    font-weight: 700;
+  }
 }
 
 .site-main {

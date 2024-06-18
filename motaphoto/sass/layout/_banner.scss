@@ -1,0 +1,21 @@
+section#hero-header {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: auto;
+    max-height: 800px;
+    margin-bottom: 50px;
+    padding: 0;
+    object-fit: contain;
+    .hero-banner {
+        display: flex;
+        justify-content: center;
+        object-fit: contain;
+        img {
+            width: 100%;
+            height: auto;
+            max-height: 800px;
+            object-fit: cover;
+        }
+    }
+}
