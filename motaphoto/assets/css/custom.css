@@ -524,7 +524,7 @@ a:focus {
   justify-content: center;
 }
 #contact-modal .wpcf7 form.wpcf7-form {
-  max-width: 70%;
+  max-width: 100%;
   align-items: left;
 }
 #contact-modal .wpcf7 form.wpcf7-form div.contact-form-entries {
@@ -535,9 +535,14 @@ a:focus {
   font-size: 14px;
   font-weight: 500;
 }
-#contact-modal .wpcf7 form.wpcf7-form div.contact-form-entries .wpcf7-form-control {
+#contact-modal .wpcf7 form.wpcf7-form div.contact-form-entries input.wpcf7-form-control {
   line-height: 20px;
+  height: 40px;
   width: 100%;
+}
+#contact-modal .wpcf7 form.wpcf7-form div.contact-form-entries textarea {
+  width: 100%;
+  height: 200px;
 }
 #contact-modal .wpcf7 form.wpcf7-form div.contact-form-button {
   display: flex;
