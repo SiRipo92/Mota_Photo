@@ -3,6 +3,8 @@
     height: 80px;
     position: relative;
     width: 100%;
+    overflow: hidden;
+    box-shadow: 0px 14px 14px rgba(0, 0, 0, 0.03);
 }
 
 .site-header {
@@ -11,6 +13,7 @@
     align-items: center;
     justify-content: space-between;
     background-color: white;
+    
 }
 
 .logo-container {

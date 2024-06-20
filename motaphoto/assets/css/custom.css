@@ -241,6 +241,8 @@ h4, h5 {
   height: 80px;
   position: relative;
   width: 100%;
+  overflow: hidden;
+  box-shadow: 0px 14px 14px rgba(0, 0, 0, 0.03);
 }
 
 .site-header {
@@ -579,6 +581,11 @@ section#hero-header .hero-banner img {
   object-fit: cover;
 }
 
+@media screen and (max-width: 768px) {
+  section#hero-header .hero-banner img {
+    max-height: 400px;
+  }
+}
 section {
   margin-bottom: 100px;
 }
