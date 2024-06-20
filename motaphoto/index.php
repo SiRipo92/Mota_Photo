@@ -6,6 +6,8 @@
             <img src="<?php echo get_template_directory_uri() . '/assets/images/hero-header-bg.png' ; ?>" >
         </div>
     </section>
+    <section class="content">
+    </section>
 </main><!-- #site-content -->
 
 <?php get_sidebar(); ?>
