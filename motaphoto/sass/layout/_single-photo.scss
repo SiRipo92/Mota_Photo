@@ -1,0 +1,84 @@
+//Style section for single photo page
+#photo-page {
+    display: flex;
+    justify-content: center;
+    align-items: first baseline;
+    width: 90%;
+    max-height: 900px;
+    margin: 50px 0;
+    flex-shrink: 1;
+    gap: 30px;
+    position: relative;
+    box-sizing: border-box;
+
+    > article {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+        &:first-child {
+            align-self: flex-end;
+            align-items:last baseline;
+        }
+        
+        &:nth-child(2) {
+            align-self: first baseline;
+            align-items:first baseline;
+        
+        }
+    }
+}
+
+.entry-meta {
+    flex-direction: column;
+    height: 100%;
+    width: 50%;
+    text-align: left;
+    max-height: 50%;
+    border-bottom: 2px solid #000;
+
+    &__title {
+        font-size: 3em;
+        width: 60%;
+        margin: 0;
+        padding: 0;
+    }
+    
+    &__details {
+        height: 40%;
+        width: 100%;
+        line-height: 20px;
+        letter-spacing: 1.2%;
+        flex-wrap: wrap;
+        
+        p {
+            &:last-child {
+                padding-bottom: 10px;
+            }
+        }
+    }
+}
+
+.photo-display {
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; // 'first baseline' is not a valid value for align-items
+    overflow: hidden; // Use 'hidden' instead of 'none' to hide overflow
+
+    figure {
+        margin: 0;
+        width: auto; // Ensure figure takes up full width of container
+        height: auto; // Ensure figure takes up full height of container
+
+        img {
+            width: 100%; // Ensure image takes up full width of figure
+            height: 100%; // Ensure image takes up full height of figure
+            max-height: 850px;
+            object-fit: contain; // Ensure image scales to fit its container while maintaining aspect ratio
+        }
+    }
+}
