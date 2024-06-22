@@ -40,21 +40,36 @@
             </div>
         </div>
     </article>
-    <article class ="photo-display">
+    <article class="photo-display">
         <?php the_content(); ?>
     </article>
-
-    <?php
-    // If comments are open or there is at least one comment, load the comment template.
-    if ( comments_open() || get_comments_number() ) :
-        comments_template();
-    endif;
-    ?>
-
     <?php
     endwhile;
     endif;
     ?>
+</section>
+<section class="photo-contact">
+    <div class="after-photo-container">
+        <article class="cta-text">
+            <p>Cette photo vous intéresse ?</p>
+            <button class="btn-cta" data-reference="<?php echo esc_attr($fields['Référence']); ?>">Contact</button>
+        </article>
+        <article class="photo-slider">
+            <div class="photo-slider-container">
+            <?php
+                $next_photo = get_next_post();
+
+
+                if (!empty($thumbnail_url)) {
+                    echo '<img class="photo-thumbnail" src="' . $thumbnail_url . '" >';
+                } ; 
+            ?>
+                <img class="photo-thumbnail" src="" >
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/nav/left-arrow.png" alt="left-arrow">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/nav/right-arrow.png" alt="right-arrow">
+            </div>
+        </article>
+    </div>
 </section>
 </main><!-- #site-content -->
 
