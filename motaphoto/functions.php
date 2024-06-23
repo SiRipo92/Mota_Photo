@@ -19,20 +19,18 @@
 */
 
 function add_motaphoto_styles(){
-    // Load photo styles
     wp_enqueue_style('motaphoto-styles', get_template_directory_uri() . '/style.css');
     wp_enqueue_style('motaphoto-custom-styles', get_template_directory_uri() . '/assets/css/custom.css');
 }
 add_action('wp_enqueue_scripts', 'add_motaphoto_styles');
 
 function add_motaphoto_scripts() {
-    // Load jQuery & custom scripts
     wp_enqueue_script('jquery', array('jquery'), null, true);
     wp_enqueue_script('motaphoto-custom-script', get_template_directory_uri() . '/assets/js/index.js', array('jquery'), null, true);
 
     // Assuming you're on a single custom post type page
     if (is_singular('photo')) {
-        $referenceID = get_field('Reference', get_the_ID()); // Adjust 'reference_id' to your ACF field name
+        $referenceID = get_field('Reference', get_the_ID());
         wp_localize_script('motaphoto-custom-script', 'customData', array('referenceID' => $referenceID));
     } else {
         wp_localize_script('motaphoto-custom-script', 'customData', array('referenceID' => ''));
@@ -58,6 +56,7 @@ function motaphoto_custom_logo_setup() {
     echo $image;
 }
 add_action( 'after_setup_theme', 'motaphoto_custom_logo_setup' );
+add_theme_support( 'custom-logo' );
 /*
 ******************* Add theme menus
 */
@@ -66,7 +65,6 @@ add_action( 'after_setup_theme', 'motaphoto_custom_logo_setup' );
 add_action( 'after_setup_theme', 'motaphoto_theme_setup' );
 
 function motaphoto_theme_setup() {
-	add_theme_support( 'wp-block-styles' );
     add_theme_support('menus');
 }
 add_action('init', 'motaphoto_theme_setup');
@@ -105,7 +103,6 @@ function register_navwalker(){
 }
 add_action( 'after_setup_theme', 'register_navwalker' );
 
-add_theme_support( 'custom-logo' );
 
 
 
