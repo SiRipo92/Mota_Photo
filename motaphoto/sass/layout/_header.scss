@@ -122,6 +122,10 @@
 }
 
 @media screen and (max-width: 768px) {
+    #header-navigation {
+        display: none;
+    }
+
     .mobile-menu-container {
         display: flex; // Show the mobile menu container on mobile
         justify-content: center;
