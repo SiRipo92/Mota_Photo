@@ -7,6 +7,9 @@
 // IMPORT LAYOUTS
 @import 'layout/layout';
 
+// IMPORT PAGES
+@import 'pages/pages';
+
 // To be moved later to a separate file but it confirmed
 // that gulp is operating and having an effect
 // on the visual output of the site
@@ -16,9 +19,12 @@ li,
 a {
   list-style: none;
   text-decoration: none;
-  font-family: 'Space Mono', monospace;
+  font-family: 'Space-Mono', monospace;
   padding: 0;
   margin: 0;
+}
+
+a {
   &:hover,
   &:focus {
     font-weight: 700;
@@ -26,7 +32,7 @@ a {
 }
 
 .site-main {
-  width: 90%;
+  width: 100%;
   margin: auto;
   padding: 0;
   @media-screen and (min-width: 1400px) {

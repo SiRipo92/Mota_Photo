@@ -7,88 +7,27 @@ button.cta:hover {
   background-color: #000000;
 }
 
-body,
-a {
-  font-family: "Space-Mono", sans-serif;
-  font-weight: normal;
-  font-style: normal;
-  color: black;
-  text-transform: uppercase;
-  text-align: center;
-}
-
-p,
-span > p {
-  font-family: "Poppins", sans-serif;
-  font-weight: 300;
-  font-style: normal;
-  font-size: 14px;
-}
-
-h1, h2, h3, h4, h5, h6 > span {
-  font-family: "Space-Mono";
-}
-
-h1 {
-  font-size: 36px;
-  font-weight: 700;
-  font-style: italic;
-}
-@media screen and (max-width: 768px) {
-  h1 {
-    font-size: 26px;
-  }
-}
-
-h2 {
-  font-size: 24px;
-  font-weight: 400;
-  font-style: italic;
-}
-@media screen and (max-width: 768px) {
-  h2 {
-    font-size: 20px;
-  }
-}
-
-h3 {
-  font-size: 18px;
-  font-weight: 400;
-  font-style: normal;
-}
-@media screen and (max-width: 768px) {
-  h3 {
-    font-size: 18px;
-  }
-}
-
-h4, h5 {
-  font-size: 14px;
-  font-weight: 400;
-  font-style: normal;
-}
-
 /* Space Mono Fonts */
 @font-face {
-  font-family: "Space Mono", monospace;
+  font-family: "Space-Mono", monospace;
   src: url("../../assets/fonts/Space_Mono/spacemono-bold-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Space_Mono/spacemono-bold-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Space_Mono/spacemono-bold-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Space_Mono/spacemono-bold-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Space_Mono/spacemono-bold-mota-photo-font.svg") format("svg");
   font-weight: bold;
   font-style: normal;
 }
 @font-face {
-  font-family: "Space Mono";
+  font-family: "Space-Mono", monospace;
   src: url("../../assets/fonts/Space_Mono/spacemono-bolditalic-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Space_Mono/spacemono-bolditalic-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Space_Mono/spacemono-bolditalic-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Space_Mono/spacemono-bolditalic-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Space_Mono/spacemono-bolditalic-mota-photo-font.svg") format("svg");
   font-weight: bold;
   font-style: italic;
 }
 @font-face {
-  font-family: "Space Mono";
+  font-family: "Space-Mono", monospace;
   src: url("../../assets/fonts/Space_Mono/spacemono-italic-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Space_Mono/spacemono-italic-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Space_Mono/spacemono-italic-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Space_Mono/spacemono-italic-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Space_Mono/spacemono-italic-mota-photo-font.svg#space_monoitalic") format("svg");
   font-weight: normal;
   font-style: italic;
 }
 @font-face {
-  font-family: "Space Mono";
+  font-family: "Space-Mono", monospace;
   src: url("../../assets/fonts/Space_Mono/spacemono-regular-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Space_Mono/spacemono-regular-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Space_Mono/spacemono-regular-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Space_Mono/spacemono-regular-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Space_Mono/spacemono-regular-mota-photo-font.svg#space_monoregular") format("svg");
   font-weight: normal;
   font-style: normal;
@@ -204,6 +143,276 @@ h4, h5 {
   font-style: italic;
 }
 /* End of Poppins Fonts */
+body,
+a,
+button {
+  font-family: "Space-Mono", monospace;
+  font-weight: normal;
+  font-style: normal;
+  color: black;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+p,
+span > p {
+  font-family: "Poppins";
+  font-weight: 300;
+  font-style: normal;
+  font-size: 14px;
+}
+
+h1, h2, h3, h4, h5, h6 > span {
+  font-family: "Space-Mono", monospace;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: 700;
+  font-style: italic;
+}
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 26px;
+  }
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 400;
+  font-style: italic;
+}
+@media screen and (max-width: 768px) {
+  h2 {
+    font-size: 20px;
+  }
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: 400;
+  font-style: normal;
+}
+@media screen and (max-width: 768px) {
+  h3 {
+    font-size: 18px;
+  }
+}
+
+h4, h5 {
+  font-size: 14px;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Space Mono Fonts */
+@font-face {
+  font-family: "Space-Mono", monospace;
+  src: url("../../assets/fonts/Space_Mono/spacemono-bold-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Space_Mono/spacemono-bold-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Space_Mono/spacemono-bold-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Space_Mono/spacemono-bold-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Space_Mono/spacemono-bold-mota-photo-font.svg") format("svg");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Space-Mono", monospace;
+  src: url("../../assets/fonts/Space_Mono/spacemono-bolditalic-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Space_Mono/spacemono-bolditalic-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Space_Mono/spacemono-bolditalic-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Space_Mono/spacemono-bolditalic-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Space_Mono/spacemono-bolditalic-mota-photo-font.svg") format("svg");
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Space-Mono", monospace;
+  src: url("../../assets/fonts/Space_Mono/spacemono-italic-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Space_Mono/spacemono-italic-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Space_Mono/spacemono-italic-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Space_Mono/spacemono-italic-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Space_Mono/spacemono-italic-mota-photo-font.svg#space_monoitalic") format("svg");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Space-Mono", monospace;
+  src: url("../../assets/fonts/Space_Mono/spacemono-regular-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Space_Mono/spacemono-regular-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Space_Mono/spacemono-regular-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Space_Mono/spacemono-regular-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Space_Mono/spacemono-regular-mota-photo-font.svg#space_monoregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/* End of Space Mono Fonts */
+/* Poppins Fonts */
+@font-face {
+  font-family: "Poppins";
+  src: url("../../assets/fonts/Poppins/poppins-black-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-black-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-black-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-black-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-black-mota-photo-font.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../../assets/fonts/Poppins/poppins-blackitalic-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-blackitalic-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-blackitalic-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-blackitalic-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-blackitalic-mota-photo-font.svg#poppinsblack_italic") format("svg");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../../assets/fonts/Poppins/poppins-bold-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-bold-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-bold-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-bold-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-bold-mota-photo-font.svg#poppinsbold") format("svg");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../../assets/fonts/Poppins/poppins-bolditalic-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-bolditalic-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-bolditalic-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-bolditalic-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-bolditalic-mota-photo-font.svg") format("svg");
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../../assets/fonts/Poppins/poppins-extrabold-mota-photo-font.eot") format("eot)"), url("../../assets/fonts/Poppins/poppins-extrabold-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-extrabold-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-extrabold-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-extrabold-mota-photo-font.svg") format("svg");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../../assets/fonts/Poppins/poppins-extrabolditalic-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-extrabolditalic-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-extrabolditalic-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-extrabolditalic-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-extrabolditalic-mota-photo-font.svg") format("svg");
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../../assets/fonts/Poppins/poppins-extralight-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-extralight-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-extralight-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-extralight-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-extralight-mota-photo-font.svg#poppinsextralight") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../../assets/fonts/Poppins/poppins-extralightitalic-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-extralightitalic-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-extralightitalic-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-extralightitalic-mota-photo-font.ttf") format("svg");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../../assets/fonts/Poppins/poppins-italic-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-italic-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-italic-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-italic-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-italic-mota-photo-font.svg") format("svg");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../../assets/fonts/Poppins/poppins-light-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-light-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-light-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-light-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-light-mota-photo-font.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../../assets/fonts/Poppins/poppins-lightitalic-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-lightitalic-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-lightitalic-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-lightitalic-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-lightitalic-mota-photo-font.svg#poppinslight_italic") format("svg");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../../assets/fonts/Poppins/poppins-medium-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-medium-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-medium-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-medium-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-medium-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-medium-mota-photo-font.svg#poppinsmedium") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../../assets/fonts/Poppins/poppins-mediumitalic-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-mediumitalic-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-mediumitalic-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-mediumitalic-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-mediumitalic-mota-photo-font.svg#poppinsmedium_italic") format("svg");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../../assets/fonts/Poppins/poppins-regular-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-regular-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-regular-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-regular-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-regular-mota-photo-font.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../../assets/fonts/Poppins/poppins-semibold-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-semibold-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-semibold-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-semibold-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-semibold-mota-photo-font.svg") format("svg");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../../assets/fonts/Poppins/poppins-semibolditalic-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-semibolditalic-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-semibolditalic-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-semibolditalic-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-semibolditalic-mota-photo-font.svg#poppinssemibold_italic") format("svg");
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../../assets/fonts/Poppins/poppins-thin-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-thin-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-thin-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-thin-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-thin-mota-photo-font.svg#poppinsthin") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../../assets/fonts/Poppins/poppins-thinitalic-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-thinitalic-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-thinitalic-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-thinitalic-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-thinitalic-mota-photo-font.svg") format("svg");
+  font-weight: normal;
+  font-style: italic;
+}
+/* End of Poppins Fonts */
+/* _reset.scss */
+/* Basic CSS Reset */
+/*
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+/* article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+/* Reset list styles */
+ol, ul {
+  list-style: none;
+}
+
+/* Reset quotes */
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+/* Reset table borders */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Remove link underlines */
+a {
+  text-decoration: none;
+}
+
+/* Reset font styles */
+body {
+  line-height: 1;
+  font-family: "Space-Mono", monospace;
+  color: #000;
+}
+
+/* Reset images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* Navigation styling for the header and footer navbars and menus */
 /* Navigation styling */
 .main-navigation {
@@ -242,6 +451,7 @@ h4, h5 {
   position: relative;
   width: 100%;
   overflow: hidden;
+  margin: 0;
   box-shadow: 0px 14px 14px rgba(0, 0, 0, 0.03);
 }
 
@@ -254,26 +464,30 @@ h4, h5 {
 }
 
 .logo-container {
-  flex-shrink: 0;
-  max-width: 40%;
-  margin-left: 50px;
-  margin-right: 50px;
+  max-width: 30%;
   height: 80px;
   display: flex;
-  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
-  justify-content: center;
+  margin-left: 5%;
+  margin-right: -5%;
 }
 .logo-container .custom-logo-link {
-  height: auto;
-  width: auto;
-  max-width: 200px;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+.logo-container .custom-logo-link a {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
 .logo-container .custom-logo-link img {
-  width: 100%;
-  height: 100%;
+  max-height: 100%; /* Adjust to control the logo size, maintaining aspect ratio */
+  max-width: 100%; /* Adjust to control the logo size, maintaining aspect ratio */
 }
 
 /* Burger button styling */
@@ -403,9 +617,8 @@ h4, h5 {
   left: 0;
   top: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
-  overflow: auto;
 }
 #contact-modal .modal-container {
   position: relative;
@@ -450,16 +663,19 @@ h4, h5 {
 }
 #contact-modal .modal-container > .modal-content {
   padding: 0;
-  height: 80%;
+  height: 90%;
 }
 #contact-modal .modal-container > .modal-content .modal-content__header {
-  margin: 40px 0;
-  display: flex;
-  justify-content: center;
+  margin: 0;
   width: 100%;
-  height: 20%;
+  height: auto;
   overflow: hidden;
-  background-image: cover;
+}
+#contact-modal .modal-container > .modal-content .modal-content__header #contact-banner {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
 }
 #contact-modal .modal-container > .modal-content .modal-content__form {
   width: 100%;
@@ -479,6 +695,8 @@ h4, h5 {
   text-align: left;
 }
 #contact-modal .wpcf7 form.wpcf7-form div.contact-form-entries label {
+  display: block;
+  margin: 20px 0;
   line-height: 20px;
   font-size: 14px;
   font-weight: 500;
@@ -488,6 +706,7 @@ h4, h5 {
   font-size: 14px;
   height: 40px;
   width: 100%;
+  margin-top: 10px;
 }
 #contact-modal .wpcf7 form.wpcf7-form div.contact-form-entries textarea {
   width: 100%;
@@ -589,78 +808,226 @@ section#hero-header .hero-banner img {
 #photo-page {
   display: flex;
   justify-content: center;
-  align-items: first baseline;
-  width: 90%;
-  max-height: 900px;
-  margin: 50px 0;
-  flex-shrink: 1;
-  gap: 30px;
-  position: relative;
-  box-sizing: border-box;
+  align-items: flex-end;
+  width: 100%;
+  min-height: 700px;
+  height: 900px;
+  margin: 0;
+  gap: 15px;
+  overflow: hidden;
 }
-#photo-page > article {
-  width: 50%;
-  height: 100%;
+#photo-page article {
+  width: 48%;
+  max-width: 50%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
-#photo-page > article:first-child {
-  align-self: flex-end;
+#photo-page article.photo {
   align-items: last baseline;
-}
-#photo-page > article:nth-child(2) {
-  align-self: first baseline;
-  align-items: first baseline;
 }
 
 .entry-meta {
+  display: flex;
+  flex: 1;
   flex-direction: column;
-  height: 100%;
-  width: 50%;
+  align-items: flex-start;
   text-align: left;
-  max-height: 50%;
+  align-self: last baseline;
+  align-content: center;
   border-bottom: 2px solid #000;
+  padding-right: 40%;
+  height: 100%;
 }
 .entry-meta__title {
   font-size: 3em;
-  width: 60%;
   margin: 0;
   padding: 0;
+  width: 50%;
+  padding-bottom: 15px;
+  font-family: "Space-Mono", monospace;
+  font-style: italic;
 }
 .entry-meta__details {
-  height: 40%;
-  width: 100%;
+  padding-top: 10px;
   line-height: 20px;
   letter-spacing: 1.2%;
   flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+.entry-meta__details p {
+  font-family: "Space-Mono", monospace;
+  font-weight: 300;
 }
 .entry-meta__details p:last-child {
   padding-bottom: 10px;
 }
 
 .photo-display {
-  height: 90%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
+  max-height: 95%;
+  object-fit: contain;
+  max-width: 100%;
+  width: 50%;
+  height: auto;
+  display: block;
+  justify-content: flex-start;
+  align-content: flex-end;
+  margin: 0;
+  object-fit: fill;
   overflow: hidden;
+  margin-bottom: -10px;
 }
 .photo-display figure {
-  margin: 0;
+  object-fit: scale-down;
+  max-height: 800px;
   width: auto;
-  height: auto;
+  padding: 0;
+  align-items: flex-start;
 }
 .photo-display figure img {
-  width: 100%;
-  height: 100%;
-  max-height: 850px;
-  object-fit: contain;
+  width: auto;
+  min-width: 50%;
+  height: auto;
 }
 
-section {
-  margin-bottom: 100px;
+/******************* Section CTA and Photo Slider *******************/
+.photo-contact {
+  display: block;
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  position: relative;
+  object-position: 0%;
+  padding: 0;
+  margin: 0;
+}
+.photo-contact .after-photo-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  gap: 15px;
+  align-self: center;
+}
+.photo-contact .after-photo-container > article {
+  max-width: 40%;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.cta-text {
+  width: 50%;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  object-fit: contain;
+  position: relative;
+}
+.cta-text p {
+  position: absolute;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  text-transform: none;
+  text-align: right;
+  width: fit-content;
+  padding: 0;
+  padding-left: 22px;
+  font-family: "Poppins";
+  font-weight: 300;
+}
+.cta-text button.btn-cta {
+  position: absolute;
+  right: 0;
+  width: 200px;
+  height: 35%;
+}
+
+.photo-slider {
+  width: 80%;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  position: relative;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+.photo-slider .photo-slider-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 50%;
+}
+.photo-slider .photo-slider-container img {
+  display: block;
+  width: 80px;
+  height: 90%;
+}
+.photo-slider .photo-slider-container > div.slider-controls {
+  margin-top: 10px;
+  justify-content: space-between;
+  display: flex;
+  height: 10%;
+  width: 80px;
+  gap: 20px;
+}
+.photo-slider .photo-slider-container > div.slider-controls button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  width: 50px;
+}
+.photo-slider .photo-slider-container > div.slider-controls button:hover {
+  transform: scale(1.5);
+  transition: transform 0.3s ease;
+}
+
+section#related-photos {
+  width: 100%;
+  margin-top: 1%;
+  padding: 0;
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+  margin-bottom: 5%;
+}
+section#related-photos h3.related-photos__title {
+  width: 80%;
+  text-align: left;
+  padding-left: 12%;
+  padding-bottom: 40px;
+}
+section#related-photos .related-photos__container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  gap: 20px; /* Adjust the gap between the photos as needed */
+  object-fit: contain;
+  margin-left: -20px;
+}
+section#related-photos .related-photos__container article.related-photo {
+  flex: 0 0 auto;
+  width: calc(38% - 10px);
+  height: 560px;
+  object-fit: cover;
+  object-position: center;
+}
+section#related-photos .related-photos__container article.related-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.related-photo {
+  flex: 1; /* This makes each photo take equal space */
+  max-width: calc(50% - 10px); /* Adjusts the width of each photo, accounting for the gap */
 }
 
 ul,
@@ -668,20 +1035,17 @@ li,
 a {
   list-style: none;
   text-decoration: none;
-  font-family: "Space Mono", monospace;
+  font-family: "Space-Mono", monospace;
   padding: 0;
   margin: 0;
 }
-ul:hover, ul:focus,
-li:hover,
-li:focus,
-a:hover,
-a:focus {
+
+a:hover, a:focus {
   font-weight: 700;
 }
 
 .site-main {
-  width: 90%;
+  width: 100%;
   margin: auto;
   padding: 0;
 }
