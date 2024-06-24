@@ -1,0 +1,246 @@
+#photo-page {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    min-height: 700px;
+    height: 900px;
+    margin: 0;
+    gap: 15px;
+    overflow: hidden;
+
+    article {
+        width: 48%;
+        max-width: 50%;
+        display: flex;
+        flex-direction: column;
+
+        &.photo {
+            align-items:last baseline;
+        }
+    }
+}
+
+.entry-meta {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;  // Align to the right
+    text-align: left;
+    align-self: last baseline;
+    align-content: center;
+    border-bottom: 2px solid #000;
+    padding-right: 40%;
+    height: 100%;
+
+    &__title {
+        font-size: 3em;
+        margin: 0;
+        padding: 0;
+        width: 50%;
+        padding-bottom: 15px;
+        font-family: 'Space-Mono', monospace;
+        font-style: italic;
+    }
+
+    &__details {
+        padding-top: 10px;
+        line-height: 20px;
+        letter-spacing: 1.2%;
+        flex-wrap: wrap;
+        margin-bottom: 10px;
+
+        p {
+            font-family: 'Space-Mono', monospace;
+            font-weight: 300;
+
+            &:last-child {
+                padding-bottom: 10px;
+            }
+        }
+    }
+}
+
+.photo-display {
+    max-height: 95%;
+    object-fit: contain;
+    max-width: 100%;
+    width: 50%;
+    height: auto;
+    display: block;
+    justify-content: flex-start ;
+    align-content: flex-end;
+    margin: 0;
+    object-fit:fill;
+    overflow: hidden;
+    margin-bottom: -10px;
+
+    figure {
+        object-fit: scale-down;
+        max-height: 800px;
+        width: auto;
+        padding: 0;
+        align-items: flex-start;
+    
+        img {
+            width: auto; 
+            min-width: 50%;
+            height: auto; 
+        }
+    }
+}
+
+/******************* Section CTA and Photo Slider *******************/
+.photo-contact {
+    display: block;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    position: relative;
+    object-position: 0%;
+    padding: 0;
+    margin: 0;
+    .after-photo-container {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        flex-direction: row;
+        align-content: center;
+        justify-content: center;
+        gap: 15px;
+        align-self: center;
+    
+        > article {
+            max-width: 40%;
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+        }
+    }    
+}
+
+.cta-text {
+    width: 50%;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    object-fit:contain;
+    position: relative;
+
+    p {
+        position: absolute;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        text-transform: none;
+        text-align: right;
+        width: fit-content;
+        padding: 0;
+        padding-left: 22px;
+        font-family: 'Poppins';
+        font-weight: 300;
+        
+    }
+
+    button.btn-cta {
+        position: absolute;
+        right: 0;
+        width: 200px;
+        height: 35%;
+    }
+}
+
+.photo-slider {
+    width: 80%;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    position: relative;
+    justify-content: flex-end;
+    margin-top: 10px;
+    
+    .photo-slider-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+        width: 50%;
+
+        img {
+            display: block;
+            width: 80px;
+            height: 90%;
+        }
+
+        > div.slider-controls {
+            margin-top: 10px;
+            justify-content: space-between;
+            display: flex;
+            height: 10%;
+            width: 80px;
+            gap: 20px;
+
+            button {
+                background-color: transparent;
+                border: none;
+                cursor: pointer;
+                width: calc(60px - 10px);
+
+                &:hover{
+                    transform: scale(1.5);
+                    transition: transform 0.3s ease;
+                }
+            }
+        }
+    }
+}
+// Related photos section
+section#related-photos {
+    width: 100%;
+    margin-top: 1%;
+    padding: 0;
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    margin-bottom: 5%;
+
+    h3.related-photos__title {
+        width: 80%;
+        text-align: left;
+        padding-left: 12%;
+        padding-bottom: 40px;
+    }
+
+    .related-photos__container {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: center;
+        gap: 20px; /* Adjust the gap between the photos as needed */
+        object-fit: contain;
+        margin-left: -20px;
+
+        article.related-photo {
+            flex: 0 0 auto; // This change ensures that the flex items do not grow or shrink but stay at the specified width
+            width: calc(38% - 10px); // Adjusts the width of each photo to be half of the container minus the gap
+            height: 560px;
+            object-fit: cover; // This is not applicable here, should be applied to img
+            object-position: center;
+            
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover; // Ensures that the image covers the container, maintaining its aspect ratio
+            }
+        }
+    }
+}
+
+
+.related-photo {
+    flex: 1; /* This makes each photo take equal space */
+    max-width: calc(50% - 10px); /* Adjusts the width of each photo, accounting for the gap */
+}
