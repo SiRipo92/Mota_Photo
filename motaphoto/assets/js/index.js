@@ -1,3 +1,4 @@
+// On document ready
 jQuery(document).ready(function($) {
 
     // Manage mobile menu open/close
@@ -32,6 +33,6 @@ jQuery(document).ready(function($) {
 
     // Prevent closing when clicking inside the modal container
     $('.modal-container').on('click', function(event) {
-        event.stopPropagation();
+        event.stopPropagation(); 
     });
 });
