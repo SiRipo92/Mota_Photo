@@ -1,8 +1,10 @@
 @import 'colors';
+@import 'fonts';
 // Import the colors
 body,
-a {
-    font-family: 'Space-Mono', sans-serif;
+a,
+button {
+    font-family: 'Space-Mono', monospace;
     font-weight: normal;
     font-style: normal;
     color: black;
@@ -12,14 +14,15 @@ a {
 
 p,
 span > p {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins';
     font-weight: 300;
     font-style: normal;
     font-size: 14px;
 }
 
 h1, h2, h3, h4, h5, h6 > span {
-    font-family: 'Space-Mono';
+    font-family: 'Space-Mono', monospace;
+    font-weight: 400;
 } 
 
 h1 {
