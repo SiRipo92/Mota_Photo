@@ -35,4 +35,28 @@ jQuery(document).ready(function($) {
     $('.modal-container').on('click', function(event) {
         event.stopPropagation(); 
     });
-});
+
+    /////////
+    /////// Hover event for the left and right arrows 
+    ////////        single-photo.php page
+    $('.prev-post').hover(function(){
+
+        // On mouse enter, update the thumbnail src
+        const prevThumbnailUrl = $(this).attr('data-thumbnail');
+        $('.dynamic-thumbnail').attr('src', prevThumbnailUrl);
+    }, function() {
+        // On mouse leave, reset the thumbnail src
+    }
+    );
+
+    $('.next-post').hover(function(){
+        // On mouse enter, update the thumbnail src
+        const nextThumbnailUrl = $(this).attr('data-thumbnail');
+        $('.dynamic-thumbnail').attr('src', nextThumbnailUrl);
+    }, function() {
+        // On mouse leave, reset the thumbnail src
+
+    });
+})
+
+

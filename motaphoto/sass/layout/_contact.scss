@@ -62,13 +62,13 @@
             .modal-content__header {
                 margin: 0;
                 width: 100%;
-                height: auto;
-                overflow: hidden;
+                height: auto; // Change height to image height
+                overflow: hidden; // Possibly need to remove
 
                 #contact-banner {
                     width: 100%;
                     height: auto;
-                    object-fit: cover;
+                    object-fit: none; // 
                     object-position: center;
                 }
             }

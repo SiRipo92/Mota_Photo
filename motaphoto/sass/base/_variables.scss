@@ -5,6 +5,9 @@ html {
     background-color: white;
 }
 
+$border-color: #000; // Example variable for border color
+
+
 $menu-mobile_nav-bg: map-get($colors, "primary-dark-red");
 
 button.cta {

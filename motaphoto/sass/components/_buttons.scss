@@ -1,0 +1,26 @@
+@import '../base/_colors.scss';
+@import '../base/_mixins.scss';
+
+
+.btn-contact,
+button.btn-cta {
+    width: 35%;
+    height: 50px;
+    background-color: map-get($colors, "btn-contact-bg-color");
+    border: none;
+    transition: 0.4s ease scale;
+
+    a {
+        color: black;
+        text-transform: none;
+    }
+
+    &:hover {
+        transform: scale(1.1);
+        background-color: black;
+        
+        a {
+            color: white;
+        }
+    }
+}

@@ -1,0 +1,49 @@
+@import "../base/mixins";
+
+section#related-photos {
+    height: auto;
+    max-height: 40%;
+    margin: 0 auto 50px;
+    width: calc(80vw - 20px);
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+
+
+    h3.related-photos__title {
+        display: flex;
+        text-align: left;
+        width: 96%;
+        justify-content: flex-start;
+        margin-bottom: 50px;
+        height: 20%;
+    }
+
+    div.related-photos__container {
+        display: flex;
+        justify-content: center; /* Center items horizontally */
+        align-items: center; /* Center items vertically */
+        max-width: calc(100% - 40px);
+        height: 80%;
+        gap: 20px;
+        flex: 1;
+        flex-wrap: nowrap; /* Prevent items from wrapping */
+    
+        article.related-photo {
+            flex: 0 1 calc(50% - 20px); /* Flex basis of 50% minus gap, allowing it to grow and shrink */
+            width: 48vw;
+            height: 500px; /* Set a max-height to control the size of the photos */
+            overflow: hidden;
+    
+            img {
+                width: 100%; /* Full width of the article */
+                height: 100% ; /* Adjusted to fill the article height */
+                object-fit: cover; /* Cover the area without losing aspect ratio */
+                background-position: center;
+            }
+        }
+    }
+}
