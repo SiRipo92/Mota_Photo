@@ -112,31 +112,6 @@
 
             }
 
-            div.contact-form-button {
-                display: flex;
-                justify-content: center;
-                margin: 10px 0;
-                width: 100%;
-                
-                p {
-                    input {
-                        display: flex;
-                        justify-content: center;
-                        width: 260px;
-                        height: 50px;
-                        padding: 10px 20px;
-                        color: black;
-                        border: none;
-                        cursor: pointer;
-                        font-size: 12px;
-                        font-weight: 400;
-                        border-radius: 5px;
-                        &:hover {
-                            font-weight: 700;
-                        }
-                    }
-                }
-            }
         }
     }
 }

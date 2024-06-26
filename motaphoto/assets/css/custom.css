@@ -150,7 +150,8 @@ button {
 }
 
 p,
-span > p {
+span > p,
+input {
   font-family: "Poppins";
   font-weight: 300;
   font-style: normal;
@@ -163,7 +164,10 @@ h1, h2, h3, h4, h5, h6 > span {
 }
 
 h1 {
-  font-size: 36px;
+  font-size: 92px;
+  color: transparent;
+  -webkit-text-stroke: 3px white;
+  -moz-text-stroke: 3px white;
   font-weight: 700;
   font-style: italic;
 }
@@ -473,6 +477,33 @@ button.btn-cta:hover a {
   transform: scale(1.2);
 }
 
+div.contact-form-button {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+  width: 100%;
+}
+div.contact-form-button p input {
+  display: flex;
+  justify-content: center;
+  width: 260px;
+  height: 50px;
+  padding: 10px 20px;
+  color: black;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 400;
+  border-radius: 5px;
+  transition: 0.4s ease scale(0);
+}
+div.contact-form-button p input:hover {
+  font-weight: 700;
+  background-color: black;
+  color: white;
+  transform: scale(1.2);
+}
+
 /* General styling for the header */
 #masthead {
   height: 80px;
@@ -744,28 +775,6 @@ button.btn-cta:hover a {
   height: 200px;
   font-size: 14px;
 }
-#contact-modal .wpcf7 form.wpcf7-form div.contact-form-button {
-  display: flex;
-  justify-content: center;
-  margin: 10px 0;
-  width: 100%;
-}
-#contact-modal .wpcf7 form.wpcf7-form div.contact-form-button p input {
-  display: flex;
-  justify-content: center;
-  width: 260px;
-  height: 50px;
-  padding: 10px 20px;
-  color: black;
-  border: none;
-  cursor: pointer;
-  font-size: 12px;
-  font-weight: 400;
-  border-radius: 5px;
-}
-#contact-modal .wpcf7 form.wpcf7-form div.contact-form-button p input:hover {
-  font-weight: 700;
-}
 
 /* Footer menu styling */
 .footer-nav {
@@ -914,6 +923,33 @@ button.btn-cta:hover a {
   transition: 0.4s ease scale(0);
 }
 .navigation-row a:hover {
+  transform: scale(1.2);
+}
+
+div.contact-form-button {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+  width: 100%;
+}
+div.contact-form-button p input {
+  display: flex;
+  justify-content: center;
+  width: 260px;
+  height: 50px;
+  padding: 10px 20px;
+  color: black;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 400;
+  border-radius: 5px;
+  transition: 0.4s ease scale(0);
+}
+div.contact-form-button p input:hover {
+  font-weight: 700;
+  background-color: black;
+  color: white;
   transform: scale(1.2);
 }
 

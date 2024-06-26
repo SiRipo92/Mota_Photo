@@ -12,7 +12,8 @@ button {
 }
 
 p,
-span > p {
+span > p,
+input {
     font-family: 'Poppins';
     font-weight: 300;
     font-style: normal;
@@ -25,7 +26,10 @@ h1, h2, h3, h4, h5, h6 > span {
 } 
 
 h1 {
-    font-size: 36px;
+    font-size: 92px;
+    color: transparent;
+    -webkit-text-stroke: 3px white;
+    -moz-text-stroke: 3px white;
     font-weight: 700;
     font-style: italic;
     @media screen and (max-width: 768px) {
@@ -56,3 +60,5 @@ h4, h5 {
     font-weight: 400;
     font-style: normal;
 }
+
+
