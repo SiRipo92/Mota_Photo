@@ -446,7 +446,7 @@ button.btn-cta {
   height: 50px;
   background-color: #D8D8D8;
   border: none;
-  transition: 0.4s ease scale;
+  transition: 0.4s ease scale(0);
 }
 .btn-contact a,
 button.btn-cta a {
@@ -461,6 +461,16 @@ button.btn-cta:hover {
 .btn-contact:hover a,
 button.btn-cta:hover a {
   color: white;
+}
+
+.navigation-row a {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  transition: 0.4s ease scale(0);
+}
+.navigation-row a:hover {
+  transform: scale(1.2);
 }
 
 /* General styling for the header */
@@ -880,7 +890,7 @@ button.btn-cta {
   height: 50px;
   background-color: #D8D8D8;
   border: none;
-  transition: 0.4s ease scale;
+  transition: 0.4s ease scale(0);
 }
 .btn-contact a,
 button.btn-cta a {
@@ -895,6 +905,16 @@ button.btn-cta:hover {
 .btn-contact:hover a,
 button.btn-cta:hover a {
   color: white;
+}
+
+.navigation-row a {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  transition: 0.4s ease scale(0);
+}
+.navigation-row a:hover {
+  transform: scale(1.2);
 }
 
 #site-content {
@@ -1017,6 +1037,23 @@ div.photo-contact-wrapper .sub-photo-container article.preview-wrapper {
   bottom: 0;
 }
 
+@media screen and (max-width: 768px) {
+  .entry-meta__title {
+    font-size: calc(3em - 0.5vw);
+  }
+  .entry-meta__details p {
+    font-size: calc(1.2em - 0.5vw);
+  }
+  .contact-wrapper p {
+    font-size: calc(1em - 0.5vw);
+  }
+  .btn-cta {
+    font-size: calc(1em - 0.5vw);
+  }
+  .related-photo {
+    width: 100%;
+  }
+}
 ul,
 li,
 a {

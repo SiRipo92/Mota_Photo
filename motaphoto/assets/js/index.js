@@ -36,26 +36,36 @@ jQuery(document).ready(function($) {
         event.stopPropagation(); 
     });
 
-    /////////
-    /////// Hover event for the left and right arrows 
-    ////////        single-photo.php page
-    $('.prev-post').hover(function(){
+    // Preload images to improve animation smoothness
+    const preloadImage = (url) => {
+        const img = new Image();
+        img.src = url;
+    };
+    $('.prev-post, .next-post').each(function() {
+        preloadImage($(this).attr('data-thumbnail'));
+    });
 
-        // On mouse enter, update the thumbnail src
-        const prevThumbnailUrl = $(this).attr('data-thumbnail');
-        $('.dynamic-thumbnail').attr('src', prevThumbnailUrl);
+    // Improved hover event for the left and right arrows
+    $('.prev-post, .next-post').hover(function() {
+        const thumbnailUrl = $(this).attr('data-thumbnail');
+        const $dynamicThumbnail = $('.dynamic-thumbnail');
+        // Only proceed if the new thumbnail is different from the current one
+        if ($dynamicThumbnail.attr('src') !== thumbnailUrl) {
+            // Ensure any ongoing animation is stopped before starting new ones
+            $dynamicThumbnail.stop(true, true);
+            // If the thumbnail is already visible (opacity 1), directly change the src
+            if ($dynamicThumbnail.css('opacity') == 1) {
+                $dynamicThumbnail.fadeTo('fast', 0, function() {
+                    $(this).attr('src', thumbnailUrl).fadeTo('fast', 1);
+                });
+            } else {
+                // If the thumbnail is not fully visible, change the src then fade in
+                $dynamicThumbnail.attr('src', thumbnailUrl).fadeTo('fast', 1);
+            }
+        }
     }, function() {
-        // On mouse leave, reset the thumbnail src
-    }
-    );
-
-    $('.next-post').hover(function(){
-        // On mouse enter, update the thumbnail src
-        const nextThumbnailUrl = $(this).attr('data-thumbnail');
-        $('.dynamic-thumbnail').attr('src', nextThumbnailUrl);
-    }, function() {
-        // On mouse leave, reset the thumbnail src
-
+        // On mouse leave, smoothly fade out the thumbnail with a slight delay
+        $('.dynamic-thumbnail').stop(true, true).delay(100).fadeTo('slow', 0.2); // Adjust opacity to desired level
     });
 })
 

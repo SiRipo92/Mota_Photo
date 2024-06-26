@@ -8,7 +8,7 @@ button.btn-cta {
     height: 50px;
     background-color: map-get($colors, "btn-contact-bg-color");
     border: none;
-    transition: 0.4s ease scale;
+    transition: 0.4s ease scale(0);
 
     a {
         color: black;
@@ -21,6 +21,18 @@ button.btn-cta {
         
         a {
             color: white;
+        }
+    }
+}
+
+.navigation-row {
+    a {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        transition: 0.4s ease scale(0);
+        &:hover {
+            transform: scale(1.2);
         }
     }
 }

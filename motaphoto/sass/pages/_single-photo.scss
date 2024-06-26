@@ -139,3 +139,30 @@ div.photo-contact-wrapper {
     }
 }
   
+@media screen and (max-width: 768px) {
+  .entry-meta {
+    &__title {
+      font-size: calc(3em - 0.5vw);
+    }
+
+    &__details {
+      p {
+        font-size: calc(1.2em - 0.5vw);
+      }
+    }
+  }
+
+  .contact-wrapper {
+    p {
+      font-size: calc(1em - 0.5vw);
+    }
+  }
+
+  .btn-cta {
+    font-size: calc(1em - 0.5vw);
+  }
+
+  .related-photo {
+    width: 100%;
+  }
+}
