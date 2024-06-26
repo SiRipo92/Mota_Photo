@@ -28,11 +28,6 @@ function add_motaphoto_scripts() {
     wp_enqueue_script('jquery', array('jquery'), null, true);
     wp_enqueue_script('motaphoto-custom-script', get_template_directory_uri() . '/assets/js/index.js', array('jquery'), null, true);
 
-    wp_enqueue_script('photo-navigation', get_template_directory_uri() . '/assets/js/photo-navigation.js', array('jquery'), null, true);
-    wp_localize_script('photo-navigation', 'myScriptData', array(
-        'ajaxurl' => admin_url('admin-ajax.php') 
-    ));
-
     // Assuming you're on a single custom post type page
     if (is_singular('photo')) {
         $referenceID = get_field('Reference', get_the_ID());

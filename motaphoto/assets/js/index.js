@@ -15,7 +15,7 @@ jQuery(document).ready(function($) {
         event.preventDefault(); // Prevent default anchor behavior
         const referenceID = customData.referenceID; // Get reference ID passed from PHP
         if (referenceID) {
-            $('label.form-reference').find('input').val(customData.referenceID);        }
+            $('label.form-reference').find('input').val(customData.referenceID).css('text-transform', 'uppercase');    }
         $('#contact-modal').fadeIn(); // Use fadeIn for a smooth opening
     });
 

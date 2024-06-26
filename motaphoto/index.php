@@ -3,7 +3,7 @@
 <main id="site-content" role="main">
     <section id="hero-header">
         <div class="hero-banner">
-            <img src="<?php echo get_template_directory_uri() . '/assets/images/hero-header-bg.png' ; ?>" >
+            <h1> Photographe Event</h1>
         </div>
     </section>
     <section class="content">
