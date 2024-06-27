@@ -477,25 +477,32 @@ img {
   }
 }
 .btn-contact,
-button.btn-cta {
+button.btn-cta,
+button#btn-load-more {
   width: 35%;
   height: 50px;
   background-color: #D8D8D8;
   border: none;
   transition: 0.4s ease scale(0);
+  text-transform: none;
 }
 .btn-contact a,
-button.btn-cta a {
+button.btn-cta a,
+button#btn-load-more a {
   color: black;
   text-transform: none;
 }
 .btn-contact:hover,
-button.btn-cta:hover {
+button.btn-cta:hover,
+button#btn-load-more:hover {
   transform: scale(1.1);
   background-color: black;
+  color: white;
+  font-weight: 700;
 }
 .btn-contact:hover a,
-button.btn-cta:hover a {
+button.btn-cta:hover a,
+button#btn-load-more:hover a {
   color: white;
 }
 
@@ -882,25 +889,32 @@ html {
 }
 
 .btn-contact,
-button.btn-cta {
+button.btn-cta,
+button#btn-load-more {
   width: 35%;
   height: 50px;
   background-color: #D8D8D8;
   border: none;
   transition: 0.4s ease scale(0);
+  text-transform: none;
 }
 .btn-contact a,
-button.btn-cta a {
+button.btn-cta a,
+button#btn-load-more a {
   color: black;
   text-transform: none;
 }
 .btn-contact:hover,
-button.btn-cta:hover {
+button.btn-cta:hover,
+button#btn-load-more:hover {
   transform: scale(1.1);
   background-color: black;
+  color: white;
+  font-weight: 700;
 }
 .btn-contact:hover a,
-button.btn-cta:hover a {
+button.btn-cta:hover a,
+button#btn-load-more:hover a {
   color: white;
 }
 
@@ -1122,7 +1136,7 @@ section#hero-header .hero-banner h1 {
   flex-wrap: nowrap;
 }
 
-section.photo-gallery {
+section.photo-catalogue {
   height: auto;
   margin: 0 auto 50px;
   width: calc(80vw - 20px);
@@ -1134,7 +1148,7 @@ section.photo-gallery {
   position: relative;
   align-items: center;
 }
-section.photo-gallery > .photo-filters {
+section.photo-catalogue > .photo-filters {
   margin: 40px auto;
   width: 98%;
   height: 100px;
@@ -1145,7 +1159,7 @@ section.photo-gallery > .photo-filters {
   align-items: center;
   gap: 20px;
 }
-section.photo-gallery > .photo-filters div {
+section.photo-catalogue > .photo-filters div {
   display: flex;
   width: 48%;
   height: 50%;
@@ -1164,7 +1178,15 @@ div.photo-filters > div.year-sortby__container {
 .year-sortby {
   border-radius: 5px;
   width: calc(40% - 20px);
-  gap: 20px;
+}
+
+.load-more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px auto;
+  width: 50%;
+  height: 100px;
 }
 
 ul,

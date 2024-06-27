@@ -25,7 +25,7 @@ get_header();
             <h1>Photographe Event</h1>
         </div>
     </section>
-    <section class="photo-gallery">
+    <section class="photo-catalogue">
         <div class="photo-filters">
             <div class="photo-filters__container">
                 <!------------- Sort by Category Dropdown --------------------->
@@ -102,8 +102,10 @@ get_header();
                 ?>
         </div>
         <div class="load-more">
-            <button id="load-more-button">Load More</button>
+            <button id="btn-load-more">Charger plus</button>
         </div>
+        <!-- Hidden div to reveal the next set of photos when button is clicked -->
+         <div class="loaded-photos"></div>
     </section>
 </main><!-- #site-content -->
 

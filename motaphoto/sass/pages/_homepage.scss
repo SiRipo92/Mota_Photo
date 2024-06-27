@@ -37,7 +37,7 @@ section#hero-header {
    
 }
 
-section.photo-gallery {
+section.photo-catalogue {
    height: auto;
    margin: 0 auto 50px;
    width: calc(80vw - 20px);
@@ -83,7 +83,13 @@ div.photo-filters > div.year-sortby__container {
 .year-sortby{
    border-radius: 5px;
    width: calc(40% - 20px);
-   gap: 20px;
 }
    
- 
+.load-more {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin: 50px auto;
+   width: 50%;
+   height: 100px;
+}

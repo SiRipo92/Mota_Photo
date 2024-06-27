@@ -120,7 +120,7 @@
 
 
 <!-- Related photos section -->
-<section class="photo-gallery">
+<section class="photo-catalogue">
 <h3 class="related-photos__title">Vous aimerez aussi</h3>
  <?php get_template_part('template-parts/photo-gallery-single'); ?>
 </section>
