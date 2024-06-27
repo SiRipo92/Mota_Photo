@@ -19,7 +19,7 @@ function get_landscape_photos() {
     if ($query->have_posts()) {
         while ($query->have_posts()) {
             $query->the_post();
-            $photo_url = get_the_post_thumbnail_url($query->post->ID, 'large');
+            $photo_url = get_the_post_thumbnail_url($query->post->ID, 'full');
             $acf_fields = get_fields($query->post->ID); // Retrieve all ACF fields for the post
 
             // Combine the photo URL and ACF fields into a single array
