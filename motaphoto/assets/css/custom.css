@@ -220,7 +220,6 @@ h4, h5 {
     font-size: calc(52px + 2vw);
   }
 }
-/* Optional: Set a minimum font size for very small screens */
 @media (max-width: 480px) {
   h1 {
     font-size: calc(40px + 2vw);
