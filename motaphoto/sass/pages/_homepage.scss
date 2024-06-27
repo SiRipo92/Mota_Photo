@@ -39,14 +39,51 @@ section#hero-header {
 
 section.photo-gallery {
    height: auto;
-  margin: 0 auto 50px;
-  width: calc(80vw - 20px);
-  padding: 20px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  align-items: center;
-  flex-wrap: wrap;
+   margin: 0 auto 50px;
+   width: calc(80vw - 20px);
+   padding: 20px;
+   flex: 1;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   position: relative;
+   align-items: center;
+   
+   >.photo-filters {
+      margin: 40px auto;
+      width: 98%;
+      height: 100px;
+      flex-direction: row;
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+
+      div {
+         display: flex;
+         width: 48%;
+         height: 50%;
+      }
+   }
+}
+
+.photo-filters__container {
+   justify-content: space-between;
 
 }
+
+div.photo-filters > div.year-sortby__container {
+   justify-content: flex-end;
+}
+
+
+.category-menu,
+.format-menu,
+.year-sortby{
+   border-radius: 5px;
+   width: calc(40% - 20px);
+   gap: 20px;
+}
+   
+ 
