@@ -67,6 +67,11 @@ jQuery(document).ready(function($) {
         // On mouse leave, smoothly fade out the thumbnail with a slight delay
         $('.dynamic-thumbnail').stop(true, true).delay(100).fadeTo('slow', 0.2); // Adjust opacity to desired level
     });
+
+
+    // Hero Header Dynamic Content
+    const heroBanner = $('.hero-banner');
+    heroBanner.attr('content', `url(${customData.heroImage})`);
 })
 
 

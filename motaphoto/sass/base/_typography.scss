@@ -32,9 +32,8 @@ h1 {
     -moz-text-stroke: 3px white;
     font-weight: 700;
     font-style: italic;
-    @media screen and (max-width: 768px) {
-        font-size: 26px ;
-    }
+
+   
 }
 
 h2 {
@@ -69,4 +68,32 @@ h4, h5 {
          1px -1px 0 #000,
         -1px  1px 0 #000,
          1px  1px 0 #000; /* Fallback for browsers that do not support text-stroke */
+}
+
+
+@media (max-width: 1200px) {
+    h1 {
+        font-size: calc(66px + 2vw);
+    }
+}
+
+
+@media (max-width: 900px) {
+    h1 {
+    font-size: calc(55px + 2vw);
+    }
+}
+
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: calc(52px + 2vw);
+    }
+}
+
+/* Optional: Set a minimum font size for very small screens */
+@media (max-width: 480px) {
+    h1 {
+        font-size: calc(40px + 2vw);
+    }
 }
