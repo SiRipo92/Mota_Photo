@@ -26,16 +26,84 @@ get_header();
         </div>
     </section>
     <section class="photo-gallery">
-        <div class="photo-filters__container">
-            <div class="sorting-menu">
-                <?php
-                $categories = get_categories(array('taxonomy' => 'category'));
-                foreach ($categories as $category) {
-                    echo '<button class="filter-button" data-filter="' . $category->slug . '">' . $category->name . '</button>';
-                }
+        <div class="photo-filters">
+            <div class="photo-filters__container">
+                <!------------- Sort by Category Dropdown --------------------->
+                <select class="category-menu">
+                    <option value="" selected disabled>Catégories</option>
+                    <?php
+                    // Initialize $terms as an empty array
+                    $terms = [];
+
+                    // Attempt to retrieve terms from a custom taxonomy
+                    $retrieved_terms = get_terms([
+                        'taxonomy' => 'categorie',
+                        'hide_empty' => false, // Set to true to hide categories with no posts
+                    ]);
+
+                    // Check if the retrieval was successful and update $terms if so
+                    if (!is_wp_error($retrieved_terms) && !empty($retrieved_terms)) {
+                        $terms = $retrieved_terms;
+                    }
+
+                    // Iterate over $terms to populate the dropdown
+                    foreach ($terms as $term) {
+                        echo "<option value='{$term->slug}'>{$term->name}</option>";
+                    }
+                    ?>
+                </select>
+
+                <!------------- Sort by Formats Dropdown    --------------------->
+                <select class="format-menu">
+                    <option value="" selected disabled>Formats</option>
+                    <?php
+                    // Initialize $formats as an empty array
+                    $formats = [];
+
+                    // Attempt to retrieve formats from the custom taxonomy 'format'
+                    $retrieved_formats = get_terms([
+                        'taxonomy' => 'format',
+                        'hide_empty' => false, // Set to true to hide formats with no posts
+                    ]);
+
+                    // Check if the retrieval was successful and update $formats if so
+                    if (!is_wp_error($retrieved_formats) && !empty($retrieved_formats)) {
+                        $formats = $retrieved_formats;
+                    }
+
+                    // Iterate over $formats to populate the dropdown
+                    foreach ($formats as $format) {
+                        echo "<option value='{$format->slug}'>{$format->name}</option>";
+                    }
+                    ?>
+                </select>
+            </div>
+            <div class="year-sortby__container">
+                <select class="year-sortby">
+                    <option value="" selected disabled>Trier par</option>
+                    <?php
+
+                    // Custom query to fetch all years from the database
+                    global $wpdb;
+                    $years = $wpdb->get_col("SELECT DISTINCT YEAR(post_date) AS year FROM $wpdb->posts WHERE post_type = 'photo' AND post_status = 'publish' ORDER BY post_date DESC");
+                    
+                    // Iterate over the years to populate the dropdown
+                    foreach ($years as $year) {
+                        echo "<option value='{$year}'>{$year}</option>";
+                    
+                    }
+                    ?>
+                </select>
+            </div>
+        </div>
+        <!------------- Gallery Photos Container --------------------->
+        <div id="posts-container" class="gallery-photos__container">
+            <?php get_template_part('template-parts/photo-gallery-index');
                 ?>
         </div>
-        <?php  get_template_part('template-parts/photo-gallery'); ?>
+        <div class="load-more">
+            <button id="load-more-button">Load More</button>
+        </div>
     </section>
 </main><!-- #site-content -->
 
