@@ -205,6 +205,11 @@ h4, h5 {
   font-style: normal;
 }
 
+.text-stroke {
+  -webkit-text-stroke: 3px white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; /* Fallback for browsers that do not support text-stroke */
+}
+
 /* Space Mono Fonts */
 @font-face {
   font-family: "Space-Mono", monospace;
@@ -410,6 +415,10 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+.wpcf7 textarea {
+  resize: none;
 }
 
 /* Navigation styling for the header and footer navbars and menus */
@@ -692,7 +701,7 @@ div.contact-form-button p input:hover {
 }
 #contact-modal .modal-container .modal-contact_btn-close {
   display: flex;
-  min-height: 30%;
+  height: 30%;
   width: 100%;
   justify-content: center;
   border-bottom: 5px solid #000;
@@ -726,22 +735,21 @@ div.contact-form-button p input:hover {
 #contact-modal .modal-container > .modal-content {
   padding: 0;
   height: 90%;
+  flex: 1;
 }
 #contact-modal .modal-container > .modal-content .modal-content__header {
   margin: 0;
   width: 100%;
-  height: auto;
-  overflow: hidden;
+  min-height: 150px;
+  height: 30%;
+  display: flex;
 }
 #contact-modal .modal-container > .modal-content .modal-content__header #contact-banner {
-  width: 100%;
-  height: auto;
   object-fit: none;
-  object-position: center;
 }
 #contact-modal .modal-container > .modal-content .modal-content__form {
   width: 100%;
-  height: 80%;
+  height: 60%;
   justify-content: center;
   display: flex;
 }

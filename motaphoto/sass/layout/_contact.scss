@@ -19,7 +19,7 @@
 
         .modal-contact_btn-close {
             display: flex;
-            min-height: 30%;
+            height: 30%;
             width: 100%;
             justify-content: center;
             border-bottom: 5px solid #000;
@@ -58,24 +58,24 @@
         >.modal-content {
             padding: 0;
             height: 90%;
+            flex: 1;
 
             .modal-content__header {
                 margin: 0;
                 width: 100%;
-                height: auto; // Change height to image height
-                overflow: hidden; // Possibly need to remove
+                min-height: 150px;
+                height: 30%;
+                display: flex;
 
                 #contact-banner {
-                    width: 100%;
-                    height: auto;
-                    object-fit: none; // 
-                    object-position: center;
+                    object-fit: none; 
+                    
                 }
             }
 
             .modal-content__form {
                 width: 100%;
-                height: 80%;
+                height: 60%;
                 justify-content: center;
                 display: flex;
             }
