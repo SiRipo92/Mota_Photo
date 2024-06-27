@@ -138,6 +138,18 @@ div.photo-contact-wrapper {
         bottom: 0;    
     }
 }
+
+// Section for Related Photos
+  h3.related-photos__title {
+      display: flex;
+      text-align: left;
+      width: 96%;
+      justify-content: flex-start;
+      margin-bottom: 50px;
+      height: 20%;
+  }
+
+  
   
 @media screen and (max-width: 768px) {
   .entry-meta {

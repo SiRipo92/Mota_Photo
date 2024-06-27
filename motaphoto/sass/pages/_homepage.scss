@@ -36,3 +36,17 @@ section#hero-header {
 
    
 }
+
+section.photo-gallery {
+   height: auto;
+  margin: 0 auto 50px;
+  width: calc(80vw - 20px);
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  flex-wrap: wrap;
+
+}

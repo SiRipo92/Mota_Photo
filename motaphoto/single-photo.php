@@ -120,7 +120,10 @@
 
 
 <!-- Related photos section -->
- <?php get_template_part('template-parts/related-photos'); ?>
+<section class="photo-gallery">
+<h3 class="related-photos__title">Vous aimerez aussi</h3>
+ <?php get_template_part('template-parts/photo-gallery'); ?>
+</section>
 </main><!-- #site-content -->
 
 <?php get_sidebar(); ?>

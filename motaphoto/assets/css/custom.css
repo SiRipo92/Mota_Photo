@@ -841,27 +841,7 @@ div.contact-form-button p input:hover {
     margin-top: 30px;
   }
 }
-section#related-photos {
-  height: auto;
-  max-height: 40%;
-  margin: 0 auto 50px;
-  width: calc(80vw - 20px);
-  padding: 20px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  align-items: center;
-}
-section#related-photos h3.related-photos__title {
-  display: flex;
-  text-align: left;
-  width: 96%;
-  justify-content: flex-start;
-  margin-bottom: 50px;
-  height: 20%;
-}
-section#related-photos div.related-photos__container {
+div.gallery-photos__container {
   display: flex;
   justify-content: center; /* Center items horizontally */
   align-items: center; /* Center items vertically */
@@ -869,15 +849,15 @@ section#related-photos div.related-photos__container {
   height: 80%;
   gap: 20px;
   flex: 1;
-  flex-wrap: nowrap; /* Prevent items from wrapping */
+  flex-wrap: wrap; /* Prevent items from wrapping */
 }
-section#related-photos div.related-photos__container article.related-photo {
+div.gallery-photos__container article.gallery-photo {
   flex: 0 1 calc(50% - 20px); /* Flex basis of 50% minus gap, allowing it to grow and shrink */
   width: 48vw;
   height: 500px; /* Set a max-height to control the size of the photos */
   overflow: hidden;
 }
-section#related-photos div.related-photos__container article.related-photo img {
+div.gallery-photos__container article.gallery-photo img {
   width: 100%; /* Full width of the article */
   height: 100%; /* Adjusted to fill the article height */
   object-fit: cover; /* Cover the area without losing aspect ratio */
@@ -1069,6 +1049,15 @@ div.photo-contact-wrapper .sub-photo-container article.preview-wrapper {
   bottom: 0;
 }
 
+h3.related-photos__title {
+  display: flex;
+  text-align: left;
+  width: 96%;
+  justify-content: flex-start;
+  margin-bottom: 50px;
+  height: 20%;
+}
+
 @media screen and (max-width: 768px) {
   .entry-meta__title {
     font-size: calc(3em - 0.5vw);
@@ -1119,6 +1108,19 @@ section#hero-header .hero-banner h1 {
   justify-content: center;
   align-self: center;
   flex-wrap: nowrap;
+}
+
+section.photo-gallery {
+  height: auto;
+  margin: 0 auto 50px;
+  width: calc(80vw - 20px);
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 ul,

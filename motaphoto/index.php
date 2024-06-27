@@ -25,7 +25,17 @@ get_header();
             <h1>Photographe Event</h1>
         </div>
     </section>
-    <section class="content">
+    <section class="photo-gallery">
+        <div class="photo-filters__container">
+            <div class="sorting-menu">
+                <?php
+                $categories = get_categories(array('taxonomy' => 'category'));
+                foreach ($categories as $category) {
+                    echo '<button class="filter-button" data-filter="' . $category->slug . '">' . $category->name . '</button>';
+                }
+                ?>
+        </div>
+        <?php  get_template_part('template-parts/photo-gallery'); ?>
     </section>
 </main><!-- #site-content -->
 

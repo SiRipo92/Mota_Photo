@@ -35,6 +35,10 @@ function add_motaphoto_scripts() {
     } else {
         wp_localize_script('motaphoto-custom-script', 'customData', array('referenceID' => ''));
     }
+
+    wp_enqueue_script('motaphoto-ajax-filter', get_template_directory_uri() .'/assets/js/ajax-filter.js', array('jquery'), null, true);
+    wp_localize_script('motaphoto-ajax-filter', 'ajaxFilter', array('ajaxurl' => get_template_directory_uri() . '/inc/ajax-handlers.php'));
+
 }
 add_action('wp_enqueue_scripts', 'add_motaphoto_scripts');
 
