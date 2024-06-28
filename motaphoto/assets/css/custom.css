@@ -1409,11 +1409,6 @@ section.photo-catalogue > .photo-filters .sorting-options {
   margin: 0;
   padding: 0;
 }
-@media-screen and (min-width: 1400px) {
-  .site-main {
-    margin: 0 2%;
-  }
-}
 
 body {
   margin: 0;
