@@ -1250,6 +1250,35 @@ section#hero-header .hero-banner h1 {
   flex-wrap: nowrap;
 }
 
+section#hero-header {
+  width: 100vw;
+  height: 960px;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section#hero-header .hero-banner {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+section#hero-header .hero-banner h1 {
+  margin: 0;
+  padding: 0;
+  align-self: center;
+}
+
 section.photo-catalogue {
   height: auto;
   margin: 0 auto 50px;
@@ -1266,7 +1295,6 @@ section.photo-catalogue > .photo-filters {
   margin: 40px auto;
   width: 98%;
   height: 100px;
-  flex-direction: row;
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
@@ -1403,7 +1431,6 @@ section.photo-catalogue > .photo-filters .sorting-options {
 .rotate {
   transform: rotate(180deg);
 }
-
 .site-main {
   width: 100vw;
   margin: 0;
