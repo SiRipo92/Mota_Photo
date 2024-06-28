@@ -58,14 +58,12 @@ function fetch_photos() {
         'post_type' => 'photo',
         'posts_per_page' => 8,
         'order' => $order,
-        'tax_query' => array(
-            'relation' => 'AND',
-        ),
     );
 
+    $tax_query = array('relation' => 'AND');
     if (!empty($category)) {
         $args['tax_query'][] = array(
-            'taxonomy' => 'category',
+            'taxonomy' => 'categorie',
             'field'    => 'slug',
             'terms'    => $category,
         );
@@ -77,6 +75,10 @@ function fetch_photos() {
             'field'    => 'slug',
             'terms'    => $format,
         );
+    }
+
+    if (count($tax_query) > 1 ) { // More than just the relation element
+        $args['tax_query'] = $tax_query;
     }
 
     $query = new WP_Query($args);
