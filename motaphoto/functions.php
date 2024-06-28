@@ -16,25 +16,34 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-/**
- * Enqueue theme stylesheets and scripts.
- */
+// Enqueue theme stylesheets and scripts (if you have any other styles or scripts not related to Ajax)
 function add_motaphoto_styles() {
     wp_enqueue_style('motaphoto-styles', get_template_directory_uri() . '/style.css');
     wp_enqueue_style('motaphoto-custom-styles', get_template_directory_uri() . '/assets/css/custom.css');
 }
 add_action('wp_enqueue_scripts', 'add_motaphoto_styles');
 
+// Optionally, enqueue additional scripts (if you have any other scripts not related to Ajax)
 function add_motaphoto_scripts() {
     wp_enqueue_script('jquery');
     wp_enqueue_script('motaphoto-custom-script', get_template_directory_uri() . '/assets/js/index.js', array('jquery'), null, true);
 
     if (is_singular('photo')) {
         $referenceID = get_field('Reference', get_the_ID());
-        wp_localize_script('motaphoto-custom-script', 'customData', array('referenceID' => $referenceID));
+        wp_add_inline_script('motaphoto-custom-script', 'const customData = ' . json_encode(array('referenceID' => $referenceID)) . ';', 'before');
     } else {
-        wp_localize_script('motaphoto-custom-script', 'customData', array('referenceID' => ''));
+        wp_add_inline_script('motaphoto-custom-script', 'const customData = ' . json_encode(array('referenceID' => '')) . ';', 'before');
     }
+
+    // Enqueue AJAX pagination script
+    wp_enqueue_script('ajax-pagination', get_template_directory_uri() . '/assets/js/ajax-pagination.js', array('jquery'), null, true);
+    // Localize AJAX pagination script
+    wp_localize_script('ajax-pagination', 'ajax_pagination_data', array('ajaxurl' => admin_url('admin-ajax.php')));
+
+    // Enqueue filters and sorting script
+    wp_enqueue_script('ajax-filter-sorting', get_template_directory_uri() . '/assets/js/ajax-filter-sorting.js', array('jquery'), null, true);
+    // Localize filters and sorting script
+    wp_localize_script('ajax-filter-sorting', 'ajax_filter_sorting_data', array('ajaxurl' => admin_url('admin-ajax.php')));
 }
 add_action('wp_enqueue_scripts', 'add_motaphoto_scripts');
 
@@ -70,6 +79,7 @@ add_action('after_setup_theme', 'motaphoto_theme_setup');
 //require_once get_template_directory() . '/inc/ajax-handlers.php';
 require_once get_template_directory() . '/inc/menus.php';
 require_once get_template_directory() . '/inc/custom-banner.php';
+require_once get_template_directory() . '/inc/ajax-handlers.php';
 
 /**
  * Register Nav Walker.

@@ -79,33 +79,23 @@ get_header();
                 </select>
             </div>
             <div class="year-sortby__container">
-                <select class="year-sortby">
-                    <option value="" selected disabled>Trier par</option>
-                    <?php
-
-                    // Custom query to fetch all years from the database
-                    global $wpdb;
-                    $years = $wpdb->get_col("SELECT DISTINCT YEAR(post_date) AS year FROM $wpdb->posts WHERE post_type = 'photo' AND post_status = 'publish' ORDER BY post_date DESC");
-                    
-                    // Iterate over the years to populate the dropdown
-                    foreach ($years as $year) {
-                        echo "<option value='{$year}'>{$year}</option>";
-                    
-                    }
-                    ?>
+                <select name="sort_order" id="sort_order" class="year-sortby">
+                    <option value="" disabled selected>Trier par : </option>
+                    <option value="DESC">À partir des plus récentes</option>
+                    <option value="ASC">À partir des plus anciennes</option>
                 </select>
             </div>
         </div>
         <!------------- Gallery Photos Container --------------------->
+            <!------------- Gallery Photos Container --------------------->
         <div id="posts-container" class="gallery-photos__container">
-            <?php get_template_part('template-parts/photo-gallery-index');
-                ?>
+            <?php get_template_part('template-parts/photo-gallery-index'); ?>
         </div>
         <div class="load-more">
             <button id="btn-load-more">Charger plus</button>
         </div>
         <!-- Hidden div to reveal the next set of photos when button is clicked -->
-         <div class="loaded-photos"></div>
+        <div class="loaded-photos"></div>
     </section>
 </main><!-- #site-content -->
 

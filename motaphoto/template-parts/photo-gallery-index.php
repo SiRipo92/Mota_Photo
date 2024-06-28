@@ -4,11 +4,12 @@
  */
 ?>
 
-<div class="gallery-photos__container">
+<div id="photo-gallery" class="gallery-photos__container">
     <?php
     $args = [
         'post_type' => 'photo',
-        'posts_per_page' => get_option('posts_per_page'),
+        'posts_per_page' => 8, // Load initial 8 photos
+        'paged' => 1 // Ensure it's the first page
     ];
 
     $photo_query = new WP_Query($args);
