@@ -1,6 +1,12 @@
 <?php
 /**
  * Template part for displaying all photo posts on the homepage with pagination.
+ * 
+ * @package MotaPhoto
+ * @version 1.0
+ * @author Sierra Ripoche
+ * @since 1.0
+ * 
  */
 ?>
 
