@@ -35,15 +35,24 @@ function add_motaphoto_scripts() {
         wp_add_inline_script('motaphoto-custom-script', 'const customData = ' . json_encode(array('referenceID' => '')) . ';', 'before');
     }
 
+     // Generate a nonce for the AJAX request
+     $ajax_nonce = wp_create_nonce('fetch_photos_nonce');
+
     // Enqueue AJAX pagination script
     wp_enqueue_script('ajax-pagination', get_template_directory_uri() . '/assets/js/ajax-pagination.js', array('jquery'), null, true);
-    // Localize AJAX pagination script
-    wp_localize_script('ajax-pagination', 'ajax_pagination_data', array('ajaxurl' => admin_url('admin-ajax.php')));
+    // Localize AJAX pagination script to include nonce
+    wp_localize_script('ajax-pagination', 'ajax_pagination_data', array(
+        'ajaxurl' => admin_url('admin-ajax.php'),
+        'nonce' => $ajax_nonce // Include nonce here
+    ));
 
     // Enqueue filters and sorting script
     wp_enqueue_script('ajax-filter-sorting', get_template_directory_uri() . '/assets/js/ajax-filter-sorting.js', array('jquery'), null, true);
-    // Localize filters and sorting script
-    wp_localize_script('ajax-filter-sorting', 'ajax_filter_sorting_data', array('ajaxurl' => admin_url('admin-ajax.php')));
+    // Localize filters and sorting script to include nonce
+    wp_localize_script('ajax-filter-sorting', 'ajax_filter_sorting_data', array(
+        'ajaxurl' => admin_url('admin-ajax.php'),
+        'nonce' => $ajax_nonce // Include nonce here
+    ));
 }
 add_action('wp_enqueue_scripts', 'add_motaphoto_scripts');
 

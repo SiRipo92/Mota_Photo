@@ -12,7 +12,8 @@ jQuery(document).ready(function($) {
             type: 'post',
             data: {
                 action: 'load_more_photos',
-                page: page
+                page: page,
+                security: ajax_pagination_data.nonce
             },
             success: function(response) {
                 $('#photo-gallery').append(response);

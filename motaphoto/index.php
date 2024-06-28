@@ -94,8 +94,6 @@ get_header();
         <div class="load-more">
             <button id="btn-load-more">Charger plus</button>
         </div>
-        <!-- Hidden div to reveal the next set of photos when button is clicked -->
-        <div class="loaded-photos"></div>
     </section>
 </main><!-- #site-content -->
 

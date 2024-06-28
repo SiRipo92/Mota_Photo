@@ -1,46 +1,36 @@
-document.addEventListener('DOMContentLoaded', function() {
-    var categoryFilter = document.getElementById('category-filter');
-    var dateSort = document.getElementById('date-sort');
+jQuery(document).ready(function($) {
+    var categoryMenu = $('.category-menu');
+    var formatMenu = $('.format-menu');
+    // Assuming there's a sorting menu in your HTML
+    var sortingMenu = $('#sort_order');
 
-    if (categoryFilter) {
-        categoryFilter.addEventListener('change', function() {
-            let selectedCategory = this.value;
-            filterPhotos(selectedCategory);
-        });
-    }
+    function fetchFilteredPhotos() {
+        var selectedCategory = categoryMenu.val();
+        var selectedFormat = formatMenu.val();
+        var selectedSortingMethod = sortingMenu.val();
 
-    if (dateSort) {
-        dateSort.addEventListener('change', function() {
-            let selectedSort = this.value;
-            sortPhotos(selectedSort);
-        });
-    }
-
-    function filterPhotos(category) {
-        jQuery.ajax({
-            url: ajaxurl, // Provided by WordPress
-            type: 'post',
+        // AJAX request to server
+        $.ajax({
+            url: ajax_filter_sorting_data.ajaxurl,
+            type: 'POST',
             data: {
-                action: 'filter_photos',
-                category: category
+                action: 'fetch_photos',
+                category: selectedCategory,
+                format: selectedFormat,
+                sorting: selectedSortingMethod,
+                security: ajax_filter_sorting_data.nonce
             },
             success: function(response) {
-                jQuery('#photo-gallery').html(response);
+                $('#posts-container').html(response);
+            },
+            error: function(xhr, status, error) {
+                console.error("Error: " + status + " " + error);
             }
         });
     }
 
-    function sortPhotos(sortOrder) {
-        jQuery.ajax({
-            url: ajaxurl, // Provided by WordPress
-            type: 'post',
-            data: {
-                action: 'sort_photos',
-                order: sortOrder
-            },
-            success: function(response) {
-                jQuery('#photo-gallery').html(response);
-            }
-        });
-    }
+    categoryMenu.change(fetchFilteredPhotos);
+    formatMenu.change(fetchFilteredPhotos);
+    // Also trigger the fetch when the sorting method changes
+    sortingMenu.change(fetchFilteredPhotos);
 });
