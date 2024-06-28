@@ -602,7 +602,6 @@ div.contact-form-button p input:hover {
   border: 1.3px solid #215AFF;
 }
 
->>>>>>> main
 /* General styling for the header */
 #masthead {
   height: 80px;
@@ -1424,18 +1423,12 @@ a {
   font-family: "Space-Mono", monospace;
   padding: 0;
   margin: 0;
->>>>>>> main
 }
-@media screen and (max-width: 900px) {
-  section#hero-header {
-    height: 85vh;
-  }
-  section.photo-catalogue {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-  }
+
+a:hover, a:focus {
+  font-weight: 700;
 }
+
 .site-main {
   width: 100vw;
   margin: 0;
