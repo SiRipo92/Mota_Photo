@@ -595,11 +595,6 @@ div.contact-form-button p input:hover {
   border: 1.3px solid #215AFF;
 }
 
-/**
- * Layout Styles
- *
- * @package Motaphoto
- */
 /* General styling for the header */
 #masthead {
   height: 80px;
@@ -1430,6 +1425,26 @@ section.photo-catalogue > .photo-filters .sorting-options {
 
 .rotate {
   transform: rotate(180deg);
+}
+ul,
+li,
+a {
+  list-style: none;
+  text-decoration: none;
+  font-family: "Space-Mono", monospace;
+  padding: 0;
+  margin: 0;
+>>>>>>> main
+}
+@media screen and (max-width: 900px) {
+  section#hero-header {
+    height: 85vh;
+  }
+  section.photo-catalogue {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
 }
 .site-main {
   width: 100vw;
