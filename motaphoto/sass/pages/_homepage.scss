@@ -1,43 +1,32 @@
+
+@import "../base/_mixins";
+
 section#hero-header {
    width: 100vw;
    height: 960px;
    margin: 0;
    position: relative;
    overflow: hidden;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-
+   @include flex-center;
+ 
    .hero-banner {
-      display: flex;
-      flex: 1;
-      width: 100%;
-      height: 100%;
-      position: relative;
-      top: 0;
-      left: 0;
-      z-index: 1;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+     @include full-size-flex-item;
+     @include flex-center;
+     z-index: 1;
+     background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
 
-         h1 {
-               flex: 1;
-               width: 100%;
-               margin: 0;
-               padding: 0;
-               display: flex;
-               position: relative;
-               justify-content: center;
-               align-self: center;
-               flex-wrap: nowrap;
-            }
+ 
+     h1 {
+       margin: 0;
+       padding: 0;
+       align-self: center;
+     }
    }
-
-   
-}
-
-section.photo-catalogue {
+ }
+ 
+ section.photo-catalogue {
    height: auto;
    margin: 0 auto 50px;
    width: calc(80vw - 20px);
@@ -48,48 +37,66 @@ section.photo-catalogue {
    justify-content: space-between;
    position: relative;
    align-items: center;
-   
-   >.photo-filters {
-      margin: 40px auto;
-      width: 98%;
-      height: 100px;
-      flex-direction: row;
-      display: flex;
-      flex-wrap: nowrap;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-
-      div {
-         display: flex;
-         width: 48%;
-         height: 50%;
-      }
+ 
+   > .photo-filters {
+     margin: 40px auto;
+     width: 98%;
+     height: 100px;
+     @include flex-container;
+     justify-content: space-between;
+     align-items: center;
+     gap: 20px;
+ 
+     div {
+       display: flex;
+       width: 48%;
+       height: 50%;
+     }
    }
-}
-
-.photo-filters__container {
+ }
+ 
+ .photo-filters__container,
+ div.photo-filters > div.year-sortby__container {
    justify-content: space-between;
-
-}
-
-div.photo-filters > div.year-sortby__container {
+ }
+ 
+ div.photo-filters > div.year-sortby__container {
    justify-content: flex-end;
-}
-
-
-.category-menu,
-.format-menu,
-.year-sortby{
+ }
+ 
+ .category-menu,
+ .format-menu,
+ .year-sortby {
    border-radius: 5px;
    width: calc(40% - 20px);
-}
-   
-.load-more {
-   display: flex;
-   justify-content: center;
-   align-items: center;
+ }
+ 
+ .load-more {
+   @include flex-center;
    margin: 50px auto;
    width: 50%;
    height: 100px;
-}
+ }
+ 
+ @media screen and (max-width: 768px) {
+   section#hero-header {
+      height: 70vh;
+   }
+
+   section.photo-catalogue {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+   }
+ }
+
+ @media screen and (max-width: 900px) {
+   section#hero-header {
+      height: 85vh;
+   }
+   section.photo-catalogue {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+   }
+ }
