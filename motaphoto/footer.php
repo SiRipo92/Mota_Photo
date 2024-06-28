@@ -1,3 +1,16 @@
+<?php 
+/**
+ * Footer Template
+ *
+ * @package MotaPhoto
+ * @version 1.1
+ * @author Sierra Ripoche
+ * @since 1.0
+ *
+ * Description: This template is used to display the custom footer of the MotaPhoto theme using Nav Walker class for navigation
+ */
+?>
+
 <!-- footer.php -->
 <footer>
     <nav class="footer-nav" role="navigation" aria-label="<?php _e('Menu footer', 'footer'); ?>">

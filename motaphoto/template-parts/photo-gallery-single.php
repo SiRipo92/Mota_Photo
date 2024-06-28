@@ -1,6 +1,12 @@
 <?php
 /**
  * Template part for displaying a limited number of related photos on a single photo post page.
+ * 
+ * @package MotaPhoto
+ * @version 1.0
+ * @author Sierra Ripoche
+ * @since 1.0
+ * 
  */
 ?>
 

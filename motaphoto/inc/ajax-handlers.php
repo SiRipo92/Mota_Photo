@@ -1,11 +1,15 @@
 <?php
 /**
- * AJAX handlers for loading, filtering, and sorting photos.
+ * AJAX handlers theme supports used for loading, filtering, and sorting custom post type photos from catalogue
  */
 
 /**
  * Generates markup for a single photo post.
- *
+ * @package MotaPhoto
+ * @version 1.0
+ * @since 1.0
+ * 
+ * 
  * @param WP_Post $post The post object.
  */
 function generate_photo_markup($post) {

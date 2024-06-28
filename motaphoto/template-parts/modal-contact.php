@@ -1,3 +1,13 @@
+<?php
+/**
+ * Template part for modal contact pop-up.
+ * 
+ * @package MotaPhoto
+ * @version 1.0
+ * @author Sierra Ripoche
+ * @since 1.0
+ */
+?>
 <div id="contact-modal" class="modal">
     <div class="modal-container">
         <div class="modal-contact_btn-close">

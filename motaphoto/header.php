@@ -1,3 +1,18 @@
+<?php 
+/**
+ * Header Template
+ *
+ * @package MotaPhoto
+ * @version 1.1
+ * @author Sierra Ripoche
+ * @since 1.0
+ *
+ * Description: This template is used to display the header of the MotaPhoto theme.
+ *              It includes the site navigation, logo and custom menus using Walker
+ *              class for navigation.
+ */
+?>
+
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -41,7 +56,9 @@
                     array(
                         'theme_location' => 'main-menu',
                         'menu_id' => 'primary-menu',
-                        'menu_class' => 'primary-menu'
+                        'menu_class' => 'primary-menu',
+                        'container' => false,
+                        'walker' => new Motaphoto_Nav_Walker(),
                     )
                 ); 
                 ?>
