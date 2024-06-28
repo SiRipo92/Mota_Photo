@@ -27,7 +27,22 @@
     }
 }
 
+ul,
+li,
+a {
+  list-style: none;
+  text-decoration: none;
+  font-family: 'Space-Mono', monospace;
+  padding: 0;
+  margin: 0;
+}
 
+a {
+  &:hover,
+  &:focus {
+    font-weight: 700;
+  }
+}
 
 /* Responsive styling */
 @media screen and (max-width: 768px) {

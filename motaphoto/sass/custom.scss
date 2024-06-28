@@ -1,35 +1,32 @@
-// IMPORT MAIN VARIABLES
+/**
+ * Custom Styles
+ *
+ * This file is for better separation of custom styles.
+ * And is compiled into /assets/css/custom.css
+ * Where it is enqueued as a custom stylesheet
+
+ * You can add your custom styles here.
+ *
+ * @package Motaphoto
+ */
+
+// IMPORT BASE ELEMENTS (colors, fonts, mixins, reset, typography, and variables)
 @import 'base/base';
 
-// IMPORT COMPONENTS
+// IMPORT COMPONENTS (buttons, nav, filter-menus)
 @import 'components/components';
 
-// IMPORT LAYOUTS
+// IMPORT LAYOUTS (contact, footer, header, photo-gallery)
 @import 'layout/layout';
 
-// IMPORT PAGES
-@import 'pages/pages';
+// IMPORT PAGES (homepage, single-photo)
+@import 'pages/pages'; 
 
 // To be moved later to a separate file but it confirmed
 // that gulp is operating and having an effect
 // on the visual output of the site
 
-ul,
-li,
-a {
-  list-style: none;
-  text-decoration: none;
-  font-family: 'Space-Mono', monospace;
-  padding: 0;
-  margin: 0;
-}
 
-a {
-  &:hover,
-  &:focus {
-    font-weight: 700;
-  }
-}
 
 .site-main {
   width: 100vw;
