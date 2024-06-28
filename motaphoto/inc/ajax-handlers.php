@@ -25,7 +25,6 @@ function generate_photo_markup($post) {
  * Handles AJAX request for loading more photos.
  */
 function load_more_photos() {
-    check_ajax_referer('load_more_photos_nonce', 'security');
     $paged = isset($_POST['page']) ? intval($_POST['page']) : 1;
     $args = array(
         'post_type' => 'photo',
