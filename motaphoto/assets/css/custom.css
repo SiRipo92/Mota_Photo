@@ -1,0 +1,1419 @@
+/**
+ * Custom Styles
+ *
+ * This file is for better separation of custom styles.
+ * And is compiled into /assets/css/custom.css
+ * Where it is enqueued as a custom stylesheet
+
+ * You can add your custom styles here.
+ *
+ * @package Motaphoto
+ */
+/**
+ * Base Styles
+ *
+ * @package Motaphoto
+ */
+body,
+html {
+  background-color: white;
+}
+
+/* Space Mono Fonts */
+@font-face {
+  font-family: "Space-Mono", monospace;
+  src: url("../../assets/fonts/Space_Mono/spacemono-bold-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Space_Mono/spacemono-bold-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Space_Mono/spacemono-bold-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Space_Mono/spacemono-bold-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Space_Mono/spacemono-bold-mota-photo-font.svg") format("svg");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Space-Mono", monospace;
+  src: url("../../assets/fonts/Space_Mono/spacemono-bolditalic-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Space_Mono/spacemono-bolditalic-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Space_Mono/spacemono-bolditalic-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Space_Mono/spacemono-bolditalic-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Space_Mono/spacemono-bolditalic-mota-photo-font.svg") format("svg");
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Space-Mono", monospace;
+  src: url("../../assets/fonts/Space_Mono/spacemono-italic-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Space_Mono/spacemono-italic-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Space_Mono/spacemono-italic-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Space_Mono/spacemono-italic-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Space_Mono/spacemono-italic-mota-photo-font.svg#space_monoitalic") format("svg");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Space-Mono", monospace;
+  src: url("../../assets/fonts/Space_Mono/spacemono-regular-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Space_Mono/spacemono-regular-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Space_Mono/spacemono-regular-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Space_Mono/spacemono-regular-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Space_Mono/spacemono-regular-mota-photo-font.svg#space_monoregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/* End of Space Mono Fonts */
+/* Poppins Fonts */
+@font-face {
+  font-family: "Poppins";
+  src: url("../../assets/fonts/Poppins/poppins-black-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-black-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-black-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-black-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-black-mota-photo-font.svg") format("svg");
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../../assets/fonts/Poppins/poppins-blackitalic-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-blackitalic-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-blackitalic-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-blackitalic-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-blackitalic-mota-photo-font.svg#poppinsblack_italic") format("svg");
+  font-weight: 900;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../../assets/fonts/Poppins/poppins-bold-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-bold-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-bold-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-bold-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-bold-mota-photo-font.svg#poppinsbold") format("svg");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../../assets/fonts/Poppins/poppins-bolditalic-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-bolditalic-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-bolditalic-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-bolditalic-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-bolditalic-mota-photo-font.svg") format("svg");
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../../assets/fonts/Poppins/poppins-extrabold-mota-photo-font.eot") format("eot)"), url("../../assets/fonts/Poppins/poppins-extrabold-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-extrabold-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-extrabold-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-extrabold-mota-photo-font.svg") format("svg");
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../../assets/fonts/Poppins/poppins-extrabolditalic-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-extrabolditalic-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-extrabolditalic-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-extrabolditalic-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-extrabolditalic-mota-photo-font.svg") format("svg");
+  font-weight: 800;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../../assets/fonts/Poppins/poppins-extralight-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-extralight-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-extralight-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-extralight-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-extralight-mota-photo-font.svg#poppinsextralight") format("svg");
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../../assets/fonts/Poppins/poppins-extralightitalic-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-extralightitalic-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-extralightitalic-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-extralightitalic-mota-photo-font.ttf") format("svg");
+  font-weight: 200;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../../assets/fonts/Poppins/poppins-italic-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-italic-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-italic-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-italic-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-italic-mota-photo-font.svg") format("svg");
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../../assets/fonts/Poppins/poppins-light-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-light-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-light-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-light-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-light-mota-photo-font.svg") format("svg");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../../assets/fonts/Poppins/poppins-lightitalic-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-lightitalic-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-lightitalic-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-lightitalic-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-lightitalic-mota-photo-font.svg#poppinslight_italic") format("svg");
+  font-weight: 300;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../../assets/fonts/Poppins/poppins-medium-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-medium-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-medium-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-medium-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-medium-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-medium-mota-photo-font.svg#poppinsmedium") format("svg");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../../assets/fonts/Poppins/poppins-mediumitalic-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-mediumitalic-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-mediumitalic-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-mediumitalic-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-mediumitalic-mota-photo-font.svg#poppinsmedium_italic") format("svg");
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../../assets/fonts/Poppins/poppins-regular-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-regular-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-regular-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-regular-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-regular-mota-photo-font.svg") format("svg");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../../assets/fonts/Poppins/poppins-semibold-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-semibold-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-semibold-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-semibold-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-semibold-mota-photo-font.svg") format("svg");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../../assets/fonts/Poppins/poppins-semibolditalic-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-semibolditalic-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-semibolditalic-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-semibolditalic-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-semibolditalic-mota-photo-font.svg#poppinssemibold_italic") format("svg");
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../../assets/fonts/Poppins/poppins-thin-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-thin-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-thin-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-thin-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-thin-mota-photo-font.svg#poppinsthin") format("svg");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../../assets/fonts/Poppins/poppins-thinitalic-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-thinitalic-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-thinitalic-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-thinitalic-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-thinitalic-mota-photo-font.svg") format("svg");
+  font-weight: 300;
+  font-style: italic;
+}
+/* End of Poppins Fonts */
+body,
+a,
+button {
+  font-family: "Space-Mono", monospace;
+  font-weight: normal;
+  font-style: normal;
+  color: black;
+  text-transform: uppercase;
+}
+
+p,
+span > p,
+input {
+  font-family: "Poppins";
+  font-weight: 300;
+  font-style: normal;
+  font-size: 14px;
+}
+
+h1, h2, h3, h4, h5, h6 > span {
+  font-family: "Space-Mono", monospace;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 92px;
+  color: transparent;
+  -webkit-text-stroke: 3px white;
+  -moz-text-stroke: 3px white;
+  font-weight: 700;
+  font-style: italic;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 400;
+  font-style: italic;
+}
+@media screen and (max-width: 768px) {
+  h2 {
+    font-size: 20px;
+  }
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: 400;
+  font-style: normal;
+}
+@media screen and (max-width: 768px) {
+  h3 {
+    font-size: 18px;
+  }
+}
+
+h4, h5 {
+  font-size: 14px;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.dropbtn {
+  font-family: "Poppins";
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.text-stroke {
+  -webkit-text-stroke: 3px white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; /* Fallback for browsers that do not support text-stroke */
+}
+
+@media (max-width: 1200px) {
+  h1 {
+    font-size: calc(66px + 2vw);
+  }
+}
+@media (max-width: 900px) {
+  h1 {
+    font-size: calc(55px + 2vw);
+  }
+}
+@media (max-width: 768px) {
+  h1 {
+    font-size: calc(52px + 2vw);
+  }
+}
+@media (max-width: 480px) {
+  h1 {
+    font-size: calc(40px + 2vw);
+  }
+}
+/* Space Mono Fonts */
+@font-face {
+  font-family: "Space-Mono", monospace;
+  src: url("../../assets/fonts/Space_Mono/spacemono-bold-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Space_Mono/spacemono-bold-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Space_Mono/spacemono-bold-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Space_Mono/spacemono-bold-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Space_Mono/spacemono-bold-mota-photo-font.svg") format("svg");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Space-Mono", monospace;
+  src: url("../../assets/fonts/Space_Mono/spacemono-bolditalic-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Space_Mono/spacemono-bolditalic-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Space_Mono/spacemono-bolditalic-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Space_Mono/spacemono-bolditalic-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Space_Mono/spacemono-bolditalic-mota-photo-font.svg") format("svg");
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Space-Mono", monospace;
+  src: url("../../assets/fonts/Space_Mono/spacemono-italic-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Space_Mono/spacemono-italic-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Space_Mono/spacemono-italic-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Space_Mono/spacemono-italic-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Space_Mono/spacemono-italic-mota-photo-font.svg#space_monoitalic") format("svg");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Space-Mono", monospace;
+  src: url("../../assets/fonts/Space_Mono/spacemono-regular-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Space_Mono/spacemono-regular-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Space_Mono/spacemono-regular-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Space_Mono/spacemono-regular-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Space_Mono/spacemono-regular-mota-photo-font.svg#space_monoregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/* End of Space Mono Fonts */
+/* Poppins Fonts */
+@font-face {
+  font-family: "Poppins";
+  src: url("../../assets/fonts/Poppins/poppins-black-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-black-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-black-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-black-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-black-mota-photo-font.svg") format("svg");
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../../assets/fonts/Poppins/poppins-blackitalic-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-blackitalic-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-blackitalic-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-blackitalic-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-blackitalic-mota-photo-font.svg#poppinsblack_italic") format("svg");
+  font-weight: 900;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../../assets/fonts/Poppins/poppins-bold-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-bold-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-bold-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-bold-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-bold-mota-photo-font.svg#poppinsbold") format("svg");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../../assets/fonts/Poppins/poppins-bolditalic-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-bolditalic-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-bolditalic-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-bolditalic-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-bolditalic-mota-photo-font.svg") format("svg");
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../../assets/fonts/Poppins/poppins-extrabold-mota-photo-font.eot") format("eot)"), url("../../assets/fonts/Poppins/poppins-extrabold-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-extrabold-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-extrabold-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-extrabold-mota-photo-font.svg") format("svg");
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../../assets/fonts/Poppins/poppins-extrabolditalic-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-extrabolditalic-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-extrabolditalic-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-extrabolditalic-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-extrabolditalic-mota-photo-font.svg") format("svg");
+  font-weight: 800;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../../assets/fonts/Poppins/poppins-extralight-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-extralight-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-extralight-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-extralight-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-extralight-mota-photo-font.svg#poppinsextralight") format("svg");
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../../assets/fonts/Poppins/poppins-extralightitalic-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-extralightitalic-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-extralightitalic-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-extralightitalic-mota-photo-font.ttf") format("svg");
+  font-weight: 200;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../../assets/fonts/Poppins/poppins-italic-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-italic-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-italic-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-italic-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-italic-mota-photo-font.svg") format("svg");
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../../assets/fonts/Poppins/poppins-light-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-light-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-light-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-light-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-light-mota-photo-font.svg") format("svg");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../../assets/fonts/Poppins/poppins-lightitalic-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-lightitalic-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-lightitalic-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-lightitalic-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-lightitalic-mota-photo-font.svg#poppinslight_italic") format("svg");
+  font-weight: 300;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../../assets/fonts/Poppins/poppins-medium-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-medium-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-medium-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-medium-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-medium-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-medium-mota-photo-font.svg#poppinsmedium") format("svg");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../../assets/fonts/Poppins/poppins-mediumitalic-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-mediumitalic-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-mediumitalic-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-mediumitalic-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-mediumitalic-mota-photo-font.svg#poppinsmedium_italic") format("svg");
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../../assets/fonts/Poppins/poppins-regular-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-regular-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-regular-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-regular-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-regular-mota-photo-font.svg") format("svg");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../../assets/fonts/Poppins/poppins-semibold-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-semibold-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-semibold-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-semibold-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-semibold-mota-photo-font.svg") format("svg");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../../assets/fonts/Poppins/poppins-semibolditalic-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-semibolditalic-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-semibolditalic-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-semibolditalic-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-semibolditalic-mota-photo-font.svg#poppinssemibold_italic") format("svg");
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../../assets/fonts/Poppins/poppins-thin-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-thin-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-thin-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-thin-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-thin-mota-photo-font.svg#poppinsthin") format("svg");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../../assets/fonts/Poppins/poppins-thinitalic-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-thinitalic-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-thinitalic-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-thinitalic-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-thinitalic-mota-photo-font.svg") format("svg");
+  font-weight: 300;
+  font-style: italic;
+}
+/* End of Poppins Fonts */
+/* _reset.scss */
+/* Basic CSS Reset */
+/*
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+/* article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+/* Reset list styles */
+ol, ul {
+  list-style: none;
+}
+
+/* Reset quotes */
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+/* Reset table borders */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Remove link underlines */
+a {
+  text-decoration: none;
+}
+
+/* Reset font styles */
+body {
+  line-height: 1;
+  font-family: "Space-Mono", monospace;
+  color: #000;
+}
+
+/* Reset images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.wpcf7 textarea {
+  resize: none;
+}
+
+/**
+ * Componenets Styles
+ *
+ * @package Motaphoto
+ */
+/* Navigation styling for the header and footer navbars and menus */
+/* Navigation styling */
+.main-navigation {
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
+  max-width: 60%;
+  position: relative;
+}
+.main-navigation ul#primary-menu {
+  justify-content: flex-end;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.main-navigation ul#primary-menu li {
+  margin: 0 30px;
+  min-width: fit-content;
+}
+.main-navigation ul#primary-menu li a {
+  padding: 10px;
+  display: block;
+}
+
+ul,
+li,
+a {
+  list-style: none;
+  text-decoration: none;
+  font-family: "Space-Mono", monospace;
+  padding: 0;
+  margin: 0;
+}
+
+a:hover, a:focus {
+  font-weight: 700;
+}
+
+/* Responsive styling */
+@media screen and (max-width: 768px) {
+  .main-navigation #primary-menu {
+    display: none;
+  }
+}
+.btn-contact,
+button.btn-cta,
+button#btn-load-more {
+  width: 35%;
+  height: 50px;
+  background-color: #D8D8D8;
+  border: none;
+  transition: 0.4s ease scale(0);
+  text-transform: none;
+}
+.btn-contact a,
+button.btn-cta a,
+button#btn-load-more a {
+  color: black;
+  text-transform: none;
+}
+.btn-contact:hover,
+button.btn-cta:hover,
+button#btn-load-more:hover {
+  transform: scale(1.1);
+  background-color: black;
+  color: white;
+  font-weight: 700;
+}
+.btn-contact:hover a,
+button.btn-cta:hover a,
+button#btn-load-more:hover a {
+  color: white;
+}
+
+.navigation-row a {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  transition: 0.4s ease scale(0);
+}
+.navigation-row a:hover {
+  transform: scale(1.2);
+}
+
+div.contact-form-button {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+  width: 100%;
+}
+div.contact-form-button p input {
+  display: flex;
+  justify-content: center;
+  width: 260px;
+  height: 50px;
+  padding: 10px 20px;
+  color: black;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 400;
+  border-radius: 5px;
+  transition: 0.4s ease scale(0);
+}
+div.contact-form-button p input:hover {
+  font-weight: 700;
+  background-color: black;
+  color: white;
+  transform: scale(1.2);
+}
+
+.dropbtn {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: left;
+  padding-left: 10px;
+  min-height: 43px;
+}
+
+.dropbtn.active,
+.dropbtn:hover,
+.dropdown-content.open + .dropbtn {
+  border: 1.3px solid #215AFF;
+}
+
+/**
+ * Layout Styles
+ *
+ * @package Motaphoto
+ */
+/* General styling for the header */
+#masthead {
+  height: 80px;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+  box-shadow: 0px 14px 14px rgba(0, 0, 0, 0.03);
+}
+
+.site-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+}
+
+.logo-container {
+  max-width: 30%;
+  height: 80px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 5%;
+  margin-right: -5%;
+}
+.logo-container .custom-logo-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+.logo-container .custom-logo-link a {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo-container .custom-logo-link img {
+  max-height: 100%; /* Adjust to control the logo size, maintaining aspect ratio */
+  max-width: 100%; /* Adjust to control the logo size, maintaining aspect ratio */
+}
+
+/* Burger button styling */
+.burger-btn {
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: none; /* Hidden by default */
+}
+.burger-btn span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: black;
+  transition: all 0.3s ease;
+}
+.burger-btn.btn-close span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.burger-btn.btn-close span:nth-child(2) {
+  opacity: 0;
+}
+.burger-btn.btn-close span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Mobile menu styling */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 80px);
+  background-color: white;
+  z-index: 1000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+.mobile-menu.open {
+  display: block;
+}
+.mobile-menu ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.mobile-menu ul li {
+  margin: 10px 0;
+}
+.mobile-menu ul li a {
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+  display: block;
+}
+.mobile-menu ul li a:hover, .mobile-menu ul li a:focus {
+  font-weight: 700;
+}
+
+@media screen and (max-width: 768px) {
+  #header-navigation {
+    display: none;
+  }
+  .mobile-menu-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+  }
+  .mobile-menu {
+    position: fixed;
+    width: 100%;
+    margin-top: 40px;
+    background-color: #E00000;
+    height: 90vh;
+  }
+  .mobile-menu.open .menu-menu-principal-container {
+    width: 100%;
+    height: 80%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .mobile-menu.open .primary-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 50%;
+  }
+  .mobile-menu.open .primary-menu li {
+    margin: 10px 0;
+  }
+  .mobile-menu.open .primary-menu li a {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    font-size: 1.5rem;
+    display: block;
+    font-family: Space-Mono, monospace;
+  }
+  .mobile-menu.open .primary-menu li a:hover, .mobile-menu.open .primary-menu li a:focus {
+    font-weight: 700;
+  }
+  .burger-btn {
+    display: flex;
+  }
+  .burger-btn.btn-close span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .burger-btn.btn-close span:nth-child(2) {
+    opacity: 0;
+  }
+  .burger-btn.btn-close span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+}
+/* Footer menu styling */
+.footer-nav {
+  border-top: 1px solid black;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 80px;
+}
+.footer-nav ul#footer-menu {
+  display: flex;
+  flex-shrink: 1;
+  margin: auto;
+}
+.footer-nav ul#footer-menu li {
+  margin: 0 15px;
+  min-width: fit-content;
+}
+.footer-nav ul#footer-menu li a {
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+  display: block;
+}
+.footer-nav ul#footer-menu li a:hover, .footer-nav ul#footer-menu li a:focus {
+  font-weight: 700;
+}
+
+/* Responsive styling */
+@media screen and (max-width: 768px) {
+  .footer-nav {
+    height: auto;
+    border-top: 1px solid black;
+  }
+  .footer-nav ul#footer-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-height: 100px;
+    margin-top: 30px;
+  }
+}
+#contact-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+#contact-modal .modal-container {
+  position: relative;
+  width: 80%;
+  max-width: 600px;
+  margin: 5% auto;
+  background: #fff;
+  border: 5px solid #000;
+}
+#contact-modal .modal-container .modal-contact_btn-close {
+  display: flex;
+  height: 30%;
+  width: 100%;
+  justify-content: center;
+  border-bottom: 5px solid #000;
+}
+#contact-modal .modal-container .modal-contact_btn-close button.btn-close {
+  display: inline-flex;
+  width: auto;
+  height: 50px;
+  position: relative;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
+#contact-modal .modal-container .modal-contact_btn-close button.btn-close > .close-bar {
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: #000;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+#contact-modal .modal-container .modal-contact_btn-close button.btn-close .close-bar:nth-child(2) {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+#contact-modal .modal-container .modal-contact_btn-close button.btn-close:hover {
+  transform-origin: center;
+  transform: rotate(360deg);
+  transition: transform 0.3s ease;
+}
+#contact-modal .modal-container > .modal-content {
+  padding: 0;
+  height: 90%;
+  flex: 1;
+}
+#contact-modal .modal-container > .modal-content .modal-content__header {
+  margin: 0;
+  width: 100%;
+  min-height: 150px;
+  height: 30%;
+  display: flex;
+}
+#contact-modal .modal-container > .modal-content .modal-content__header #contact-banner {
+  object-fit: none;
+}
+#contact-modal .modal-container > .modal-content .modal-content__form {
+  width: 100%;
+  height: 60%;
+  justify-content: center;
+  display: flex;
+}
+#contact-modal .wpcf7 {
+  display: flex;
+  justify-content: center;
+}
+#contact-modal .wpcf7 form.wpcf7-form {
+  max-width: 100%;
+  align-items: left;
+}
+#contact-modal .wpcf7 form.wpcf7-form div.contact-form-entries {
+  text-align: left;
+}
+#contact-modal .wpcf7 form.wpcf7-form div.contact-form-entries label {
+  display: block;
+  margin: 20px 0;
+  line-height: 20px;
+  font-size: 14px;
+  font-weight: 500;
+}
+#contact-modal .wpcf7 form.wpcf7-form div.contact-form-entries input.wpcf7-form-control {
+  line-height: 20px;
+  font-size: 14px;
+  height: 40px;
+  width: 100%;
+  margin-top: 10px;
+}
+#contact-modal .wpcf7 form.wpcf7-form div.contact-form-entries textarea {
+  width: 100%;
+  height: 200px;
+  font-size: 14px;
+}
+
+div.gallery-photos__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 80%;
+  gap: 20px;
+  flex: 1;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+}
+div.gallery-photos__container article.gallery-photo {
+  flex: 0 1 calc(50% - 20px); /* Flex basis of 50% minus gap, allowing it to grow and shrink */
+  width: 50vw;
+  height: 500px;
+  overflow: hidden;
+}
+div.gallery-photos__container article.gallery-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Cover the area without losing aspect ratio */
+  background-position: center;
+  margin: 0;
+  padding: 0;
+}
+
+/**
+ * Layout Styles
+ *
+ * @package Motaphoto
+ */
+body,
+html {
+  background-color: white;
+}
+
+.btn-contact,
+button.btn-cta,
+button#btn-load-more {
+  width: 35%;
+  height: 50px;
+  background-color: #D8D8D8;
+  border: none;
+  transition: 0.4s ease scale(0);
+  text-transform: none;
+}
+.btn-contact a,
+button.btn-cta a,
+button#btn-load-more a {
+  color: black;
+  text-transform: none;
+}
+.btn-contact:hover,
+button.btn-cta:hover,
+button#btn-load-more:hover {
+  transform: scale(1.1);
+  background-color: black;
+  color: white;
+  font-weight: 700;
+}
+.btn-contact:hover a,
+button.btn-cta:hover a,
+button#btn-load-more:hover a {
+  color: white;
+}
+
+.navigation-row a {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  transition: 0.4s ease scale(0);
+}
+.navigation-row a:hover {
+  transform: scale(1.2);
+}
+
+div.contact-form-button {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+  width: 100%;
+}
+div.contact-form-button p input {
+  display: flex;
+  justify-content: center;
+  width: 260px;
+  height: 50px;
+  padding: 10px 20px;
+  color: black;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 400;
+  border-radius: 5px;
+  transition: 0.4s ease scale(0);
+}
+div.contact-form-button p input:hover {
+  font-weight: 700;
+  background-color: black;
+  color: white;
+  transform: scale(1.2);
+}
+
+.dropbtn {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: left;
+  padding-left: 10px;
+  min-height: 43px;
+}
+
+.dropbtn.active,
+.dropbtn:hover,
+.dropdown-content.open + .dropbtn {
+  border: 1.3px solid #215AFF;
+}
+
+#site-content {
+  margin: 0 auto;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#photo-page {
+  margin: 50px auto;
+  padding: 20px;
+  width: calc(100vw - 40px);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+#photo-page > div {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 0;
+  gap: 20px;
+}
+#photo-page > div > article {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  width: calc(40% - 20px);
+  max-width: 50%;
+}
+
+.entry-meta {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: flex-end;
+  flex: 1;
+  width: 100%;
+  border-bottom: 2px solid #000;
+}
+.entry-meta__title {
+  font-size: 66px;
+  width: 60%;
+  padding: 0;
+  margin: 0;
+}
+.entry-meta__details p {
+  font-weight: 400;
+  font-family: "Poppins";
+  font-size: calc(14px + 0.5vw);
+}
+
+div.photo-contact-wrapper {
+  margin-top: 20px;
+  flex-direction: row;
+  height: 118px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+div.photo-contact-wrapper .sub-photo-container {
+  border-bottom: 2px solid #000;
+  width: calc(80% - 20px);
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  height: 100%;
+  align-items: center;
+}
+div.photo-contact-wrapper .sub-photo-container article.contact-wrapper {
+  width: calc(50% - 10px);
+  display: flex;
+  justify-content: space-between;
+}
+div.photo-contact-wrapper .sub-photo-container article.contact-wrapper p {
+  text-transform: none;
+}
+div.photo-contact-wrapper .sub-photo-container article.preview-wrapper {
+  width: calc(50% - 10px);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+}
+
+.content-block {
+  position: relative;
+  margin-right: 5%;
+  display: flex;
+  width: 81px;
+  height: 90%;
+  max-height: 118px;
+  justify-content: center;
+}
+.content-block div.thumbnail-row {
+  display: block;
+  max-height: 118px;
+  height: 85%;
+  width: 100%;
+  position: absolute;
+  object-fit: cover;
+  object-position: center;
+}
+.content-block div.thumbnail-row img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.content-block div.navigation-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 15%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+h3.related-photos__title {
+  display: flex;
+  text-align: left;
+  width: 96%;
+  justify-content: flex-start;
+  margin-bottom: 50px;
+  height: 20%;
+}
+
+@media screen and (max-width: 768px) {
+  .entry-meta__title {
+    font-size: calc(3em - 0.5vw);
+  }
+  .entry-meta__details p {
+    font-size: calc(1.2em - 0.5vw);
+  }
+  .contact-wrapper p {
+    font-size: calc(1em - 0.5vw);
+  }
+  .btn-cta {
+    font-size: calc(1em - 0.5vw);
+  }
+  .related-photo {
+    width: 100%;
+  }
+}
+section#hero-header {
+  width: 100vw;
+  height: 960px;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section#hero-header .hero-banner {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+section#hero-header .hero-banner h1 {
+  flex: 1;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-self: center;
+  flex-wrap: nowrap;
+}
+
+section#hero-header {
+  width: 100vw;
+  height: 960px;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section#hero-header .hero-banner {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+section#hero-header .hero-banner h1 {
+  flex: 1;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-self: center;
+  flex-wrap: nowrap;
+}
+
+section.photo-catalogue {
+  height: auto;
+  margin: 0 auto 50px;
+  width: calc(80vw - 20px);
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  align-items: center;
+}
+section.photo-catalogue > .photo-filters {
+  margin: 40px auto;
+  width: 98%;
+  height: 100px;
+  flex-direction: row;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+section.photo-catalogue > .photo-filters .filters-options,
+section.photo-catalogue > .photo-filters .sorting-options {
+  display: flex;
+  width: 49%;
+  height: 100%;
+}
+
+.filters-options {
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  gap: 20px;
+}
+.filters-options > .category-menu {
+  justify-content: flex-start;
+}
+.filters-options > .category-menu button {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.filters-options > .format-menu {
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.filters-options > .format-menu button {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sorting-options {
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.sorting-options > .sorting-menu {
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.sorting-options > .sorting-menu button {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.load-more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px auto;
+  width: 50%;
+  height: 100px;
+}
+
+.category-menu,
+.format-menu,
+.sorting-menu {
+  border-radius: 5px;
+  width: calc(40% - 20px);
+}
+.category-menu :active,
+.format-menu :active,
+.sorting-menu :active {
+  border: 1.3px solid #215AFF;
+}
+
+.dropdown {
+  position: relative;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  width: 100%;
+  z-index: 100;
+  height: auto;
+  text-transform: none;
+  cursor: pointer;
+  border: 1px solid black;
+}
+.dropdown-content ul {
+  margin: 0;
+  padding: 0;
+}
+.dropdown-content ul :hover {
+  background-color: #FFD6D6;
+}
+.dropdown-content ul :active {
+  background-color: #FE5858;
+}
+.dropdown-content li {
+  padding: 8px 12px;
+  background-color: white;
+}
+.dropdown-content .selected {
+  background-color: #E00000;
+  color: white;
+}
+.dropdown-content.open {
+  display: block;
+}
+.dropdown-content .hidden-label {
+  font-size: 20px;
+  color: transparent;
+  cursor: pointer;
+}
+.dropdown-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  color: black;
+  padding: 10px;
+  cursor: pointer;
+}
+.dropdown-toggle :active {
+  border: 1.3px solid #215AFF;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+
+.site-main {
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+/*# sourceMappingURL=custom.css.map */

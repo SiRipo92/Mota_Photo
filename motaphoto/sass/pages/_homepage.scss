@@ -1,20 +1,22 @@
 <<<<<<< HEAD
-
-@import "../base/_mixins";
-
-=======
 //Import colors
 
 @import '../base/colors';
 
 // Hero Header Banner
->>>>>>> main
+=======
+
+@import "../base/_mixins";
+
+>>>>>>> 46df095 (new mixins for homepage.scss to reduce redundancies and responsive design)
 section#hero-header {
    width: 100vw;
    height: 960px;
    margin: 0;
    position: relative;
    overflow: hidden;
+   @include flex-center;
+ 
    @include flex-center;
  
    .hero-banner {
@@ -33,10 +35,6 @@ section#hero-header {
      }
    }
 <<<<<<< HEAD
- }
- 
- section.photo-catalogue {
-=======
 
    
 }
@@ -81,7 +79,11 @@ section#hero-header {
 
 // Photo Catalogue Section
 section.photo-catalogue {
->>>>>>> main
+=======
+ }
+ 
+ section.photo-catalogue {
+>>>>>>> 46df095 (new mixins for homepage.scss to reduce redundancies and responsive design)
    height: auto;
    margin: 0 auto 50px;
    width: calc(80vw - 20px);
@@ -93,70 +95,6 @@ section.photo-catalogue {
    position: relative;
    align-items: center;
 <<<<<<< HEAD
- 
-   > .photo-filters {
-     margin: 40px auto;
-     width: 98%;
-     height: 100px;
-     @include flex-container;
-     justify-content: space-between;
-     align-items: center;
-     gap: 20px;
- 
-     div {
-       display: flex;
-       width: 48%;
-       height: 50%;
-     }
-   }
- }
- 
- .photo-filters__container,
- div.photo-filters > div.year-sortby__container {
-   justify-content: space-between;
- }
- 
- div.photo-filters > div.year-sortby__container {
-   justify-content: flex-end;
- }
- 
- .category-menu,
- .format-menu,
- .year-sortby {
-   border-radius: 5px;
-   width: calc(40% - 20px);
- }
- 
- .load-more {
-   @include flex-center;
-   margin: 50px auto;
-   width: 50%;
-   height: 100px;
- }
- 
- @media screen and (max-width: 768px) {
-   section#hero-header {
-      height: 70vh;
-   }
-
-   section.photo-catalogue {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-   }
- }
-
- @media screen and (max-width: 900px) {
-   section#hero-header {
-      height: 85vh;
-   }
-   section.photo-catalogue {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-   }
- }
-=======
    
    >.photo-filters {
       margin: 40px auto;
@@ -319,4 +257,68 @@ section.photo-catalogue {
 .rotate {
    transform: rotate(180deg);
 }
->>>>>>> main
+=======
+ 
+   > .photo-filters {
+     margin: 40px auto;
+     width: 98%;
+     height: 100px;
+     @include flex-container;
+     justify-content: space-between;
+     align-items: center;
+     gap: 20px;
+ 
+     div {
+       display: flex;
+       width: 48%;
+       height: 50%;
+     }
+   }
+ }
+ 
+ .photo-filters__container,
+ div.photo-filters > div.year-sortby__container {
+   justify-content: space-between;
+ }
+ 
+ div.photo-filters > div.year-sortby__container {
+   justify-content: flex-end;
+ }
+ 
+ .category-menu,
+ .format-menu,
+ .year-sortby {
+   border-radius: 5px;
+   width: calc(40% - 20px);
+ }
+ 
+ .load-more {
+   @include flex-center;
+   margin: 50px auto;
+   width: 50%;
+   height: 100px;
+ }
+ 
+ @media screen and (max-width: 768px) {
+   section#hero-header {
+      height: 70vh;
+   }
+
+   section.photo-catalogue {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+   }
+ }
+
+ @media screen and (max-width: 900px) {
+   section#hero-header {
+      height: 85vh;
+   }
+   section.photo-catalogue {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+   }
+ }
+>>>>>>> 46df095 (new mixins for homepage.scss to reduce redundancies and responsive design)
