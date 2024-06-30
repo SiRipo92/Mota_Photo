@@ -27,63 +27,61 @@ get_header();
     </section>
     <section class="photo-catalogue">
         <div class="photo-filters">
-            <div class="photo-filters__container">
-                <!------------- Sort by Category Dropdown --------------------->
-                <select class="category-menu">
-                    <option value="" selected disabled>Catégories</option>
-                    <?php
-                    // Initialize $terms as an empty array
-                    $terms = [];
-
-                    // Attempt to retrieve terms from a custom taxonomy
-                    $retrieved_terms = get_terms([
+            <div class="filters-options">
+                <?php 
+                    $categories = get_terms(array(
                         'taxonomy' => 'categorie',
-                        'hide_empty' => false, // Set to true to hide categories with no posts
-                    ]);
+                        'hide_empty' => false,
+                    ));
 
-                    // Check if the retrieval was successful and update $terms if so
-                    if (!is_wp_error($retrieved_terms) && !empty($retrieved_terms)) {
-                        $terms = $retrieved_terms;
-                    }
-
-                    // Iterate over $terms to populate the dropdown
-                    foreach ($terms as $term) {
-                        echo "<option value='{$term->slug}'>{$term->name}</option>";
-                    }
-                    ?>
-                </select>
-
-                <!------------- Sort by Formats Dropdown    --------------------->
-                <select class="format-menu">
-                    <option value="" selected disabled>Formats</option>
-                    <?php
-                    // Initialize $formats as an empty array
-                    $formats = [];
-
-                    // Attempt to retrieve formats from the custom taxonomy 'format'
-                    $retrieved_formats = get_terms([
+                    $formats = get_terms(array(
                         'taxonomy' => 'format',
-                        'hide_empty' => false, // Set to true to hide formats with no posts
-                    ]);
-
-                    // Check if the retrieval was successful and update $formats if so
-                    if (!is_wp_error($retrieved_formats) && !empty($retrieved_formats)) {
-                        $formats = $retrieved_formats;
-                    }
-
-                    // Iterate over $formats to populate the dropdown
-                    foreach ($formats as $format) {
-                        echo "<option value='{$format->slug}'>{$format->name}</option>";
-                    }
-                    ?>
-                </select>
+                        'hide_empty' => false,
+                    ));
+                ?>
+                <!-- Category Filter -->
+                <div class="dropdown category-menu">
+                    <button class="dropbtn">Catégories
+                        <span class="arrow">&#8964;</span>
+                    </button>
+                    <div class="dropdown-content">
+                        <ul>
+                            <li data-value="" class="hidden-label">Catégories</li> <!-- Reset option -->
+                            <?php foreach ($categories as $category): ?>
+                                <li data-value="<?php echo esc_attr($category->slug); ?>"><?php echo esc_html($category->name); ?></li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Format Filter -->
+                <div class="dropdown format-menu">
+                    <button class="dropbtn">Formats
+                        <span class="arrow">&#8964;</span>
+                    </button>
+                    <div class="dropdown-content">
+                        <ul>
+                            <li data-value="" class="hidden-label">Formats</li> <!-- Reset option -->
+                            <?php foreach ($formats as $format): ?>
+                                <li data-value="<?php echo esc_attr($format->slug); ?>"><?php echo esc_html($format->name); ?></li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div class="year-sortby__container">
-                <select name="sort_order" id="sort_order" class="year-sortby">
-                    <option value="" disabled selected>Trier par : </option>
-                    <option value="DESC">À partir des plus récentes</option>
-                    <option value="ASC">À partir des plus anciennes</option>
-                </select>
+            <div class="sorting-options">
+                <!-- Sorting Options -->
+                <div class="dropdown sorting-menu" id="sort_order">
+                    <button class="dropbtn">Trier par  
+                        <span class="arrow">&#8964;</span>
+                    </button>
+                    <div class="dropdown-content">
+                        <ul>
+                            <li data-value="" class="hidden-label">Trier par</li> <!-- Reset option -->
+                            <li data-value="asc">À partir des plus anciennes</li>
+                            <li data-value="desc">À partir des plus récentes</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
         <!------------- Gallery Photos Container --------------------->

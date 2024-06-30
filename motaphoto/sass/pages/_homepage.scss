@@ -1,3 +1,8 @@
+//Import colors
+
+@import '../base/colors';
+
+// Hero Header Banner
 section#hero-header {
    width: 100vw;
    height: 960px;
@@ -37,6 +42,45 @@ section#hero-header {
    
 }
 
+// Hero Header Banner
+section#hero-header {
+   width: 100vw;
+   height: 960px;
+   margin: 0;
+   position: relative;
+   overflow: hidden;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+   .hero-banner {
+      display: flex;
+      flex: 1;
+      width: 100%;
+      height: 100%;
+      position: relative;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+         h1 {
+               flex: 1;
+               width: 100%;
+               margin: 0;
+               padding: 0;
+               display: flex;
+               position: relative;
+               justify-content: center;
+               align-self: center;
+               flex-wrap: nowrap;
+            }
+   }
+}
+
+// Photo Catalogue Section
 section.photo-catalogue {
    height: auto;
    margin: 0 auto 50px;
@@ -60,31 +104,65 @@ section.photo-catalogue {
       align-items: center;
       gap: 20px;
 
-      div {
+      .filters-options,
+      .sorting-options {
          display: flex;
-         width: 48%;
-         height: 50%;
+         width: 49%;
+         height: 100%;
       }
    }
 }
 
-.photo-filters__container {
+.filters-options {
    justify-content: space-between;
+   align-items: center;
+   width: 100%;
+   height: 100%;
+   gap: 20px;
 
+   >.category-menu {
+      justify-content: flex-start;
+
+      button {
+         width: 100%;
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+      }
+   }
+
+   >.format-menu {
+      justify-content: flex-end;
+      align-items: flex-end;
+
+      button {
+         width: 100%;
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+      }
+   }
 }
 
-div.photo-filters > div.year-sortby__container {
+.sorting-options {
    justify-content: flex-end;
+   align-items: center;
+   width: 100%;
+   height: 100%;
+
+   >.sorting-menu {
+      justify-content: flex-end;
+      align-items: flex-end;
+
+      button {
+         width: 100%;
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+      }
+   }
 }
 
-
-.category-menu,
-.format-menu,
-.year-sortby{
-   border-radius: 5px;
-   width: calc(40% - 20px);
-}
-   
 .load-more {
    display: flex;
    justify-content: center;
@@ -92,4 +170,87 @@ div.photo-filters > div.year-sortby__container {
    margin: 50px auto;
    width: 50%;
    height: 100px;
+}
+
+// FILTER AND SORTING STYLES
+
+.category-menu,
+.format-menu,
+.sorting-menu{
+   border-radius: 5px;
+   width: calc(40% - 20px);
+
+   :active {
+      border: 1.3px solid #215AFF;
+   }
+}
+
+
+.dropdown {
+   position: relative;
+
+   &-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background-color: white;
+      width: 100%;
+      z-index: 100;
+      height: auto;
+      text-transform: none;
+      cursor: pointer;
+      border: 1px solid black;
+  
+      ul {
+          margin: 0;
+          padding: 0;
+
+         :hover {
+            background-color: #FFD6D6;
+        }
+
+        :active {
+          background-color: #FE5858;
+        }
+      }
+  
+      li {
+          padding: 8px 12px;
+          background-color: white;
+      }
+  
+      .selected {
+          background-color: #E00000;
+          color: white;
+      }
+  
+      &.open {
+          display: block;
+      }
+  
+      .hidden-label {
+          font-size: 20px;
+          color: transparent;
+          cursor: pointer;
+      }
+   }
+
+   &-toggle {
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       background-color: white;
+       color: black;
+       padding: 10px;
+       cursor: pointer;
+      
+       :active {
+         border: 1.3px solid #215AFF;
+       }
+   }
+}
+
+.rotate {
+   transform: rotate(180deg);
 }
