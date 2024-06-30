@@ -49,109 +49,109 @@ html {
 @font-face {
   font-family: "Poppins";
   src: url("../../assets/fonts/Poppins/poppins-black-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-black-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-black-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-black-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-black-mota-photo-font.svg") format("svg");
-  font-weight: normal;
+  font-weight: 900;
   font-style: normal;
 }
 @font-face {
   font-family: "Poppins";
   src: url("../../assets/fonts/Poppins/poppins-blackitalic-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-blackitalic-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-blackitalic-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-blackitalic-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-blackitalic-mota-photo-font.svg#poppinsblack_italic") format("svg");
-  font-weight: normal;
+  font-weight: 900;
   font-style: italic;
 }
 @font-face {
   font-family: "Poppins";
   src: url("../../assets/fonts/Poppins/poppins-bold-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-bold-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-bold-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-bold-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-bold-mota-photo-font.svg#poppinsbold") format("svg");
-  font-weight: bold;
+  font-weight: 700;
   font-style: normal;
 }
 @font-face {
   font-family: "Poppins";
   src: url("../../assets/fonts/Poppins/poppins-bolditalic-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-bolditalic-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-bolditalic-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-bolditalic-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-bolditalic-mota-photo-font.svg") format("svg");
-  font-weight: bold;
+  font-weight: 700;
   font-style: italic;
 }
 @font-face {
   font-family: "Poppins";
   src: url("../../assets/fonts/Poppins/poppins-extrabold-mota-photo-font.eot") format("eot)"), url("../../assets/fonts/Poppins/poppins-extrabold-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-extrabold-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-extrabold-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-extrabold-mota-photo-font.svg") format("svg");
-  font-weight: bold;
+  font-weight: 800;
   font-style: normal;
 }
 @font-face {
   font-family: "Poppins";
   src: url("../../assets/fonts/Poppins/poppins-extrabolditalic-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-extrabolditalic-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-extrabolditalic-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-extrabolditalic-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-extrabolditalic-mota-photo-font.svg") format("svg");
-  font-weight: bold;
+  font-weight: 800;
   font-style: italic;
 }
 @font-face {
   font-family: "Poppins";
   src: url("../../assets/fonts/Poppins/poppins-extralight-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-extralight-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-extralight-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-extralight-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-extralight-mota-photo-font.svg#poppinsextralight") format("svg");
-  font-weight: normal;
+  font-weight: 200;
   font-style: normal;
 }
 @font-face {
   font-family: "Poppins";
   src: url("../../assets/fonts/Poppins/poppins-extralightitalic-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-extralightitalic-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-extralightitalic-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-extralightitalic-mota-photo-font.ttf") format("svg");
-  font-weight: normal;
+  font-weight: 200;
   font-style: italic;
 }
 @font-face {
   font-family: "Poppins";
   src: url("../../assets/fonts/Poppins/poppins-italic-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-italic-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-italic-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-italic-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-italic-mota-photo-font.svg") format("svg");
-  font-weight: normal;
+  font-weight: 400;
   font-style: italic;
 }
 @font-face {
   font-family: "Poppins";
   src: url("../../assets/fonts/Poppins/poppins-light-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-light-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-light-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-light-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-light-mota-photo-font.svg") format("svg");
-  font-weight: normal;
+  font-weight: 300;
   font-style: normal;
 }
 @font-face {
   font-family: "Poppins";
   src: url("../../assets/fonts/Poppins/poppins-lightitalic-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-lightitalic-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-lightitalic-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-lightitalic-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-lightitalic-mota-photo-font.svg#poppinslight_italic") format("svg");
-  font-weight: normal;
+  font-weight: 300;
   font-style: italic;
 }
 @font-face {
   font-family: "Poppins";
   src: url("../../assets/fonts/Poppins/poppins-medium-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-medium-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-medium-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-medium-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-medium-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-medium-mota-photo-font.svg#poppinsmedium") format("svg");
-  font-weight: normal;
+  font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: "Poppins";
   src: url("../../assets/fonts/Poppins/poppins-mediumitalic-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-mediumitalic-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-mediumitalic-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-mediumitalic-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-mediumitalic-mota-photo-font.svg#poppinsmedium_italic") format("svg");
-  font-weight: normal;
+  font-weight: 400;
   font-style: italic;
 }
 @font-face {
   font-family: "Poppins";
   src: url("../../assets/fonts/Poppins/poppins-regular-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-regular-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-regular-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-regular-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-regular-mota-photo-font.svg") format("svg");
-  font-weight: normal;
+  font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: "Poppins";
   src: url("../../assets/fonts/Poppins/poppins-semibold-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-semibold-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-semibold-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-semibold-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-semibold-mota-photo-font.svg") format("svg");
-  font-weight: bold;
+  font-weight: 500;
   font-style: normal;
 }
 @font-face {
   font-family: "Poppins";
   src: url("../../assets/fonts/Poppins/poppins-semibolditalic-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-semibolditalic-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-semibolditalic-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-semibolditalic-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-semibolditalic-mota-photo-font.svg#poppinssemibold_italic") format("svg");
-  font-weight: bold;
+  font-weight: 500;
   font-style: italic;
 }
 @font-face {
   font-family: "Poppins";
   src: url("../../assets/fonts/Poppins/poppins-thin-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-thin-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-thin-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-thin-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-thin-mota-photo-font.svg#poppinsthin") format("svg");
-  font-weight: normal;
+  font-weight: 300;
   font-style: normal;
 }
 @font-face {
   font-family: "Poppins";
   src: url("../../assets/fonts/Poppins/poppins-thinitalic-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-thinitalic-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-thinitalic-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-thinitalic-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-thinitalic-mota-photo-font.svg") format("svg");
-  font-weight: normal;
+  font-weight: 300;
   font-style: italic;
 }
 /* End of Poppins Fonts */
@@ -216,10 +216,9 @@ h4, h5 {
   font-style: normal;
 }
 
-select,
-option {
+.dropbtn {
   font-family: "Poppins";
-  font-weight: 500;
+  font-weight: 400;
   font-style: normal;
   font-size: 14px;
   line-height: 18px;
@@ -280,109 +279,109 @@ option {
 @font-face {
   font-family: "Poppins";
   src: url("../../assets/fonts/Poppins/poppins-black-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-black-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-black-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-black-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-black-mota-photo-font.svg") format("svg");
-  font-weight: normal;
+  font-weight: 900;
   font-style: normal;
 }
 @font-face {
   font-family: "Poppins";
   src: url("../../assets/fonts/Poppins/poppins-blackitalic-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-blackitalic-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-blackitalic-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-blackitalic-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-blackitalic-mota-photo-font.svg#poppinsblack_italic") format("svg");
-  font-weight: normal;
+  font-weight: 900;
   font-style: italic;
 }
 @font-face {
   font-family: "Poppins";
   src: url("../../assets/fonts/Poppins/poppins-bold-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-bold-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-bold-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-bold-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-bold-mota-photo-font.svg#poppinsbold") format("svg");
-  font-weight: bold;
+  font-weight: 700;
   font-style: normal;
 }
 @font-face {
   font-family: "Poppins";
   src: url("../../assets/fonts/Poppins/poppins-bolditalic-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-bolditalic-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-bolditalic-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-bolditalic-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-bolditalic-mota-photo-font.svg") format("svg");
-  font-weight: bold;
+  font-weight: 700;
   font-style: italic;
 }
 @font-face {
   font-family: "Poppins";
   src: url("../../assets/fonts/Poppins/poppins-extrabold-mota-photo-font.eot") format("eot)"), url("../../assets/fonts/Poppins/poppins-extrabold-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-extrabold-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-extrabold-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-extrabold-mota-photo-font.svg") format("svg");
-  font-weight: bold;
+  font-weight: 800;
   font-style: normal;
 }
 @font-face {
   font-family: "Poppins";
   src: url("../../assets/fonts/Poppins/poppins-extrabolditalic-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-extrabolditalic-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-extrabolditalic-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-extrabolditalic-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-extrabolditalic-mota-photo-font.svg") format("svg");
-  font-weight: bold;
+  font-weight: 800;
   font-style: italic;
 }
 @font-face {
   font-family: "Poppins";
   src: url("../../assets/fonts/Poppins/poppins-extralight-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-extralight-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-extralight-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-extralight-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-extralight-mota-photo-font.svg#poppinsextralight") format("svg");
-  font-weight: normal;
+  font-weight: 200;
   font-style: normal;
 }
 @font-face {
   font-family: "Poppins";
   src: url("../../assets/fonts/Poppins/poppins-extralightitalic-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-extralightitalic-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-extralightitalic-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-extralightitalic-mota-photo-font.ttf") format("svg");
-  font-weight: normal;
+  font-weight: 200;
   font-style: italic;
 }
 @font-face {
   font-family: "Poppins";
   src: url("../../assets/fonts/Poppins/poppins-italic-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-italic-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-italic-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-italic-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-italic-mota-photo-font.svg") format("svg");
-  font-weight: normal;
+  font-weight: 400;
   font-style: italic;
 }
 @font-face {
   font-family: "Poppins";
   src: url("../../assets/fonts/Poppins/poppins-light-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-light-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-light-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-light-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-light-mota-photo-font.svg") format("svg");
-  font-weight: normal;
+  font-weight: 300;
   font-style: normal;
 }
 @font-face {
   font-family: "Poppins";
   src: url("../../assets/fonts/Poppins/poppins-lightitalic-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-lightitalic-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-lightitalic-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-lightitalic-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-lightitalic-mota-photo-font.svg#poppinslight_italic") format("svg");
-  font-weight: normal;
+  font-weight: 300;
   font-style: italic;
 }
 @font-face {
   font-family: "Poppins";
   src: url("../../assets/fonts/Poppins/poppins-medium-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-medium-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-medium-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-medium-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-medium-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-medium-mota-photo-font.svg#poppinsmedium") format("svg");
-  font-weight: normal;
+  font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: "Poppins";
   src: url("../../assets/fonts/Poppins/poppins-mediumitalic-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-mediumitalic-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-mediumitalic-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-mediumitalic-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-mediumitalic-mota-photo-font.svg#poppinsmedium_italic") format("svg");
-  font-weight: normal;
+  font-weight: 400;
   font-style: italic;
 }
 @font-face {
   font-family: "Poppins";
   src: url("../../assets/fonts/Poppins/poppins-regular-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-regular-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-regular-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-regular-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-regular-mota-photo-font.svg") format("svg");
-  font-weight: normal;
+  font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: "Poppins";
   src: url("../../assets/fonts/Poppins/poppins-semibold-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-semibold-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-semibold-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-semibold-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-semibold-mota-photo-font.svg") format("svg");
-  font-weight: bold;
+  font-weight: 500;
   font-style: normal;
 }
 @font-face {
   font-family: "Poppins";
   src: url("../../assets/fonts/Poppins/poppins-semibolditalic-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-semibolditalic-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-semibolditalic-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-semibolditalic-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-semibolditalic-mota-photo-font.svg#poppinssemibold_italic") format("svg");
-  font-weight: bold;
+  font-weight: 500;
   font-style: italic;
 }
 @font-face {
   font-family: "Poppins";
   src: url("../../assets/fonts/Poppins/poppins-thin-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-thin-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-thin-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-thin-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-thin-mota-photo-font.svg#poppinsthin") format("svg");
-  font-weight: normal;
+  font-weight: 300;
   font-style: normal;
 }
 @font-face {
   font-family: "Poppins";
   src: url("../../assets/fonts/Poppins/poppins-thinitalic-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-thinitalic-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-thinitalic-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-thinitalic-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-thinitalic-mota-photo-font.svg") format("svg");
-  font-weight: normal;
+  font-weight: 300;
   font-style: italic;
 }
 /* End of Poppins Fonts */
@@ -579,11 +578,31 @@ div.contact-form-button p input:hover {
   transform: scale(1.2);
 }
 
+<<<<<<< HEAD
 /**
  * Layout Styles
  *
  * @package Motaphoto
  */
+=======
+.dropbtn {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: left;
+  padding-left: 10px;
+  min-height: 43px;
+}
+
+.dropbtn.active,
+.dropbtn:hover,
+.dropdown-content.open + .dropbtn {
+  border: 1.3px solid #215AFF;
+}
+
+>>>>>>> main
 /* General styling for the header */
 #masthead {
   height: 80px;
@@ -1001,6 +1020,23 @@ div.contact-form-button p input:hover {
   transform: scale(1.2);
 }
 
+.dropbtn {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: left;
+  padding-left: 10px;
+  min-height: 43px;
+}
+
+.dropbtn.active,
+.dropbtn:hover,
+.dropdown-content.open + .dropbtn {
+  border: 1.3px solid #215AFF;
+}
+
 #site-content {
   margin: 0 auto;
   min-height: 90vh;
@@ -1176,6 +1212,41 @@ section#hero-header .hero-banner h1 {
   align-self: center;
 }
 
+section#hero-header {
+  width: 100vw;
+  height: 960px;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section#hero-header .hero-banner {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+section#hero-header .hero-banner h1 {
+  flex: 1;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-self: center;
+  flex-wrap: nowrap;
+}
+
 section.photo-catalogue {
   height: auto;
   margin: 0 auto 50px;
@@ -1198,26 +1269,60 @@ section.photo-catalogue > .photo-filters {
   align-items: center;
   gap: 20px;
 }
-section.photo-catalogue > .photo-filters div {
+section.photo-catalogue > .photo-filters .filters-options,
+section.photo-catalogue > .photo-filters .sorting-options {
   display: flex;
-  width: 48%;
-  height: 50%;
+  width: 49%;
+  height: 100%;
 }
 
+<<<<<<< HEAD
 .photo-filters__container,
 div.photo-filters > div.year-sortby__container {
+=======
+.filters-options {
+>>>>>>> main
   justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  gap: 20px;
 }
-
-div.photo-filters > div.year-sortby__container {
+.filters-options > .category-menu {
+  justify-content: flex-start;
+}
+.filters-options > .category-menu button {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.filters-options > .format-menu {
   justify-content: flex-end;
+  align-items: flex-end;
+}
+.filters-options > .format-menu button {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.category-menu,
-.format-menu,
-.year-sortby {
-  border-radius: 5px;
-  width: calc(40% - 20px);
+.sorting-options {
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.sorting-options > .sorting-menu {
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.sorting-options > .sorting-menu button {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .load-more {
@@ -1229,6 +1334,7 @@ div.photo-filters > div.year-sortby__container {
   height: 100px;
 }
 
+<<<<<<< HEAD
 @media screen and (max-width: 768px) {
   section#hero-header {
     height: 70vh;
@@ -1238,6 +1344,87 @@ div.photo-filters > div.year-sortby__container {
     padding: 0;
     width: 100%;
   }
+=======
+.category-menu,
+.format-menu,
+.sorting-menu {
+  border-radius: 5px;
+  width: calc(40% - 20px);
+}
+.category-menu :active,
+.format-menu :active,
+.sorting-menu :active {
+  border: 1.3px solid #215AFF;
+}
+
+.dropdown {
+  position: relative;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  width: 100%;
+  z-index: 100;
+  height: auto;
+  text-transform: none;
+  cursor: pointer;
+  border: 1px solid black;
+}
+.dropdown-content ul {
+  margin: 0;
+  padding: 0;
+}
+.dropdown-content ul :hover {
+  background-color: #FFD6D6;
+}
+.dropdown-content ul :active {
+  background-color: #FE5858;
+}
+.dropdown-content li {
+  padding: 8px 12px;
+  background-color: white;
+}
+.dropdown-content .selected {
+  background-color: #E00000;
+  color: white;
+}
+.dropdown-content.open {
+  display: block;
+}
+.dropdown-content .hidden-label {
+  font-size: 20px;
+  color: transparent;
+  cursor: pointer;
+}
+.dropdown-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  color: black;
+  padding: 10px;
+  cursor: pointer;
+}
+.dropdown-toggle :active {
+  border: 1.3px solid #215AFF;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+
+ul,
+li,
+a {
+  list-style: none;
+  text-decoration: none;
+  font-family: "Space-Mono", monospace;
+  padding: 0;
+  margin: 0;
+>>>>>>> main
 }
 @media screen and (max-width: 900px) {
   section#hero-header {
