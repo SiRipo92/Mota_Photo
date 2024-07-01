@@ -29,13 +29,37 @@ function generate_photo_markup($post) {
  * Handles AJAX request for loading more photos.
  */
 function load_more_photos() {
+    check_ajax_referer('load_more_photos_nonce', 'security');
+
     $paged = isset($_POST['page']) ? intval($_POST['page']) : 1;
+    $category = isset($_POST['category']) ? sanitize_text_field($_POST['category']) : '';
+    $format = isset($_POST['format']) ? sanitize_text_field($_POST['format']) : '';
+
     $args = array(
         'post_type' => 'photo',
         'posts_per_page' => 8,
         'paged' => $paged,
     );
+
+    // Apply category and format filters
+    if (!empty($category)) {
+        $args['tax_query'][] = array(
+            'taxonomy' => 'categorie',
+            'field'    => 'slug',
+            'terms'    => $category,
+        );
+    }
+
+    if (!empty($format)) {
+        $args['tax_query'][] = array(
+            'taxonomy' => 'format', // Adjust 'format' to your actual taxonomy
+            'field'    => 'slug',
+            'terms'    => $format,
+        );
+    }
+
     $query = new WP_Query($args);
+
     if ($query->have_posts()) {
         while ($query->have_posts()) {
             $query->the_post();
@@ -44,9 +68,9 @@ function load_more_photos() {
     } else {
         wp_send_json_error('No more photos found.');
     }
+
     wp_die();
 }
-
 /**
  * Handles AJAX request for fetching, filtering, and sorting photos.
  */
