@@ -105,3 +105,22 @@ h4, h5 {
         font-size: calc(40px + 2vw);
     }
 }
+
+span.photo_category {
+    font-family: 'Space-Mono', monospace;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: white;
+    line-height: 21px;
+}
+
+span.photo_reference {
+    font-family: 'Poppins';
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    text-transform: uppercase;
+    color: white;
+}

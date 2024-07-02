@@ -87,7 +87,7 @@ get_header();
         <!------------- Gallery Photos Container --------------------->
             <!------------- Gallery Photos Container --------------------->
         <div id="posts-container" class="gallery-photos__container">
-            <?php get_template_part('template-parts/photo-gallery-index'); ?>
+            <?php get_template_part('template-parts/photo-gallery'); ?>
         </div>
         <div class="load-more">
             <button id="btn-load-more">Charger plus</button>
