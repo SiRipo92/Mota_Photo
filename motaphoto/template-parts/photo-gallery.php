@@ -39,7 +39,6 @@ if ($is_single_photo_page) {
     $args['paged'] = get_query_var('paged') ? get_query_var('paged') : 1;
 }
 
-
 $photo_query = new WP_Query($args);
 
 if ($photo_query->have_posts()) : ?>
@@ -50,34 +49,34 @@ if ($photo_query->have_posts()) : ?>
                     <?php if (has_post_thumbnail()) : ?>
                         <div class="photo-container">
                             <?php the_post_thumbnail('featured-image'); ?>
-                        </div>
-                        <div class="photo-overlay">
-                            <div class="photo-overlay__text">
-                                <img class="icon icon-eye" src="<?php echo get_template_directory_uri().'/assets/images/nav/Icon_eye.svg'; ?>" alt="View icon">
-                                <img class="icon icon-fullscreen" src="<?php echo get_template_directory_uri().'/assets/images/nav/Icon_fullscreen.svg'; ?>" alt="Fullscreen icon">
-                                <span class="photo_reference">
-                                    <?php // Using ACF get_field() for ReferenceID
-                                        $referenceID = get_field('Reference');
-                                        if (!$referenceID) {
-                                            echo '<span class="debug-message">ReferenceID not found for post ID: '.get_the_ID().'</span>';
+                            <div class="photo-overlay">
+                                <div class="photo-overlay__text">
+                                    <img class="icon icon-eye" src="<?php echo get_template_directory_uri().'/assets/images/nav/Icon_eye.svg'; ?>" alt="View icon">
+                                    <img class="icon icon-fullscreen" src="<?php echo get_template_directory_uri().'/assets/images/nav/Icon_fullscreen.svg'; ?>" alt="Fullscreen icon">
+                                    <span class="photo_reference">
+                                        <?php // Using ACF get_field() for ReferenceID
+                                            $referenceID = get_field('Reference');
+                                            if (!$referenceID) {
+                                                echo '<span class="debug-message">ReferenceID not found for post ID: '.get_the_ID().'</span>';
+                                            } else {
+                                                echo '<span class="photo_reference">'.esc_html($referenceID).'</span>';
+                                            }
+                                        ?>
+                                    </span>
+                                    <span class="photo_category">
+                                        <?php
+                                        // Using get_the_terms() to retrieve categories
+                                        $categories = get_the_terms(get_the_ID(), 'categorie'); // Ensure 'categorie' is the correct taxonomy
+                                        if (!$categories || is_wp_error($categories)) {
+                                            echo '<span class="debug-message">Category not found for post ID: '.get_the_ID().'</span>';
                                         } else {
-                                            echo '<span class="photo_reference">'.esc_html($referenceID).'</span>';
+                                            // Iterate through each category and display its name
+                                            $category_names = array_map(function($cat) { return esc_html($cat->name); }, $categories);
+                                            echo '<span class="photo_category">'.implode(', ', $category_names).'</span>';
                                         }
-                                    ?>
-                                </span>
-                                <span class="photo_category">
-                                    <?php
-                                    // Using get_the_terms() to retrieve categories
-                                    $categories = get_the_terms(get_the_ID(), 'categorie'); // Ensure 'categorie' is the correct taxonomy
-                                    if (!$categories || is_wp_error($categories)) {
-                                        echo '<span class="debug-message">Category not found for post ID: '.get_the_ID().'</span>';
-                                    } else {
-                                        // Iterate through each category and display its name
-                                        $category_names = array_map(function($cat) { return esc_html($cat->name); }, $categories);
-                                        echo '<span class="photo_category">'.implode(', ', $category_names).'</span>';
-                                    }
-                                    ?>
-                                </span>
+                                        ?>
+                                    </span>
+                                </div>
                             </div>
                         </div>
                     <?php endif; ?>
