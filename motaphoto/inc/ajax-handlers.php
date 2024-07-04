@@ -19,6 +19,7 @@ function generate_photo_markup($post) {
             <?php if (has_post_thumbnail()) : ?>
                 <?php the_post_thumbnail('featured-image'); ?>
             <?php endif; ?>
+
         </a>
     </article>
     <?php wp_reset_postdata();

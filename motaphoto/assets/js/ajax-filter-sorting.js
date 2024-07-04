@@ -19,7 +19,7 @@ jQuery(document).ready(function($) {
                 security: ajax_filter_sorting_data.nonce
             },
             success: function(response) {
-                $('#posts-container .gallery-photos__container').html(response); // Replace existing content with first page
+                $('.gallery-photos__container').html(response); // Replace existing content with first page
             },
             error: function(xhr, status, error) {
                 console.error("Error: " + status + " " + error);

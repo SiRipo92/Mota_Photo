@@ -9,6 +9,7 @@ jQuery(document).ready(function($) {
     function loadMorePhotos(page) {
         var selectedCategory = $('.category-menu .selected').data('value');
         var selectedFormat = $('.format-menu .selected').data('value');
+        var selectedSortingMethod = $('#sort_order .selected').data('value');
 
         $.ajax({
             url: ajax_pagination_data.ajaxurl,
@@ -18,10 +19,11 @@ jQuery(document).ready(function($) {
                 page: page,
                 category: selectedCategory,
                 format: selectedFormat,
+                sorting: selectedSortingMethod,
                 security: ajax_pagination_data.nonce
             },
             success: function(response) {
-                $('#posts-container .gallery-photos__container').append(response); // Append new photos
+                $('#posts-container').append(response); // Append new photos
             },
             error: function(xhr, status, error) {
                 console.error("Error loading more photos: " + error);

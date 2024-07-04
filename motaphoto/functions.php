@@ -41,6 +41,7 @@ function add_motaphoto_scripts() {
     // Generate nonces for AJAX requests
     $fetch_photos_nonce = wp_create_nonce('fetch_photos_nonce');
     $load_more_photos_nonce = wp_create_nonce('load_more_photos_nonce');
+    $lightbox_fetch_photos_nonce = wp_create_nonce('lightbox_fetch_photos_nonce');
 
     // Enqueue AJAX pagination script
     wp_enqueue_script('ajax-pagination', get_template_directory_uri() . '/assets/js/ajax-pagination.js', array('jquery'), null, true);
@@ -57,6 +58,15 @@ function add_motaphoto_scripts() {
         'ajaxurl' => admin_url('admin-ajax.php'),
         'nonce' => $fetch_photos_nonce, // Use fetch photos nonce here
     ));
+
+    // Enqueue custom script for lightbox
+    wp_enqueue_script('motaphoto-lightbox', get_template_directory_uri() . '/assets/js/lightbox.js', array('jquery'), null, true);
+    // Localize AJAX lightbox script
+    wp_localize_script('motaphoto-lightbox', 'ajax_lightbox_data', array(
+        'ajaxurl' => admin_url('admin-ajax.php'),
+        'nonce' => $lightbox_fetch_photos_nonce, // Use fetch photos nonce here
+    ));
+
 }
 add_action('wp_enqueue_scripts', 'add_motaphoto_scripts');
 
