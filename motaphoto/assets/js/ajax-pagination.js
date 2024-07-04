@@ -21,7 +21,10 @@ jQuery(document).ready(function($) {
                 security: ajax_pagination_data.nonce
             },
             success: function(response) {
-                $('#photo-gallery').append(response); // Append new photos
+                $('#posts-container .gallery-photos__container').append(response); // Append new photos
+            },
+            error: function(xhr, status, error) {
+                console.error("Error loading more photos: " + error);
             }
         });
     }

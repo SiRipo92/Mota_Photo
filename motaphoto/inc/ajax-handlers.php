@@ -19,7 +19,6 @@ function generate_photo_markup($post) {
             <?php if (has_post_thumbnail()) : ?>
                 <?php the_post_thumbnail('featured-image'); ?>
             <?php endif; ?>
-            <h2 class="entry-title"><?php the_title(); ?></h2>
         </a>
     </article>
     <?php wp_reset_postdata();
