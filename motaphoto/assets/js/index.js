@@ -45,28 +45,40 @@ jQuery(document).ready(function($) {
         preloadImage($(this).attr('data-thumbnail'));
     });
 
+    // Define a variable outside hover event to keep track of the timeout
+    let fadeOutTimeout;
+
     // Improved hover event for the left and right arrows
     $('.prev-post, .next-post').hover(function() {
-        const thumbnailUrl = $(this).attr('data-thumbnail');
-        const $dynamicThumbnail = $('.dynamic-thumbnail');
-        // Only proceed if the new thumbnail is different from the current one
-        if ($dynamicThumbnail.attr('src') !== thumbnailUrl) {
-            // Ensure any ongoing animation is stopped before starting new ones
-            $dynamicThumbnail.stop(true, true);
-            // If the thumbnail is already visible (opacity 1), directly change the src
-            if ($dynamicThumbnail.css('opacity') == 1) {
-                $dynamicThumbnail.fadeTo('fast', 0, function() {
-                    $(this).attr('src', thumbnailUrl).fadeTo('fast', 1);
-                });
-            } else {
-                // If the thumbnail is not fully visible, change the src then fade in
-                $dynamicThumbnail.attr('src', thumbnailUrl).fadeTo('fast', 1);
-            }
+        // Clear any existing timeout to reset the fade-out timer
+    clearTimeout(fadeOutTimeout);
+
+    const thumbnailUrl = $(this).attr('data-thumbnail');
+    const $dynamicThumbnail = $('.dynamic-thumbnail');
+    if ($dynamicThumbnail.attr('src') !== thumbnailUrl) {
+        $dynamicThumbnail.stop(true, true);
+        if ($dynamicThumbnail.css('opacity') == 1) {
+            $dynamicThumbnail.fadeTo('fast', 0, function() {
+                $(this).attr('src', thumbnailUrl).fadeTo('fast', 1);
+            });
+        } else {
+            $dynamicThumbnail.attr('src', thumbnailUrl).fadeTo('fast', 1);
         }
-    }, function() {
-        // On mouse leave, smoothly fade out the thumbnail with a slight delay
-        $('.dynamic-thumbnail').stop(true, true).delay(100).fadeTo('slow', 0.2); // Adjust opacity to desired level
-    });
+    }
+}, function() {
+    // Use setTimeout to delay the fade-out
+    fadeOutTimeout = setTimeout(function() {
+        $('.dynamic-thumbnail').stop(true, true).animate({
+            opacity: 0
+        }, {
+            duration: 'slow', // This can be a number in milliseconds for finer control
+            complete: function() {
+                // Optional: hide or set display to 'none' after fade-out completes
+                $(this).hide();
+            }
+        });
+    }, 1000); // Adjust the timeout as needed
+});
 
 
     // Hero Header Dynamic Content
