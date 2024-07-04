@@ -69,47 +69,32 @@ if ($photo_query->have_posts()) :
     while ($photo_query->have_posts()) : $photo_query->the_post();
         ?>
         <article class="gallery-photo">
-            <a href="<?php echo esc_url(get_permalink()); ?>">
+            <a href="<?php echo esc_url(get_permalink()); ?>" class="photo__link">
+                <div class="photo-container">
                 <?php
-                if (has_post_thumbnail()) {
-                    the_post_thumbnail('featured-image');
-                } else {
-                    echo '<img src="' . esc_url(get_template_directory_uri() . '/assets/images/default-thumbnail.jpg') . '" alt="Placeholder">';
-                }
-                ?>
+                    if (has_post_thumbnail()) {
+                        the_post_thumbnail('featured-image');
+                    } else {
+                        echo '<img src="' . esc_url(get_template_directory_uri() . '/assets/images/default-thumbnail.jpg') . '" alt="Placeholder">';
+                    }
+                    ?>
+                </div>
                 <div class="photo-overlay">
-                    <div class="photo-overlay__text">
-                        <!-- Additional content as needed -->
-                        <span class="photo_reference">
-                            <?php
-                            // Display Reference ID using ACF get_field()
-                            ;
-                            if (!$referenceID) {
-                                echo '<span class="debug-message">ReferenceID not found for post ID: ' . get_the_ID() . '</span>';
-                            } else {
-                                echo '<span class="photo_reference">' . esc_html($referenceID) . '</span>';
+                    <img class="icon icon-fullscreen" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/lightbox/Icon_fullscreen.png'); ?>" alt="Fullscreen Icon">
+                    <img class="icon icon-eye" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/lightbox/Icon_eye.png'); ?>" alt="Eye Icon">
+                    <span class="photo-title"><?php the_title(); ?></span>
+                    <span class="photo-category">
+                        <?php
+                        $categories = get_field('Categorie');
+                        if ($categories) {
+                            $category_names = array();
+                            foreach ($categories as $category) {
+                                $category_names[] = $category->name;
                             }
-                            ?>
-                        </span>
-                        <span class="photo_category">
-                            <?php
-                            // Display Categories
-                            $categories = get_the_terms(get_the_ID(), 'categorie');
-                            if (!$categories || is_wp_error($categories)) {
-                                echo '<span class="debug-message">Category not found for post ID: ' . get_the_ID() . '</span>';
-                            } else {
-                                $category_names = array_map(function ($cat) {
-                                    return esc_html($cat->name);
-                                }, $categories);
-                                echo '<span class="photo_category">' . implode(', ', $category_names) . '</span>';
-                            }
-                            ?>
-                        </span>
-                        <div class="photo-overlay__icons">
-                            <img class="icon icon-fullscreen" src="<?php echo get_template_directory_uri() . '/assets/images/lightbox/Icon_fullscreen.png'; ?>" alt="Fullscreen icon">
-                            <img class="icon icon-eye" src="<?php echo get_template_directory_uri() . '/assets/images/lightbox/Icon_eye.png'; ?>" alt="Eye icon">
-                        </div>
-                    </div>
+                            echo implode(', ', $category_names);
+                        }
+                        ?>
+                </span>
                 </div>
             </a>
         </article>

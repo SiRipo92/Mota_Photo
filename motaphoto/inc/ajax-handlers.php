@@ -14,14 +14,36 @@
  */
 function generate_photo_markup($post) {
     setup_postdata($post); ?>
-    <article class="gallery-photo" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-        <a href="<?php the_permalink(); ?>">
-            <?php if (has_post_thumbnail()) : ?>
-                <?php the_post_thumbnail('featured-image'); ?>
-            <?php endif; ?>
-
-        </a>
-    </article>
+            <article class="gallery-photo">
+            <a href="<?php echo esc_url(get_permalink()); ?>" class="photo__link">
+                <div class="photo-container">
+                <?php
+                    if (has_post_thumbnail()) {
+                        the_post_thumbnail('featured-image');
+                    } else {
+                        echo '<img src="' . esc_url(get_template_directory_uri() . '/assets/images/default-thumbnail.jpg') . '" alt="Placeholder">';
+                    }
+                    ?>
+                </div>
+                <div class="photo-overlay">
+                    <img class="icon icon-fullscreen" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/lightbox/Icon_fullscreen.png'); ?>" alt="Fullscreen Icon">
+                    <img class="icon icon-eye" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/lightbox/Icon_eye.png'); ?>" alt="Eye Icon">
+                    <span class="photo-title"><?php the_title(); ?></span>
+                    <span class="photo-category">
+                        <?php
+                        $categories = get_field('Categorie');
+                        if ($categories) {
+                            $category_names = array();
+                            foreach ($categories as $category) {
+                                $category_names[] = $category->name;
+                            }
+                            echo implode(', ', $category_names);
+                        }
+                        ?>
+                </span>
+                </div>
+            </a>
+        </article>
     <?php wp_reset_postdata();
 }
 
@@ -61,6 +83,7 @@ function load_more_photos() {
     $query = new WP_Query($args);
 
     if ($query->have_posts()) {
+        ob_start();
         while ($query->have_posts()) {
             $query->the_post();
             generate_photo_markup($query->post);

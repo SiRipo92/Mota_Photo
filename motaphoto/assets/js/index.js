@@ -84,6 +84,15 @@ jQuery(document).ready(function($) {
     // Hero Header Dynamic Content
     const heroBanner = $('.hero-banner');
     heroBanner.attr('content', `url(${customData.heroImage})`);
+
+    // Photo Gallery Hover Display
+
+    const galleryPhotos = $('.gallery-photo');
+    galleryPhotos.hover(function() {
+        $(this).find('.photo-overlay').fadeIn();
+    }, function() {
+        $(this).find('.photo-overlay').fadeOut();
+    });
 })
 
 

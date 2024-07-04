@@ -79,6 +79,26 @@ h4, h5 {
          1px  1px 0 #000; /* Fallback for browsers that do not support text-stroke */
 }
 
+.photo-title {
+    font-family: 'Poppins';
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    text-transform: none;
+    color: white;
+
+}
+
+.photo-category {
+    font-family: 'Space-Mono', monospace;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: white;
+    line-height: 21px;
+
+}
 
 @media (max-width: 1200px) {
     h1 {
