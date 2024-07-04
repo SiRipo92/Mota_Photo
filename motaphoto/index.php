@@ -85,7 +85,6 @@ get_header();
             </div>
         </div>
         <!------------- Gallery Photos Container --------------------->
-            <!------------- Gallery Photos Container --------------------->
         <div id="posts-container" class="gallery-photos__container">
             <?php get_template_part('template-parts/photo-gallery'); ?>
         </div>

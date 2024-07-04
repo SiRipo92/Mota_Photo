@@ -140,6 +140,11 @@ div.photo-contact-wrapper {
 }
 
 // Section for Related Photos
+
+section#related-photos{
+  margin-top: 0;
+  margin-bottom: 50px;
+}
   h3.related-photos__title {
       display: flex;
       text-align: left;

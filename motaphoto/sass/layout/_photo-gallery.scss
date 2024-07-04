@@ -2,13 +2,13 @@ div.gallery-photos__container {
     display: flex;
     justify-content: center;
     align-items: center; 
-    width: 100%;
+    width: calc(80vw - 20px);
     height: 80%;
     gap: 20px;
     flex: 1;
     flex-wrap: wrap;
     padding: 0;
-    margin: 0;
+    margin: auto;
   
     article.gallery-photo {
         flex: 0 1 calc(50% - 20px); /* Flex basis of 50% minus gap, allowing it to grow and shrink */
