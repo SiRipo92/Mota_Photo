@@ -788,6 +788,18 @@ section.photo-catalogue > .photo-filters .sorting-options {
   background: rgba(0, 0, 0, 0.8);
   z-index: 1000;
 }
+.lightbox-modal.open {
+  display: block;
+}
+.lightbox-modal__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1;
+}
 .lightbox-modal__container {
   position: absolute;
   top: 50%;
@@ -799,6 +811,7 @@ section.photo-catalogue > .photo-filters .sorting-options {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  z-index: 2;
 }
 .lightbox-modal__container__header {
   justify-content: flex-end;
@@ -816,6 +829,34 @@ section.photo-catalogue > .photo-filters .sorting-options {
   justify-content: space-between;
   align-items: center;
   max-height: 600px;
+}
+.lightbox-modal__container__display .prev-btn,
+.lightbox-modal__container__display .next-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.lightbox-modal__container__display .prev-btn {
+  left: 0;
+}
+.lightbox-modal__container__display .next-btn {
+  right: 0;
+}
+.lightbox-modal__container .lightbox-modal__image {
+  max-width: 100%;
+  height: auto;
+}
+.lightbox-modal__container .lightbox-modal__caption {
+  margin-top: 10px;
+  text-align: center;
+  color: #fff;
+}
+.lightbox-modal__container .lightbox-modal__caption .photo_reference,
+.lightbox-modal__container .lightbox-modal__caption .photo_category {
+  display: block;
 }
 
 /**

@@ -2,61 +2,74 @@ jQuery(document).ready(function($) {
     var currentPhotoIndex = 0;
     var totalPhotos = 0;
 
+    // Function to open lightbox modal
     function openLightbox(index) {
+        if (typeof photosData !== 'undefined' && photosData.data.length > 0) {
+            totalPhotos = photosData.data.length;
+        } else {
+            console.error('Error: photosData is not properly defined or is empty');
+            return;
+        }
+
         if (index < 0 || index >= totalPhotos) {
-            console.error('Index out of bounds');
+            console.error('Error: Index is out of bounds');
             return;
         }
 
         var photo = photosData.data[index];
-        if (!photo || !photo.acf) {
-            console.error('Photo data or ACF field is missing');
+        if (!photo || !photo.id) {
+            console.error('Error: Photo data or ID is missing');
             return;
         }
 
-        $('#lightbox-modal-image').attr('src', photo.imgSrc);
-        $('#lightbox-modal-caption .photo_reference').text(photo.acf.Reference || '');
-        $('#lightbox-modal-caption .photo_category').text(photo.categories.map(function(cat) { return cat.name; }).join(', ') || '');
-        $('#lightbox-modal').fadeIn();
+        // Update modal content with photo data
+        $('#lightbox-modal-image').attr('src', photo.featured_image || '');
+        $('#lightbox-modal-caption .photo_reference').text(photo.reference_id || '');
+        $('#lightbox-modal-caption .photo_category').text(photo.categories.join(', ') || '');
+        $('#lightbox-modal').addClass('open');
+        $('body').addClass('modal-open');
+
+        // Make AJAX call to fetch detailed photo data
+        fetchLightboxData(photo.id);
     }
 
-    function closeLightbox() {
-        $('#lightbox-modal').fadeOut();
-    }
+    // Function to fetch lightbox data via AJAX
+    function fetchLightboxData(photoId) {
+        $.ajax({
+            url: photosData.ajaxurl,
+            type: 'POST',
+            data: {
+                action: 'fetch_lightbox_data',
+                nonce: photosData.nonce,
+                photo_id: photoId,
+            },
+            success: function(response) {
+                if (response.success) {
+                    var data = response.data;
 
-    function showPrevPhoto() {
-        currentPhotoIndex = (currentPhotoIndex - 1 + totalPhotos) % totalPhotos;
-        openLightbox(currentPhotoIndex);
-    }
-
-    function showNextPhoto() {
-        currentPhotoIndex = (currentPhotoIndex + 1) % totalPhotos;
-        openLightbox(currentPhotoIndex);
+                    // Update modal with additional data
+                    $('#lightbox-modal-caption .photo_reference').text(data.referenceID || '');
+                    $('#lightbox-modal-caption .photo_category').text(data.categories.join(', ') || '');
+                    $('#lightbox-modal-image').attr('src', data.featured_image || '');
+                } else {
+                    console.error('Error fetching lightbox data:', response.data);
+                }
+            },
+            error: function(error) {
+                console.error('Error fetching lightbox data:', error);
+            }
+        });
     }
 
     // Event handler for opening lightbox on icon click
     $('.icon-fullscreen, .icon-eye').on('click', function(e) {
-        e.preventDefault(); // Prevent default action (e.g., navigating to a new page)
-
-        // Find the index of the clicked photo
+        e.preventDefault();
         var index = $(this).closest('.gallery-photo').index();
         currentPhotoIndex = index;
         openLightbox(currentPhotoIndex);
     });
 
-    // Event handler for closing lightbox
-    $('#lightbox-modal-close').on('click', function() {
-        closeLightbox();
-    });
-
-    // Event handler for clicking outside lightbox to close it
-    $('#lightbox-modal').on('click', function(e) {
-        if ($(e.target).is('#lightbox-modal')) {
-            closeLightbox();
-        }
-    });
-
-    // Event handlers for previous and next buttons
+    // Event handler for previous and next buttons
     $('#lightbox-modal-prev').on('click', function(e) {
         e.stopPropagation();
         showPrevPhoto();
@@ -67,10 +80,28 @@ jQuery(document).ready(function($) {
         showNextPhoto();
     });
 
-    // Ensure photosData is defined and has data
-    if (typeof photosData !== 'undefined' && photosData.data.length > 0) {
-        totalPhotos = photosData.data.length;
-    } else {
-        console.error('photosData is not properly defined or is empty');
+    // Event handler for closing lightbox
+    $('#lightbox-modal-close, #lightbox-modal-overlay').on('click', function(e) {
+        closeLightbox();
+    });
+
+    // Function to close the lightbox
+    function closeLightbox() {
+        $('#lightbox-modal').removeClass('open');
+        $('body').removeClass('modal-open');
+    }
+
+    // Function to show previous photo
+    function showPrevPhoto() {
+        if (totalPhotos === 0) return;
+        currentPhotoIndex = (currentPhotoIndex - 1 + totalPhotos) % totalPhotos;
+        openLightbox(currentPhotoIndex);
+    }
+
+    // Function to show next photo
+    function showNextPhoto() {
+        if (totalPhotos === 0) return;
+        currentPhotoIndex = (currentPhotoIndex + 1) % totalPhotos;
+        openLightbox(currentPhotoIndex);
     }
 });

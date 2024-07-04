@@ -8,8 +8,21 @@
     background: rgba(0, 0, 0, 0.8);
     z-index: 1000;
 
-    &__container {
+    &.open {
+        display: block;
+    }
 
+    &__overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        z-index: 1;
+    }
+
+    &__container {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -20,6 +33,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        z-index: 2;
 
         &__header {
             justify-content: flex-end;
@@ -27,9 +41,9 @@
             width: 100%;
 
             button {
-            background-color: transparent;
-            border: none;
-            box-shadow: none;
+                background-color: transparent;
+                border: none;
+                box-shadow: none;
             }
         }
 
@@ -40,6 +54,39 @@
             align-items: center;
             max-height: 600px;
 
+            .prev-btn,
+            .next-btn {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                background: none;
+                border: none;
+                cursor: pointer;
+            }
+
+            .prev-btn {
+                left: 0;
+            }
+
+            .next-btn {
+                right: 0;
+            }
+        }
+
+        .lightbox-modal__image {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .lightbox-modal__caption {
+            margin-top: 10px;
+            text-align: center;
+            color: #fff;
+
+            .photo_reference,
+            .photo_category {
+                display: block;
+            }
         }
     }
 }

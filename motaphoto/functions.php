@@ -16,13 +16,14 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-// Enqueue theme stylesheets and scripts (if you have any other styles or scripts not related to Ajax)
+/// Enqueue theme stylesheets and scripts (if you have any other styles or scripts not related to Ajax)
 function add_motaphoto_styles() {
     wp_enqueue_style('motaphoto-styles', get_template_directory_uri() . '/style.css');
     wp_enqueue_style('motaphoto-custom-styles', get_template_directory_uri() . '/assets/css/custom.css');
 }
 add_action('wp_enqueue_scripts', 'add_motaphoto_styles');
 
+/// Enqueue theme scripts
 function add_motaphoto_scripts() {
     // Enqueue jQuery
     wp_enqueue_script('jquery');
@@ -43,6 +44,7 @@ function add_motaphoto_scripts() {
     $load_more_photos_nonce = wp_create_nonce('load_more_photos_nonce');
     $lightbox_fetch_photos_nonce = wp_create_nonce('lightbox_fetch_photos_nonce');
 
+
     // Enqueue AJAX pagination script
     wp_enqueue_script('ajax-pagination', get_template_directory_uri() . '/assets/js/ajax-pagination.js', array('jquery'), null, true);
     // Localize AJAX pagination script with nonces
@@ -61,14 +63,48 @@ function add_motaphoto_scripts() {
 
     // Enqueue custom script for lightbox
     wp_enqueue_script('motaphoto-lightbox', get_template_directory_uri() . '/assets/js/lightbox.js', array('jquery'), null, true);
-    // Localize AJAX lightbox script
-    wp_localize_script('motaphoto-lightbox', 'ajax_lightbox_data', array(
-        'ajaxurl' => admin_url('admin-ajax.php'),
-        'nonce' => $lightbox_fetch_photos_nonce, // Use fetch photos nonce here
-    ));
 
+      // Prepare an array to hold photo data
+      $photos_data = array();
+
+      // Query custom posts (photos)
+      $args = array(
+          'post_type' => 'photo', 
+          'posts_per_page' => -1, // Retrieve all posts
+      );
+  
+      $query = new WP_Query($args);
+  
+      if ($query->have_posts()) {
+          while ($query->have_posts()) {
+              $query->the_post();
+  
+              // Example: Retrieve necessary data for each photo
+              $photo_id = get_the_ID();
+              $reference_id = get_field('Reference', $photo_id);
+              $featured_image = get_the_post_thumbnail_url($photo_id, 'full');
+              $categories = wp_get_post_terms($photo_id, 'categorie', array('fields' => 'names'));
+  
+              // Prepare data for each photo
+              $photos_data[] = array(
+                  'id' => $photo_id,
+                  'reference_id' => $reference_id,
+                  'featured_image' => $featured_image,
+                  'categories' => $categories,
+              );
+          }
+          wp_reset_postdata();
+      }
+  
+      // Localize AJAX lightbox script with photosData
+      wp_localize_script('motaphoto-lightbox', 'photosData', array(
+          'ajaxurl' => admin_url('admin-ajax.php'),
+          'data' => $photos_data,
+          'nonce' => $lightbox_fetch_photos_nonce,
+      ));
 }
 add_action('wp_enqueue_scripts', 'add_motaphoto_scripts');
+
 
 /**
  * Theme setup.

@@ -50,6 +50,8 @@ function generate_photo_markup($post) {
 /**
  * Handles AJAX request for loading more photos.
  */
+add_action('wp_ajax_nopriv_load_more_photos', 'load_more_photos');
+add_action('wp_ajax_load_more_photos', 'load_more_photos');
 function load_more_photos() {
     check_ajax_referer('load_more_photos_nonce', 'security');
 
@@ -97,6 +99,8 @@ function load_more_photos() {
 /**
  * Handles AJAX request for fetching, filtering, and sorting photos.
  */
+add_action('wp_ajax_nopriv_fetch_photos', 'fetch_photos');
+add_action('wp_ajax_fetch_photos', 'fetch_photos');
 function fetch_photos() {
     check_ajax_referer('fetch_photos_nonce', 'security'); // Adjust nonce as necessary
 
@@ -144,6 +148,8 @@ function fetch_photos() {
     wp_die();
 }
 
+add_action('wp_ajax_nopriv_filter_photos', 'filter_photos');
+add_action('wp_ajax_filter_photos', 'filter_photos');
 function filter_photos() {
     check_ajax_referer('filter_photos_nonce', 'security');
 
@@ -201,15 +207,32 @@ function sort_photos() {
     }
     wp_die();
 }
-
-
-// Register AJAX actions
-add_action('wp_ajax_nopriv_load_more_photos', 'load_more_photos');
-add_action('wp_ajax_load_more_photos', 'load_more_photos');
-
-add_action('wp_ajax_nopriv_fetch_photos', 'fetch_photos');
-add_action('wp_ajax_fetch_photos', 'fetch_photos');
-add_action('wp_ajax_nopriv_filter_photos', 'filter_photos');
-add_action('wp_ajax_filter_photos', 'filter_photos');
 add_action('wp_ajax_nopriv_sort_photos', 'sort_photos');
 add_action('wp_ajax_sort_photos', 'sort_photos');
+
+// AJAX handler for fetching lightbox data
+add_action('wp_ajax_fetch_lightbox_data', 'fetch_lightbox_data_callback');
+add_action('wp_ajax_nopriv_fetch_lightbox_data', 'fetch_lightbox_data_callback'); // For non-logged-in users
+
+function fetch_lightbox_data_callback() {
+    // Verify nonce
+    $nonce = $_POST['nonce'];
+    if (!wp_verify_nonce($nonce, 'lightbox_fetch_photos_nonce')) {
+        wp_send_json_error('Invalid nonce');
+        die();
+    }
+
+    // Sanitize and retrieve photo ID
+    $photo_id = absint($_POST['photo_id']);
+
+    // Example: Retrieve additional data based on $photo_id
+    $additional_data = array(
+        'referenceID' => get_field('Reference', $photo_id),
+        'categories' => wp_get_post_terms($photo_id, 'categorie', array('fields' => 'names')),
+        'featured_image' => get_the_post_thumbnail_url($photo_id, 'full'),
+    );
+
+    // Return JSON response
+    wp_send_json_success($additional_data);
+    die();
+}
