@@ -145,6 +145,7 @@ section#related-photos{
   margin-top: 0;
   margin-bottom: 50px;
 }
+
   h3.related-photos__title {
       display: flex;
       text-align: left;
@@ -154,7 +155,14 @@ section#related-photos{
       height: 20%;
   }
 
-  
+.photo-display img {
+  min-height: 500px;
+  max-height: 800px;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  height: 100%;
+}
   
 @media screen and (max-width: 768px) {
   .entry-meta {

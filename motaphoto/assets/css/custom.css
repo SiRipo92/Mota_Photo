@@ -1441,6 +1441,15 @@ h3.related-photos__title {
   height: 20%;
 }
 
+.photo-display img {
+  min-height: 500px;
+  max-height: 800px;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  height: 100%;
+}
+
 @media screen and (max-width: 768px) {
   .entry-meta__title {
     font-size: calc(3em - 0.5vw);

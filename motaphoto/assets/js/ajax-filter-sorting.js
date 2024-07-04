@@ -1,4 +1,7 @@
 jQuery(document).ready(function($) {
+    let page = 1;
+
+    // Function to fetch filtered photos
     function fetchFilteredPhotos() {
         var selectedCategory = $('.category-menu .selected').data('value');
         var selectedFormat = $('.format-menu .selected').data('value');
@@ -20,12 +23,60 @@ jQuery(document).ready(function($) {
             },
             success: function(response) {
                 $('.gallery-photos__container').html(response); // Replace existing content with first page
+
+                // After replacing content, initialize hover and modal functions
+                initializePhotoFunctions();
             },
             error: function(xhr, status, error) {
                 console.error("Error: " + status + " " + error);
             }
         });
     }
+
+    // Function to initialize/reapply JavaScript functionalities
+    function initializePhotoFunctions() {
+        // Initialize hover effect
+        $('.gallery-photo').hover(function() {
+            $(this).find('.photo-overlay').fadeIn();
+        }, function() {
+            $(this).find('.photo-overlay').fadeOut();
+        });
+
+        // Modal lightbox functionality
+        $('.icon-fullscreen, .icon-eye').on('click', function(e) {
+            e.preventDefault();
+            var modalLightbox = $('#lightbox-modal');
+
+            // Retrieve photo details
+            var photoTitle = $(this).closest('.gallery-photo').find('.photo-title').text();
+            var photoCategory = $(this).closest('.gallery-photo').find('.photo-category').text();
+
+            // Set modal content
+            $('#lightbox-modal-caption .photo_reference').text(photoTitle);
+            $('#lightbox-modal-caption .photo_category').text(photoCategory);
+
+            // Open modal
+            modalLightbox.addClass('open');
+        });
+
+        // Close modal
+        $('#lightbox-modal-close').on('click', function(e) {
+            e.preventDefault();
+            $('#lightbox-modal').removeClass('open');
+        });
+
+        // Optional: Previous and Next functionality for lightbox
+        $('#lightbox-modal-prev').on('click', function() {
+            // Implement previous photo functionality
+        });
+
+        $('#lightbox-modal-next').on('click', function() {
+            // Implement next photo functionality
+        });
+    }
+
+    // Initial call to initialize functions on page load
+    initializePhotoFunctions();
 
     // Event handler for when an item in dropdown is clicked
     $('.dropdown-content ul li').on('click', function() {
@@ -82,6 +133,7 @@ jQuery(document).ready(function($) {
         }
     });
 
+    // Close dropdowns when clicking outside
     $(document).on('click', function(e) {
         if (!$(e.target).closest('.dropdown').length) {
             $('.dropdown-content').slideUp().removeClass('open');
@@ -90,7 +142,6 @@ jQuery(document).ready(function($) {
             $('.dropbtn').css('border-color', 'black'); // Reset border on all buttons
         }
     });
-
 
     // Hide dropdowns on page load
     $('.dropdown-content').hide();
