@@ -68,10 +68,10 @@ $photo_query = new WP_Query($args);
 if ($photo_query->have_posts()) :
     while ($photo_query->have_posts()) : $photo_query->the_post();
         ?>
-        <article class="gallery-photo">
+        <article class="gallery-photo" data-photo-id="<?php echo get_the_ID(); ?>" data-reference-id="<?php echo esc_attr(get_field('Reference')); ?>">
             <a href="<?php echo esc_url(get_permalink()); ?>" class="photo__link">
                 <div class="photo-container">
-                <?php
+                    <?php
                     if (has_post_thumbnail()) {
                         the_post_thumbnail('featured-image');
                     } else {
@@ -94,7 +94,7 @@ if ($photo_query->have_posts()) :
                             echo implode(', ', $category_names);
                         }
                         ?>
-                </span>
+                    </span>
                 </div>
             </a>
         </article>

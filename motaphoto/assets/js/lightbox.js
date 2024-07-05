@@ -3,7 +3,7 @@ jQuery(document).ready(function($) {
     var totalPhotos = 0;
 
     // Function to open lightbox modal
-    function openLightbox(index) {
+    function openLightbox(referenceId) {
         if (typeof photosData !== 'undefined' && photosData.data.length > 0) {
             totalPhotos = photosData.data.length;
         } else {
@@ -11,12 +11,13 @@ jQuery(document).ready(function($) {
             return;
         }
 
-        if (index < 0 || index >= totalPhotos) {
-            console.error('Error: Index is out of bounds');
+        var photoIndex = photosData.data.findIndex(photo => photo.reference_id == referenceId);
+        if (photoIndex < 0 || photoIndex >= totalPhotos) {
+            console.error('Error: Index is out of bounds or photo not found');
             return;
         }
 
-        var photo = photosData.data[index];
+        var photo = photosData.data[photoIndex];
         if (!photo || !photo.id) {
             console.error('Error: Photo data or ID is missing');
             return;
@@ -31,6 +32,8 @@ jQuery(document).ready(function($) {
 
         // Make AJAX call to fetch detailed photo data
         fetchLightboxData(photo.id);
+
+        currentPhotoIndex = photoIndex; // Update currentPhotoIndex after successful photo load
     }
 
     // Function to fetch lightbox data via AJAX
@@ -62,11 +65,20 @@ jQuery(document).ready(function($) {
     }
 
     // Event handler for opening lightbox on icon click
-    $('.icon-fullscreen, .icon-eye').on('click', function(e) {
-        e.preventDefault();
-        var index = $(this).closest('.gallery-photo').index();
-        currentPhotoIndex = index;
-        openLightbox(currentPhotoIndex);
+    function attachLightboxHandlers() {
+        $('.icon-fullscreen, .icon-eye').on('click', function(e) {
+            e.preventDefault();
+            var referenceId = $(this).closest('.gallery-photo').data('reference-id');
+            openLightbox(referenceId);
+        });
+    }
+
+    // Attach handlers to initial photos
+    attachLightboxHandlers();
+
+    // Attach handlers to newly loaded photos
+    $(document).ajaxComplete(function() {
+        attachLightboxHandlers();
     });
 
     // Event handler for previous and next buttons
@@ -95,13 +107,13 @@ jQuery(document).ready(function($) {
     function showPrevPhoto() {
         if (totalPhotos === 0) return;
         currentPhotoIndex = (currentPhotoIndex - 1 + totalPhotos) % totalPhotos;
-        openLightbox(currentPhotoIndex);
+        openLightbox(photosData.data[currentPhotoIndex].reference_id);
     }
 
     // Function to show next photo
     function showNextPhoto() {
         if (totalPhotos === 0) return;
         currentPhotoIndex = (currentPhotoIndex + 1) % totalPhotos;
-        openLightbox(currentPhotoIndex);
+        openLightbox(photosData.data[currentPhotoIndex].reference_id);
     }
 });

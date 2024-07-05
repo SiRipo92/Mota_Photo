@@ -12,38 +12,40 @@
  * 
  * @param WP_Post $post The post object.
  */
+
+ /**************** Function to generate photo markup for new photo displays ****************/
 function generate_photo_markup($post) {
     setup_postdata($post); ?>
-            <article class="gallery-photo">
-            <a href="<?php echo esc_url(get_permalink()); ?>" class="photo__link">
-                <div class="photo-container">
-                <?php
-                    if (has_post_thumbnail()) {
-                        the_post_thumbnail('featured-image');
-                    } else {
-                        echo '<img src="' . esc_url(get_template_directory_uri() . '/assets/images/default-thumbnail.jpg') . '" alt="Placeholder">';
+    <article class="gallery-photo" data-photo-id="<?php echo get_the_ID(); ?>" data-reference-id="<?php echo esc_attr(get_field('Reference')); ?>">
+        <a href="<?php echo esc_url(get_permalink()); ?>" class="photo__link">
+            <div class="photo-container">
+            <?php
+                if (has_post_thumbnail()) {
+                    the_post_thumbnail('featured-image');
+                } else {
+                    echo '<img src="' . esc_url(get_template_directory_uri() . '/assets/images/default-thumbnail.jpg') . '" alt="Placeholder">';
+                }
+            ?>
+            </div>
+            <div class="photo-overlay">
+                <img class="icon icon-fullscreen" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/lightbox/Icon_fullscreen.png'); ?>" alt="Fullscreen Icon">
+                <img class="icon icon-eye" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/lightbox/Icon_eye.png'); ?>" alt="Eye Icon">
+                <span class="photo-title"><?php the_title(); ?></span>
+                <span class="photo-category">
+                    <?php
+                    $categories = get_field('Categorie');
+                    if ($categories) {
+                        $category_names = array();
+                        foreach ($categories as $category) {
+                            $category_names[] = $category->name;
+                        }
+                        echo implode(', ', $category_names);
                     }
                     ?>
-                </div>
-                <div class="photo-overlay">
-                    <img class="icon icon-fullscreen" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/lightbox/Icon_fullscreen.png'); ?>" alt="Fullscreen Icon">
-                    <img class="icon icon-eye" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/lightbox/Icon_eye.png'); ?>" alt="Eye Icon">
-                    <span class="photo-title"><?php the_title(); ?></span>
-                    <span class="photo-category">
-                        <?php
-                        $categories = get_field('Categorie');
-                        if ($categories) {
-                            $category_names = array();
-                            foreach ($categories as $category) {
-                                $category_names[] = $category->name;
-                            }
-                            echo implode(', ', $category_names);
-                        }
-                        ?>
                 </span>
-                </div>
-            </a>
-        </article>
+            </div>
+        </a>
+    </article>
     <?php wp_reset_postdata();
 }
 
@@ -97,16 +99,18 @@ function load_more_photos() {
     wp_die();
 }
 /**
- * Handles AJAX request for fetching, filtering, and sorting photos.
+ * Handles AJAX requests for fetching, filtering, and sorting photos.
  */
+
+// AJAX handler for fetching photos
 add_action('wp_ajax_nopriv_fetch_photos', 'fetch_photos');
 add_action('wp_ajax_fetch_photos', 'fetch_photos');
 function fetch_photos() {
-    check_ajax_referer('fetch_photos_nonce', 'security'); // Adjust nonce as necessary
+    check_ajax_referer('fetch_photos_nonce', 'security'); 
 
     $category = isset($_POST['category']) ? sanitize_text_field($_POST['category']) : '';
-    $format = isset($_POST['format']) ? sanitize_text_field($_POST['format']) : ''; // New format parameter
-    $order = isset($_POST['sorting']) ? sanitize_text_field($_POST['sorting']) : 'DESC'; // Use 'sorting' parameter
+    $format = isset($_POST['format']) ? sanitize_text_field($_POST['format']) : ''; 
+    $order = isset($_POST['sorting']) ? sanitize_text_field($_POST['sorting']) : 'DESC'; 
 
     $args = array(
         'post_type' => 'photo',
@@ -125,13 +129,13 @@ function fetch_photos() {
 
     if (!empty($format)) {
         $args['tax_query'][] = array(
-            'taxonomy' => 'format', // Adjust 'format' to your actual taxonomy
+            'taxonomy' => 'format', 
             'field'    => 'slug',
             'terms'    => $format,
         );
     }
 
-    if (count($tax_query) > 1 ) { // More than just the relation element
+    if (count($tax_query) > 1 ) { 
         $args['tax_query'] = $tax_query;
     }
 
@@ -148,8 +152,11 @@ function fetch_photos() {
     wp_die();
 }
 
+
+// AJAX handler for filtering photos
 add_action('wp_ajax_nopriv_filter_photos', 'filter_photos');
 add_action('wp_ajax_filter_photos', 'filter_photos');
+
 function filter_photos() {
     check_ajax_referer('filter_photos_nonce', 'security');
 
@@ -181,6 +188,9 @@ function filter_photos() {
     wp_die();
 }
 
+// AJAX handler for sorting photos
+add_action('wp_ajax_nopriv_sort_photos', 'sort_photos');
+add_action('wp_ajax_sort_photos', 'sort_photos');
 function sort_photos() {
     check_ajax_referer('sort_photos_nonce', 'security');
 
@@ -207,8 +217,6 @@ function sort_photos() {
     }
     wp_die();
 }
-add_action('wp_ajax_nopriv_sort_photos', 'sort_photos');
-add_action('wp_ajax_sort_photos', 'sort_photos');
 
 // AJAX handler for fetching lightbox data
 add_action('wp_ajax_fetch_lightbox_data', 'fetch_lightbox_data_callback');
