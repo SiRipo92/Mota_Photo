@@ -633,6 +633,13 @@ div.contact-form-button p input:hover {
   border: 1.3px solid #215AFF;
 }
 
+#lightbox-modal-close {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  cursor: pointer;
+}
+
 section.photo-catalogue {
   height: auto;
   margin: 0 auto 50px;
@@ -800,36 +807,66 @@ section.photo-catalogue > .photo-filters .sorting-options {
   background: rgba(0, 0, 0, 0.8);
   z-index: 1;
 }
+
 .lightbox-modal__container {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 80%;
-  height: 80%;
+  width: 100%;
+  height: 100%;
   transform: translate(-50%, -50%);
-  overflow: contain;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   z-index: 2;
 }
-.lightbox-modal__container__header {
+
+.lightbox-modal__container-header {
+  position: relative;
+  display: flex;
   justify-content: flex-end;
-  height: 30px;
+  align-items: center;
   width: 100%;
+  height: 5%;
+  z-index: 3;
 }
-.lightbox-modal__container__header button {
+
+.lightbox-modal__container-header button {
   background-color: transparent;
   border: none;
   box-shadow: none;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
 }
-.lightbox-modal__container__display {
-  width: 100%;
-  flex-direction: row;
-  justify-content: space-between;
+
+.lightbox-modal__container-header button img {
+  display: block;
+}
+
+.lightbox-modal__display {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
   align-items: center;
-  max-height: 600px;
+  max-height: 90%;
+  max-width: 90%;
+  box-sizing: border-box;
 }
+.lightbox-modal__display .main-axis {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  align-items: center;
+  width: 98%;
+  height: 100%;
+  max-height: 900px;
+  gap: 20px;
+  position: relative;
+}
+
 .lightbox-modal__container__display .prev-btn,
 .lightbox-modal__container__display .next-btn {
   position: absolute;
@@ -838,25 +875,94 @@ section.photo-catalogue > .photo-filters .sorting-options {
   background: none;
   border: none;
   cursor: pointer;
+  z-index: 3;
+  min-width: 10%;
 }
+.lightbox-modal__container__display .prev-btn img,
+.lightbox-modal__container__display .next-btn img {
+  width: 5vw;
+  height: auto;
+  min-width: 60px;
+  min-height: 60px;
+}
+
 .lightbox-modal__container__display .prev-btn {
   left: 0;
 }
+
 .lightbox-modal__container__display .next-btn {
   right: 0;
 }
-.lightbox-modal__container .lightbox-modal__image {
-  max-width: 100%;
-  height: auto;
+
+.lightbox-modal__container .main-display {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  max-width: 98vw;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  box-sizing: border-box;
 }
-.lightbox-modal__container .lightbox-modal__caption {
-  margin-top: 10px;
+.lightbox-modal__container .main-display .lightbox-modal__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  object-fit: contain;
+  object-position: center;
+}
+
+.lightbox-modal__container .lightbox-modal__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-height: 80vh;
+  z-index: 2;
+  object-fit: contain;
+  object-position: center;
+}
+
+#lightbox-modal-caption {
+  padding-top: 20px;
   text-align: center;
   color: #fff;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-between;
+  min-width: 68%;
+  max-width: 100%;
+  position: relative;
 }
-.lightbox-modal__container .lightbox-modal__caption .photo_reference,
-.lightbox-modal__container .lightbox-modal__caption .photo_category {
+
+#lightbox-modal-caption .photo_reference,
+#lightbox-modal-caption .photo_category {
   display: block;
+}
+
+.lightbox-modal__display {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  max-height: 85vh;
+  max-width: 100%;
+  flex: 1;
+}
+
+.lightbox-modal__display .lightbox-modal__button {
+  min-width: 80px;
+}
+
+.main-image-container {
+  max-width: 80%;
+  max-height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /**
@@ -1346,6 +1452,13 @@ div.contact-form-button p input:hover {
 .dropbtn:hover,
 .dropdown-content.open + .dropbtn {
   border: 1.3px solid #215AFF;
+}
+
+#lightbox-modal-close {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  cursor: pointer;
 }
 
 #site-content {
