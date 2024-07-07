@@ -45,7 +45,7 @@ get_header();
                         <span class="arrow">&#8964;</span>
                     </button>
                     <div class="dropdown-content">
-                        <ul>
+                        <ul class="dropdown-categories">
                             <li data-value="" class="hidden-label">Catégories</li> <!-- Reset option -->
                             <?php foreach ($categories as $category): ?>
                                 <li data-value="<?php echo esc_attr($category->slug); ?>"><?php echo esc_html($category->name); ?></li>
@@ -59,7 +59,7 @@ get_header();
                         <span class="arrow">&#8964;</span>
                     </button>
                     <div class="dropdown-content">
-                        <ul>
+                        <ul class="dropdown-filters">
                             <li data-value="" class="hidden-label">Formats</li> <!-- Reset option -->
                             <?php foreach ($formats as $format): ?>
                                 <li data-value="<?php echo esc_attr($format->slug); ?>"><?php echo esc_html($format->name); ?></li>
@@ -75,7 +75,7 @@ get_header();
                         <span class="arrow">&#8964;</span>
                     </button>
                     <div class="dropdown-content">
-                        <ul>
+                        <ul class="dropdown-sorting">
                             <li data-value="" class="hidden-label">Trier par</li> <!-- Reset option -->
                             <li data-value="asc">À partir des plus anciennes</li>
                             <li data-value="desc">À partir des plus récentes</li>
