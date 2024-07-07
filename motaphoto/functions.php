@@ -17,7 +17,7 @@ if (!defined('ABSPATH')) {
 }
 
 /**
- * Include required files.
+ * Include required files from the INC directory
  * --- menus.php (for registering theme menus with Nav Walker)
  * --- custom-banner.php (for adding a custom banner to the theme)
  * --- ajax-handlers.php (for handling AJAX requests for photo gallery functionality)
