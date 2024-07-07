@@ -1,6 +1,10 @@
 files:
   include: 'sass/**/*.scss'
+options:
+  formatter: stylish
 rules:
   no-ids: 1
-  no-mergeable-selectors: 1
+  no-mergeable-selectors: 0
   property-sort-order: 0
+  no-whitespace-before: 0
+  no-whitespace-after: 0

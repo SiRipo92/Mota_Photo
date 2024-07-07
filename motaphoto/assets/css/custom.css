@@ -1,15 +1,4 @@
 /**
- * Custom Styles
- *
- * This file is for better separation of custom styles.
- * And is compiled into /assets/css/custom.css
- * Where it is enqueued as a custom stylesheet
-
- * You can add your custom styles here.
- *
- * @package Motaphoto
- */
-/**
  * Base Styles
  *
  * @package Motaphoto
@@ -1698,9 +1687,9 @@ section#hero-header .hero-banner h1 {
 }
 
 .site-main {
-  width: 100vw;
   margin: 0;
   padding: 0;
+  width: 100%;
 }
 
 body {
