@@ -1,5 +1,9 @@
 <?php 
 
+/** This custom banner shortcode allows us to recover ONLY the landscape photos from the database to be used for the custom banner
+**  It replaces the background photo of the banner on the homepage with a random landscape photo from the database each time the page is loaded
+**/
+
 function get_landscape_photos() {
     $args = array(
         'post_type' => 'photo',
@@ -39,12 +43,3 @@ function get_landscape_photos() {
 
     return $photos;
 }
-
-function motaphoto_custom_banner_scripts() {
-    wp_enqueue_script('motaphoto-custom-banner', get_template_directory_uri() . '/assets/js/custom-banner.js', array('jquery'), '1.0', true);
-    wp_localize_script('motaphoto-custom-banner', 'customBannerData', array(
-        'photos' => get_landscape_photos(),
-    ));
-}
-
-add_action('wp_enqueue_scripts', 'motaphoto_custom_banner_scripts');
