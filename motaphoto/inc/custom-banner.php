@@ -40,11 +40,11 @@ function get_landscape_photos() {
     return $photos;
 }
 
-function enqueue_custom_scripts() {
-    wp_enqueue_script('custom-banner', get_template_directory_uri() . '/assets/js/custom-banner.js', array('jquery'), '1.0', true);
-    wp_localize_script('custom-banner', 'customBannerData', array(
+function motaphoto_custom_banner_scripts() {
+    wp_enqueue_script('motaphoto-custom-banner', get_template_directory_uri() . '/assets/js/custom-banner.js', array('jquery'), '1.0', true);
+    wp_localize_script('motaphoto-custom-banner', 'customBannerData', array(
         'photos' => get_landscape_photos(),
     ));
 }
 
-add_action('wp_enqueue_scripts', 'enqueue_custom_scripts');
+add_action('wp_enqueue_scripts', 'motaphoto_custom_banner_scripts');
