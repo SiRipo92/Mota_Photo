@@ -108,9 +108,9 @@ add_action('wp_ajax_fetch_photos', 'fetch_photos');
 function fetch_photos() {
     check_ajax_referer('fetch_photos_nonce', 'security'); 
 
-    $category = isset($_POST['category']) ? sanitize_text_field($_POST['category']) : '';
-    $format = isset($_POST['format']) ? sanitize_text_field($_POST['format']) : ''; 
-    $order = isset($_POST['sorting']) ? sanitize_text_field($_POST['sorting']) : 'DESC'; 
+    $category = isset($_POST['category']) ? ($_POST['category'] === 'all' ? '' : sanitize_text_field($_POST['category'])) : '';
+    $format = isset($_POST['format']) ? ($_POST['format'] === 'all' ? '' : sanitize_text_field($_POST['format'])) : '';
+    $order = isset($_POST['sorting']) ? ($_POST['sorting'] === 'all' ? 'DESC' : sanitize_text_field($_POST['sorting'])) : 'DESC';
 
     $args = array(
         'post_type' => 'photo',

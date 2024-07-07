@@ -3,9 +3,9 @@ jQuery(document).ready(function($) {
 
     // Function to fetch filtered photos
     function fetchFilteredPhotos() {
-        var selectedCategory = $('.category-menu .selected').data('value');
-        var selectedFormat = $('.format-menu .selected').data('value');
-        var selectedSortingMethod = $('#sort_order .selected').data('value');
+        var selectedCategory = $('.category-menu .selected').hasClass('hidden-label') ? 'all' : $('.category-menu .selected').data('value');
+        var selectedFormat = $('.format-menu .selected').hasClass('hidden-label') ? 'all' : $('.format-menu .selected').data('value');
+        var selectedSortingMethod = $('#sort_order .selected').hasClass('hidden-label') ? 'all' : $('#sort_order .selected').data('value');
 
         // Reset pagination
         page = 1;
