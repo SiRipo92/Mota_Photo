@@ -1,5 +1,5 @@
 <?php
-/**
+/************************* NAV WALKER MENU
  * Starts the element output.
  *
  * @since 3.0.0

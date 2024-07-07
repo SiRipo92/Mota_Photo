@@ -16,7 +16,22 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-/// Enqueue theme stylesheets and scripts (if you have any other styles or scripts not related to Ajax)
+/**
+ * Include required files.
+ * --- menus.php (for registering theme menus with Nav Walker)
+ * --- custom-banner.php (for adding a custom banner to the theme)
+ * --- ajax-handlers.php (for handling AJAX requests for photo gallery functionality)
+ */
+require_once get_template_directory() . '/inc/menus.php';
+require_once get_template_directory() . '/inc/custom-banner.php';
+require_once get_template_directory() . '/inc/ajax-handlers.php';
+
+
+/**
+ * Enqueue theme stylesheets 
+ * ---the required CSS file for WP Custom Theme (EMPTY)
+ * --- a personalized CSS file compiled from SASS and deposited in the /assets/css/ directory.
+ */
 function add_motaphoto_styles() {
     wp_enqueue_style('motaphoto-styles', get_template_directory_uri() . '/style.css');
     wp_enqueue_style('motaphoto-custom-styles', get_template_directory_uri() . '/assets/css/custom.css');
@@ -28,10 +43,10 @@ function add_motaphoto_scripts() {
     // Enqueue jQuery
     wp_enqueue_script('jquery');
 
-    // Enqueue your custom script
+    // Enqueue Index.js script for homepage
     wp_enqueue_script('motaphoto-custom-script', get_template_directory_uri() . '/assets/js/index.js', array('jquery'), null, true);
 
-    // Localize script with dynamic data (if needed)
+    // Localize script with dynamic data for photo gallery
     if (is_singular('photo')) {
         $referenceID = get_field('Reference', get_the_ID());
         wp_add_inline_script('motaphoto-custom-script', 'const customData = ' . json_encode(array('referenceID' => $referenceID)) . ';', 'before');
@@ -39,70 +54,69 @@ function add_motaphoto_scripts() {
         wp_add_inline_script('motaphoto-custom-script', 'const customData = ' . json_encode(array('referenceID' => '')) . ';', 'before');
     }
 
+    // Enqueue your custom scripts for AJAX
+    wp_enqueue_script('motaphoto-photo-gallery-scripts', get_template_directory_uri() . '/assets/js/ajax-scripts.js', array('jquery'), null, true);
+
     // Generate nonces for AJAX requests
     $fetch_photos_nonce = wp_create_nonce('fetch_photos_nonce');
     $load_more_photos_nonce = wp_create_nonce('load_more_photos_nonce');
     $lightbox_fetch_photos_nonce = wp_create_nonce('lightbox_fetch_photos_nonce');
 
-
-    // Enqueue AJAX pagination script
-    wp_enqueue_script('ajax-pagination', get_template_directory_uri() . '/assets/js/ajax-pagination.js', array('jquery'), null, true);
-    // Localize AJAX pagination script with nonces
-    wp_localize_script('ajax-pagination', 'ajax_pagination_data', array(
+    // Localize ajax-scripts.js with nonces and data
+    wp_localize_script('motaphoto-photo-gallery-scripts', 'ajax_pagination_data', array(
         'ajaxurl' => admin_url('admin-ajax.php'),
-        'nonce' => $load_more_photos_nonce, // Use load more photos nonce here
+        'nonce' => $load_more_photos_nonce,
     ));
 
-    // Enqueue filters and sorting script
-    wp_enqueue_script('ajax-filter-sorting', get_template_directory_uri() . '/assets/js/ajax-filter-sorting.js', array('jquery'), null, true);
-    // Localize filters and sorting script with nonces
-    wp_localize_script('ajax-filter-sorting', 'ajax_filter_sorting_data', array(
+    wp_localize_script('motaphoto-photo-gallery-scripts', 'ajax_filter_sorting_data', array(
         'ajaxurl' => admin_url('admin-ajax.php'),
-        'nonce' => $fetch_photos_nonce, // Use fetch photos nonce here
+        'nonce' => $fetch_photos_nonce,
     ));
 
-    // Enqueue custom script for lightbox
-    wp_enqueue_script('motaphoto-lightbox', get_template_directory_uri() . '/assets/js/lightbox.js', array('jquery'), null, true);
+    // Prepare an array to hold photo data
+    $photos_data = array();
 
-      // Prepare an array to hold photo data
-      $photos_data = array();
+    // Query custom posts (photos)
+    $args = array(
+        'post_type' => 'photo', 
+        'posts_per_page' => -1, // Retrieve all posts
+    );
 
-      // Query custom posts (photos)
-      $args = array(
-          'post_type' => 'photo', 
-          'posts_per_page' => -1, // Retrieve all posts
-      );
-  
-      $query = new WP_Query($args);
-  
-      if ($query->have_posts()) {
-          while ($query->have_posts()) {
-              $query->the_post();
-  
-              // Example: Retrieve necessary data for each photo
-              $photo_id = get_the_ID();
-              $reference_id = get_field('Reference', $photo_id);
-              $featured_image = get_the_post_thumbnail_url($photo_id, 'full');
-              $categories = wp_get_post_terms($photo_id, 'categorie', array('fields' => 'names'));
-  
-              // Prepare data for each photo
-              $photos_data[] = array(
-                  'id' => $photo_id,
-                  'reference_id' => $reference_id,
-                  'featured_image' => $featured_image,
-                  'categories' => $categories,
-              );
-          }
-          wp_reset_postdata();
-      }
-  
-      // Localize AJAX lightbox script with photosData
-      wp_localize_script('motaphoto-lightbox', 'photosData', array(
-          'ajaxurl' => admin_url('admin-ajax.php'),
-          'data' => $photos_data,
-          'nonce' => $lightbox_fetch_photos_nonce,
-      ));
+    $query = new WP_Query($args);
+
+    if ($query->have_posts()) {
+        while ($query->have_posts()) {
+            $query->the_post();
+
+            // Retrieve the data for each photo
+            $photo_id = get_the_ID();
+            $reference_id = get_field('Reference', $photo_id);
+            $featured_image = get_the_post_thumbnail_url($photo_id, 'full');
+            $categories = wp_get_post_terms($photo_id, 'categorie', array('fields' => 'names'));
+            $formats = wp_get_post_terms($photo_id, 'format', array('fields' => 'names'));
+            $published_date = get_the_date('Y', $photo_id);
+
+            // Prepare data for each photo
+            $photos_data[] = array(
+                'id' => $photo_id,
+                'reference_id' => $reference_id,
+                'featured_image' => $featured_image,
+                'categories' => $categories,
+                'formats' => $formats,
+                'published_date' => $published_date,
+            );
+        }
+        wp_reset_postdata();
+    }
+
+    // Localize ajax-scripts.js with photosData
+    wp_localize_script('motaphoto-photo-gallery-scripts', 'photosData', array(
+        'ajaxurl' => admin_url('admin-ajax.php'),
+        'data' => $photos_data,
+        'nonce' => $lightbox_fetch_photos_nonce,
+    ));
 }
+
 add_action('wp_enqueue_scripts', 'add_motaphoto_scripts');
 
 
@@ -131,14 +145,6 @@ function motaphoto_theme_setup() {
     add_theme_support('menus');
 }
 add_action('after_setup_theme', 'motaphoto_theme_setup');
-
-/**
- * Include required files.
- */
-//require_once get_template_directory() . '/inc/ajax-handlers.php';
-require_once get_template_directory() . '/inc/menus.php';
-require_once get_template_directory() . '/inc/custom-banner.php';
-require_once get_template_directory() . '/inc/ajax-handlers.php';
 
 /**
  * Register Nav Walker.

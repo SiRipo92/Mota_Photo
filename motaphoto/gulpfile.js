@@ -6,7 +6,7 @@ const sourcemaps = require('gulp-sourcemaps');
 function lintSass() {
   return src('sass/custom.scss')
     .pipe(sassLint({
-      configFile: '.sass-lint.yml' // Ensure you have a sass-lint configuration file
+      configFile: '.sass-lint.yml' // Load sass configuration file
     }))
     .pipe(sassLint.format())
     .pipe(sassLint.failOnError());

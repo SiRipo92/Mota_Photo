@@ -13,7 +13,27 @@
  * @param WP_Post $post The post object.
  */
 
- /**************** Function to generate photo markup for new photo displays ****************/
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////            ADD ACTIONS           /////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Load more photos
+add_action('wp_ajax_nopriv_load_more_photos', 'load_more_photos');
+add_action('wp_ajax_load_more_photos', 'load_more_photos');
+
+// Fetch photos
+add_action('wp_ajax_nopriv_fetch_photos', 'fetch_photos');
+add_action('wp_ajax_fetch_photos', 'fetch_photos');
+
+// Fetch lightbox data
+add_action('wp_ajax_fetch_lightbox_data', 'fetch_lightbox_data_callback');
+add_action('wp_ajax_nopriv_fetch_lightbox_data', 'fetch_lightbox_data_callback'); 
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////  GENERATE MARKUP FOR NEW PHOTOS  /////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function generate_photo_markup($post) {
     setup_postdata($post); ?>
     <article class="gallery-photo" data-photo-id="<?php echo get_the_ID(); ?>" data-reference-id="<?php echo esc_attr(get_field('Reference')); ?>">
@@ -49,22 +69,24 @@ function generate_photo_markup($post) {
     <?php wp_reset_postdata();
 }
 
-/**
- * Handles AJAX request for loading more photos.
- */
-add_action('wp_ajax_nopriv_load_more_photos', 'load_more_photos');
-add_action('wp_ajax_load_more_photos', 'load_more_photos');
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////// ACTION FUNCTION FOR PAGINATION LOADING AND HANDLING /////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 function load_more_photos() {
     check_ajax_referer('load_more_photos_nonce', 'security');
 
     $paged = isset($_POST['page']) ? intval($_POST['page']) : 1;
     $category = isset($_POST['category']) ? sanitize_text_field($_POST['category']) : '';
     $format = isset($_POST['format']) ? sanitize_text_field($_POST['format']) : '';
+    $sorting = isset($_POST['sorting']) ? sanitize_text_field($_POST['sorting']) : 'DESC';
+    $orderby = isset($_POST['orderby']) ? sanitize_text_field($_POST['orderby']) : 'date[Y]';
 
     $args = array(
         'post_type' => 'photo',
         'posts_per_page' => 8,
         'paged' => $paged,
+        'total_posts' => -1,
     );
 
     // Apply category and format filters
@@ -78,10 +100,15 @@ function load_more_photos() {
 
     if (!empty($format)) {
         $args['tax_query'][] = array(
-            'taxonomy' => 'format', // Adjust 'format' to your actual taxonomy
+            'taxonomy' => 'format', 
             'field'    => 'slug',
             'terms'    => $format,
         );
+    }
+
+    if (!empty($sorting)) {
+        $args['order'] = $sorting;
+        $args['orderby'] = $orderby;
     }
 
     $query = new WP_Query($args);
@@ -98,13 +125,10 @@ function load_more_photos() {
 
     wp_die();
 }
-/**
- * Handles AJAX requests for fetching, filtering, and sorting photos.
- */
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////// AJAX HANDLER TO FETCH PHOTOS, FILTER & SORT THEM  ///////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// AJAX handler for fetching photos
-add_action('wp_ajax_nopriv_fetch_photos', 'fetch_photos');
-add_action('wp_ajax_fetch_photos', 'fetch_photos');
 function fetch_photos() {
     check_ajax_referer('fetch_photos_nonce', 'security'); 
 
@@ -152,75 +176,10 @@ function fetch_photos() {
     wp_die();
 }
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////// AJAX HANDLER TO FETCH REFERENCE IDS & CATEGORIES FOR LIGHTBOX  /////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// AJAX handler for filtering photos
-add_action('wp_ajax_nopriv_filter_photos', 'filter_photos');
-add_action('wp_ajax_filter_photos', 'filter_photos');
-
-function filter_photos() {
-    check_ajax_referer('filter_photos_nonce', 'security');
-
-    // Assume filtering parameters are passed similarly to fetch_photos
-    $category = isset($_POST['category']) ? sanitize_text_field($_POST['category']) : '';
-
-    $args = array(
-        'post_type' => 'photo',
-        'posts_per_page' => 8,
-        'tax_query' => array(
-            array(
-                'taxonomy' => 'category',
-                'field'    => 'slug',
-                'terms'    => $category,
-            ),
-        ),
-    );
-
-    $query = new WP_Query($args);
-
-    if ($query->have_posts()) {
-        while ($query->have_posts()) {
-            $query->the_post();
-            generate_photo_markup($query->post);
-        }
-    } else {
-        wp_send_json_error('No photos found for the selected category.');
-    }
-    wp_die();
-}
-
-// AJAX handler for sorting photos
-add_action('wp_ajax_nopriv_sort_photos', 'sort_photos');
-add_action('wp_ajax_sort_photos', 'sort_photos');
-function sort_photos() {
-    check_ajax_referer('sort_photos_nonce', 'security');
-
-    // Sorting parameters, e.g., by date or title
-    $order = isset($_POST['order']) ? sanitize_text_field($_POST['order']) : 'DESC';
-    $orderby = isset($_POST['orderby']) ? sanitize_text_field($_POST['orderby']) : 'date';
-
-    $args = array(
-        'post_type' => 'photo',
-        'posts_per_page' => 8,
-        'order' => $order,
-        'orderby' => $orderby,
-    );
-
-    $query = new WP_Query($args);
-
-    if ($query->have_posts()) {
-        while ($query->have_posts()) {
-            $query->the_post();
-            generate_photo_markup($query->post);
-        }
-    } else {
-        wp_send_json_error('No photos found with the selected sorting.');
-    }
-    wp_die();
-}
-
-// AJAX handler for fetching lightbox data
-add_action('wp_ajax_fetch_lightbox_data', 'fetch_lightbox_data_callback');
-add_action('wp_ajax_nopriv_fetch_lightbox_data', 'fetch_lightbox_data_callback'); // For non-logged-in users
 
 function fetch_lightbox_data_callback() {
     // Verify nonce
@@ -233,7 +192,7 @@ function fetch_lightbox_data_callback() {
     // Sanitize and retrieve photo ID
     $photo_id = absint($_POST['photo_id']);
 
-    // Example: Retrieve additional data based on $photo_id
+    // Retrieve additional data based on $photo_id
     $additional_data = array(
         'referenceID' => get_field('Reference', $photo_id),
         'categories' => wp_get_post_terms($photo_id, 'categorie', array('fields' => 'names')),
