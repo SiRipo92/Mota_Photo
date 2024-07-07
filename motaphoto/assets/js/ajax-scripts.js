@@ -1,3 +1,7 @@
+// JQUERY AJAX SCRIPTS FOR FILTERING AND SORTING PHOTOS, 
+// FOR LOADING MORE PHOTOS, AND 
+// MANAGING LIGHTBOX FUNCTIONALITY FOR NEW PHOTOS
+
 (jQuery)(document).ready(function($) {
 
     // Initialize page variable
@@ -72,9 +76,13 @@
     function initializePhotoFunctions() {
         // Initialize hover effect
         $('.gallery-photo').hover(function() {
-            $(this).find('.photo-overlay').fadeIn();
+            // Stop any ongoing fade-in animations and fade out any other overlays quickly
+            $('.photo-overlay').not($(this).find('.photo-overlay')).stop(true, true).fadeOut('fast');
+            // Stop any ongoing fade-in animation on the current overlay and then fade it in
+            $(this).find('.photo-overlay').stop(true, true).fadeIn('fast');
         }, function() {
-            $(this).find('.photo-overlay').fadeOut();
+            // When no longer hovering, stop any ongoing animation and fade out the overlay
+            $(this).find('.photo-overlay').stop(true, true).fadeOut('fast');
         });
 
         // Modal lightbox functionality
