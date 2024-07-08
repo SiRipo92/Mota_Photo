@@ -43,10 +43,3 @@ a {
     font-weight: 700;
   }
 }
-
-/* Responsive styling */
-@media screen and (max-width: 768px) {
-    .main-navigation #primary-menu {
-        display: none; // Hide the main menu on mobile
-    }
-}
