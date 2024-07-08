@@ -137,8 +137,6 @@ add_action('wp_enqueue_scripts', 'add_motaphoto_scripts');
 function motaphoto_theme_setup() {
     // Custom Logo
     add_theme_support('custom-logo', array(
-        'height'      => 'auto',
-        'width'       => 'auto',
         'flex-height' => true,
         'flex-width'  => true,
         'header-text' => array('site-title', 'site-description'),
