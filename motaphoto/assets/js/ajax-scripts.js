@@ -78,19 +78,33 @@
         });
     }
 
-    ///////////// EVENT HANDLERS FOR MENU FILTERS /////////////
+   ///////////// EVENT HANDLERS FOR MENU FILTERS /////////////
 
     // Hide dropdowns on page load
     $('.dropdown-content').hide();
     $('.arrow').removeClass('rotate');
 
-    // Close dropdowns when clicking outside
-    $(document).on('click', function(e) {
-        if (!$(e.target).closest('.dropdown').length) {
-            $('.dropdown-content').slideUp().removeClass('open');
-            $('.dropbtn').removeClass('active');
-            $('.arrow').removeClass('rotate');
-            $('.dropbtn').css('border-color', 'black'); // Reset border on all buttons
+    // Event handler for clicking on dropdown button
+    $('.dropbtn').on('click', function(e) {
+        var $dropdown = $(this).closest('.dropdown');
+        var $dropdownContent = $dropdown.find('.dropdown-content');
+
+        // Toggle active class on button and rotate class on arrow
+        $(this).toggleClass('active');
+        $(this).find('.arrow').toggleClass('rotate');
+
+        // Toggle dropdown content visibility and .open class
+        $dropdownContent.slideToggle().toggleClass('open');
+
+        // Check if dropdown is being opened
+        if ($dropdownContent.hasClass('open')) {
+            // Show border on active button when dropdown is open
+            $(this).css('border-color', '#215AFF');
+            console.log("Opened dropdown");
+        } else {
+            // Remove border when dropdown is closed
+            $(this).css('border-color', 'black');
+            console.log("Closed dropdown");
         }
     });
 
@@ -243,28 +257,6 @@
         }, function() {
             // When no longer hovering, stop any ongoing animation and fade out the overlay
             $(this).find('.photo-overlay').stop(true, true).fadeOut('fast');
-        });
-
-        // Event handler for clicking on dropdown button
-        $('.dropbtn').on('click', function() {
-            var $dropdown = $(this).closest('.dropdown');
-            var $dropdownContent = $dropdown.find('.dropdown-content');
-
-            // Toggle active class on button and rotate class on arrow
-            $(this).toggleClass('active');
-            $(this).find('.arrow').toggleClass('rotate');
-
-            // Toggle dropdown content visibility and .open class
-            $dropdownContent.slideToggle().toggleClass('open');
-
-            // Check if dropdown is being opened
-            if ($dropdownContent.hasClass('open')) {
-                // Show border on active button when dropdown is open
-                $(this).css('border-color', '#215AFF');
-            } else {
-                // Remove border when dropdown is closed
-                $(this).css('border-color', 'black');
-            }
         });
     }
 });
