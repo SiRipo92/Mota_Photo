@@ -6,16 +6,12 @@
 // You can add your custom styles here.
 //
 // @package Motaphoto
-
 // IMPORT BASE ELEMENTS (colors, fonts, mixins, reset, typography, and variables)
 @import 'base/base';
-
 // IMPORT COMPONENTS (buttons, nav, filter-menus)
 @import 'components/components';
-
 // IMPORT LAYOUTS (contact, footer, header, photo-gallery)
 @import 'layout/layout';
-
 // IMPORT PAGES (homepage, single-photo)
 @import 'pages/pages'; 
 

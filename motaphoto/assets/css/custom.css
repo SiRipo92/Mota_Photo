@@ -532,12 +532,6 @@ a:hover, a:focus {
   font-weight: 700;
 }
 
-/* Responsive styling */
-@media screen and (max-width: 768px) {
-  .main-navigation #primary-menu {
-    display: none;
-  }
-}
 .btn-contact,
 button.btn-cta,
 button#btn-load-more {
@@ -774,6 +768,45 @@ section.photo-catalogue > .photo-filters .sorting-options {
   transform: rotate(180deg);
 }
 
+@media screen and (max-width: 760px) {
+  section.photo-catalogue > div.photo-filters {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+  }
+  section.photo-catalogue > div.photo-filters .filters-options,
+  section.photo-catalogue > div.photo-filters .sorting-options {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    justify-content: space-around;
+  }
+  .filters-options {
+    height: 200px;
+  }
+  .filters-options .category-menu {
+    order: 0;
+  }
+  .filters-options .format-menu {
+    order: -1;
+  }
+  .sorting-options {
+    height: 100px;
+  }
+  .dropdown {
+    width: 70%;
+  }
+  .dropdown-content {
+    height: auto;
+  }
+  .dropdown-content.open {
+    display: block;
+    max-height: min-content;
+  }
+}
 .lightbox-modal {
   display: none;
   position: fixed;
@@ -978,6 +1011,7 @@ section.photo-catalogue > .photo-filters .sorting-options {
 }
 
 .logo-container {
+  min-width: 200px;
   max-width: 30%;
   height: 80px;
   display: flex;
@@ -985,23 +1019,20 @@ section.photo-catalogue > .photo-filters .sorting-options {
   align-items: center;
   margin-left: 5%;
   margin-right: -5%;
+  flex: 1;
 }
 .logo-container .custom-logo-link {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50%;
-}
-.logo-container .custom-logo-link a {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  max-width: 200px;
+  max-height: 80px;
+  height: auto;
+  width: auto;
 }
 .logo-container .custom-logo-link img {
-  max-height: 100%; /* Adjust to control the logo size, maintaining aspect ratio */
-  max-width: 100%; /* Adjust to control the logo size, maintaining aspect ratio */
+  width: 100%;
+  height: 100%;
 }
 
 /* Burger button styling */
@@ -1014,6 +1045,7 @@ section.photo-catalogue > .photo-filters .sorting-options {
   border: none;
   cursor: pointer;
   display: none; /* Hidden by default */
+  right: 40px;
 }
 .burger-btn span {
   display: block;
@@ -1034,15 +1066,13 @@ section.photo-catalogue > .photo-filters .sorting-options {
 
 /* Mobile menu styling */
 .mobile-menu {
-  display: none;
+  display: none; /* Hidden by default */
   position: fixed;
   top: 80px;
   left: 0;
   width: 100%;
   height: calc(100vh - 80px);
-  background-color: white;
   z-index: 1000;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
 }
 .mobile-menu.open {
@@ -1068,6 +1098,7 @@ section.photo-catalogue > .photo-filters .sorting-options {
   font-weight: 700;
 }
 
+/* Media queries for mobile */
 @media screen and (max-width: 768px) {
   #header-navigation {
     display: none;
@@ -1076,7 +1107,20 @@ section.photo-catalogue > .photo-filters .sorting-options {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 20px;
+    margin-right: 40px;
+    max-width: 100px;
+  }
+  .burger-btn {
+    display: flex;
+  }
+  .burger-btn.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .burger-btn.open span:nth-child(2) {
+    opacity: 0;
+  }
+  .burger-btn.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
   }
   .mobile-menu {
     position: fixed;
@@ -1349,6 +1393,35 @@ div.photo-overlay:hover div.photo-overlay {
   opacity: 1;
 }
 
+@media screen and (max-width: 760px) {
+  div.gallery-photos__container {
+    flex-direction: column;
+    gap: 10px;
+    width: 90%;
+    margin: 50px 10px;
+    height: auto;
+    padding: 0 10px;
+    gap: 30px;
+  }
+  div.gallery-photos__container article.gallery-photo {
+    width: 100%;
+    height: 600px;
+    flex: 1;
+  }
+  div.gallery-photos__container div.photo-container {
+    width: 100%;
+    height: 100%;
+    max-height: 600px;
+    overflow: hidden;
+  }
+  div.gallery-photos__container div.photo-container img.attachment-featured-image {
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+    min-height: 600px;
+  }
+}
 /**
  * Layout Styles
  *
@@ -1619,8 +1692,6 @@ section#hero-header {
   display: flex;
   justify-content: center;
   align-items: center;
-  display: flex;
-  justify-content: center;
   align-items: center;
 }
 section#hero-header .hero-banner {
@@ -1635,41 +1706,19 @@ section#hero-header .hero-banner {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-}
-section#hero-header .hero-banner h1 {
-  margin: 0;
-  padding: 0;
-  align-self: center;
-}
-
-section#hero-header {
-  width: 100vw;
-  height: 960px;
-  margin: 0;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-section#hero-header .hero-banner {
-  display: flex;
   flex: 1;
   width: 100%;
   height: 100%;
   position: relative;
   top: 0;
   left: 0;
-  z-index: 1;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 section#hero-header .hero-banner h1 {
-  flex: 1;
-  width: 100%;
   margin: 0;
   padding: 0;
+  align-self: center;
+  flex: 1;
+  width: 100%;
   display: flex;
   position: relative;
   justify-content: center;
@@ -1677,7 +1726,7 @@ section#hero-header .hero-banner h1 {
   flex-wrap: nowrap;
 }
 
-.load-more {
+div.load-more {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1686,6 +1735,23 @@ section#hero-header .hero-banner h1 {
   height: 100px;
 }
 
+@media screen and (max-width: 760px) {
+  section#hero-header {
+    height: 60vh;
+  }
+  section#hero-header .hero-banner h1 {
+    font-size: 2.8rem;
+  }
+  section.photo-catalogue {
+    width: 100%;
+    height: auto;
+    margin: 50px auto;
+    padding: auto;
+    display: flex;
+    position: relative;
+    box-sizing: border-box;
+  }
+}
 .site-main {
   margin: 0;
   padding: 0;
