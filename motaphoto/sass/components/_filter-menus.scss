@@ -115,11 +115,12 @@ section.photo-catalogue {
 
          :hover {
             background-color: #FFD6D6;
-        }
+         }
 
-        :active {
-          background-color: #FE5858;
-        }
+         :active {
+            background-color: #FE5858;
+         }
+
       }
   
       li {
@@ -160,4 +161,55 @@ section.photo-catalogue {
 
 .rotate {
    transform: rotate(180deg);
+}
+
+@media screen and (max-width: 760px){
+
+   section.photo-catalogue > div.photo-filters {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      gap: 20px;
+
+      .filters-options,
+      .sorting-options {
+         display: flex;
+         flex-direction: column;
+         width: 65%;
+         justify-content: space-around;
+      }
+   }
+   
+
+   // Change order of elements in filter menu when screen is smaller
+   .filters-options {
+      height: 200px;
+
+      .category-menu {
+         order: 0;
+      }
+
+      .format-menu {
+         order: -1;
+      }
+   }
+
+   .sorting-options {
+      height: 100px;
+   }
+
+   .dropdown {
+      width: 70%;
+
+      &-content {
+         height: auto;
+
+         &.open {
+            display: block;
+            max-height:min-content;
+         }
+      }
+   }
 }
