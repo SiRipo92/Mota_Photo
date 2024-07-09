@@ -172,6 +172,8 @@ section.photo-catalogue {
       align-items: center;
       width: 100%;
       gap: 20px;
+      margin: 0; // Remove margin
+      margin-bottom: 20px; // Add margin to bottom
 
       .filters-options,
       .sorting-options {

@@ -4,14 +4,14 @@
 body,
 a,
 button {
-    font-family: 'Space-Mono', monospace;
+    font-family: 'Space-Mono';
     font-weight: normal;
     font-style: normal;
     color: black;
     text-transform: uppercase;
 }
 
-p,
+p:not(.photo-labels),
 span > p,
 input {
     font-family: 'Poppins';
@@ -20,9 +20,14 @@ input {
     font-size: 14px;
 }
 
-h1, h2, h3, h4, h5, h6 > span {
-    font-family: 'Space-Mono', monospace;
-    font-weight: 400;
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: 'Space-Mono';
+    font-weight: bold;
+    font-style: italic;
 } 
 
 h1 {
@@ -30,7 +35,7 @@ h1 {
     color: transparent;
     -webkit-text-stroke: 3px white;
     -moz-text-stroke: 3px white;
-    font-weight: 700;
+    font-weight: bold;
     font-style: italic;
 
    
@@ -38,7 +43,7 @@ h1 {
 
 h2 {
     font-size: 24px;
-    font-weight: 400;
+    font-weight: normal;
     font-style: italic;
     @media screen and (max-width: 768px) {
         font-size: 20px ;
@@ -47,7 +52,7 @@ h2 {
 
 h3 {
     font-size: 18px;
-    font-weight: 400;
+    font-weight: normal;
     font-style: normal;
     @media screen and (max-width: 768px) {
         font-size: 18px ;
@@ -56,7 +61,7 @@ h3 {
 
 h4, h5 {
     font-size: 14px;
-    font-weight: 400;
+    font-weight: normal;
     font-style: normal;
 }
 
@@ -90,8 +95,8 @@ h4, h5 {
 }
 
 .photo-category {
-    font-family: 'Space-Mono', monospace;
-    font-weight: 400;
+    font-family: 'Space-Mono';
+    font-weight: normal;
     font-style: normal;
     font-size: 14px;
     text-transform: uppercase;
@@ -127,8 +132,8 @@ h4, h5 {
 }
 
 span.photo_category {
-    font-family: 'Space-Mono', monospace;
-    font-weight: 400;
+    font-family: 'Space-Mono';
+    font-weight: normal;
     font-style: normal;
     font-size: 14px;
     text-transform: uppercase;

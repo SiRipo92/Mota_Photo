@@ -55,9 +55,7 @@
     }
     &__details {
       p {
-        font-weight: 400;
-        font-family: 'Poppins';
-        font-size: calc(14px + 0.5vw);
+        font-size: 14px;
       }
     }
   }
@@ -79,7 +77,8 @@ div.photo-contact-wrapper {
       justify-content: space-between;
       height: 100%;
       align-items: center;
-  
+
+        // Switch order of articles and restyle
         article.contact-wrapper {
         width: calc(50% - 10px);
         display: flex;
@@ -164,30 +163,160 @@ section#related-photos{
   height: 100%;
 }
   
+// Media Queries
 @media screen and (max-width: 768px) {
-  .entry-meta {
-    &__title {
-      font-size: calc(3em - 0.5vw);
+  section#photo-page {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    div.photo-display-wrapper {
+      flex-direction: column;
+      justify-content: center;
+      box-sizing: border-box;
+      width: 100vw !important;
+      display: flex; 
+
+      article:nth-child(1) {
+        // Change order of article to 2nd position
+        width: 100%;
+        order: 1;
+        max-width: 100%;
+        min-width: 100%;
+
+          div.entry-meta {
+            position: relative;
+            top: 0;
+            display: flex;
+            justify-content: flex-start;
+            width: 100%;
+            margin: 0;
+          }
+
+          h2.entry-meta__title {
+            min-width: 60%;
+            display: flex;
+            justify-content: flex-start;
+            margin: 0;
+            margin-left: 10%;
+            flex: 1;
+            font-size: 3.2em;
+            letter-spacing: 5px;
+            margin-bottom: 10px;
+          }
+
+          div.entry-meta__details {
+              min-width: 80%;
+              margin-left: 10%;
+              font-size: 12px;
+              margin-bottom: 30px;
+
+
+              .photo-labels{
+                line-height: 20px;
+                letter-spacing: .2em;
+                width: 100%;
+              }
+            }
+          }
+
+      article:nth-child(2).photo-display {
+        // Change order of article to 1st position
+        width: 100%;
+        order: -1;
+        display: flex;
+        justify-content: center;
+        align-items: center;  
+        margin-top: 20px;
+        max-width: 100%;
+
+          figure {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 80%;
+          }
+
+            img {
+              width: 100%;
+              height: 100%;
+              object-position: center;
+              object-fit: cover;
+            }
+          }
+        }
+
+        div.photo-contact-wrapper{
+          height: 200px;
+          .sub-photo-container{
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            article.contact-wrapper {
+              width: 100%;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              align-items: center;
+              margin: 40px 0;
+              gap: 20px;
+
+              div.cta-text {
+                width: 100%;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                line-height: 21px;
+                letter-spacing: .5px;
+                padding-left: 20%;
+              }
+
+              > button.btn-cta {
+                width: 80%;
+                margin: 0;
+                align-self: center;
+                justify-content: center;
+                padding-left: 10%;
+                padding-right: 10%;
+                margin-bottom: 30px;
+              }
+            }
+
+            > article.preview-wrapper {
+              display: none;
+            }
+          }
+        }
     }
 
-    &__details {
-      p {
-        font-size: calc(1.2em - 0.5vw);
+    section#related-photos {
+      width: 100%;
+      padding: 0;
+      margin: 0 0 50px 0;
+
+      div.gallery-photos__container{
+        padding-left: 10%;
+        padding-right: 10%;
+        width: 80%;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-self: center;
+        gap: 20px;
+
+        h3.related-photos__title {
+          width: 100%;
+          justify-content: center;
+          margin: 0;
+          padding: 40px 0;
+          align-self: center;
+          line-height: 30px;
+          font-size: 24px;
+          letter-spacing: 2px;
+        }
       }
     }
-  }
-
-  .contact-wrapper {
-    p {
-      font-size: calc(1em - 0.5vw);
-    }
-  }
-
-  .btn-cta {
-    font-size: calc(1em - 0.5vw);
-  }
-
-  .related-photo {
-    width: 100%;
-  }
 }

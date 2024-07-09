@@ -37,7 +37,8 @@ $formats = get_terms(array(
 
 <main id="site-content" role="main">
     <section id="hero-header">
-        <div class="hero-banner">
+        <div class="hero-banner"> 
+            <?php // Custom banner code is in 'inc/custom-banner.php' ?>
             <h1>Photographe Event</h1>
         </div>
     </section>

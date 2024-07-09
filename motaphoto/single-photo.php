@@ -24,7 +24,7 @@
                     <!-- Display custom fields, excluding 'Photo Image' -->
                     <?php foreach ($fields as $label => $value) : ?>
                         <?php if ($value && $label != 'Photo Image') : ?>
-                            <p><?php echo $label; ?>: 
+                            <p class="photo-labels"><?php echo $label; ?>: 
                                 <?php 
                                 if (is_array($value)) {
                                     foreach ($value as $item) {
@@ -99,16 +99,16 @@
                     <div class="navigation-row">
                         <!-- Left Arrow for Previous Post -->
                         <?php if ($prev_post): ?>
-                        <a href="<?php echo get_permalink($prev_post->ID); ?>" class="prev-post" data-thumbnail="<?php echo get_the_post_thumbnail_url($prev_post->ID); ?>">
-                            <img class="left-arrow" src="<?php echo get_template_directory_uri() . "/assets/images/nav/left-arrow.png"; ?>">
-                        </a>
+                            <a href="<?php echo get_permalink($prev_post->ID); ?>" class="prev-post" data-thumbnail="<?php echo get_the_post_thumbnail_url($prev_post->ID); ?>">
+                                <img class="left-arrow" src="<?php echo get_template_directory_uri() . "/assets/images/nav/left-arrow.png"; ?>">
+                            </a>
                         <?php endif; ?>
 
                         <!-- Right Arrow for Next Post -->
                         <?php if ($next_post): ?>
-                        <a href="<?php echo get_permalink($next_post->ID); ?>" class="next-post" data-thumbnail="<?php echo get_the_post_thumbnail_url($next_post->ID); ?>">
-                            <img class="right-arrow" src="<?php echo get_template_directory_uri() . "/assets/images/nav/right-arrow.png"; ?>">
-                        </a>
+                            <a href="<?php echo get_permalink($next_post->ID); ?>" class="next-post" data-thumbnail="<?php echo get_the_post_thumbnail_url($next_post->ID); ?>">
+                                <img class="right-arrow" src="<?php echo get_template_directory_uri() . "/assets/images/nav/right-arrow.png"; ?>">
+                            </a>
                         <?php endif; ?>
                     </div>
                 </div>
@@ -116,13 +116,10 @@
         </div>
     </div>
 </section>
-
-
-
 <!-- Related photos section -->
 <section id="related-photos">
     <div class="gallery-photos__container">
-    <h3 class="related-photos__title">Vous aimerez aussi</h3>
+        <h3 class="related-photos__title">Vous aimerez aussi</h3>
         <?php get_template_part('template-parts/photo-gallery'); ?>
     </div>
 </section>

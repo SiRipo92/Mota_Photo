@@ -16,6 +16,7 @@
         margin: 5% auto;
         background: #fff;
         border: 5px solid #000;
+        box-sizing: border-box;
 
         .modal-contact_btn-close {
             display: flex;
@@ -84,6 +85,7 @@
     .wpcf7 {
         display: flex;
         justify-content: center;
+        flex: 1;
         form.wpcf7-form {
             max-width: 100%;
             align-items: left;
@@ -112,6 +114,75 @@
 
             }
 
+        }
+    }
+}
+
+// Media Queries
+@media screen and (max-width: 768px) {
+        #contact-modal {
+            padding: 20px 0;
+            margin: 0;
+            width: 100%;
+            
+            .modal-container {
+                align-items: center;
+                width: 90%;
+                max-width: 80%;
+                max-height: 100vh;
+                margin: 5% auto;
+
+                .modal-contact_btn-close {
+                    max-height: 5%;
+                }
+
+            > .modal-content {
+                max-height: 95%;
+
+                .modal-content__header {
+                    max-height: calc(95vh - 5%);
+
+                    #contact-banner {
+                        min-height: 100%;
+                        flex: 1;
+                    }
+                }
+
+                .modal-content__form {
+                    height: 75%;
+                    flex: 1;
+                }
+            }
+        }
+
+        .wpcf7 {
+            height: 100%;
+            min-height: 60vh;
+            form.wpcf7-form {
+                min-height: 100%;
+                div.contact-form-entries {
+                    label {
+                        font-size: 12px;
+                        margin: 10px 0;
+                        line-height: 15px;
+                    }
+                    input.wpcf7-form-control {
+                        font-size: 12px;
+                        height: 30px;
+                        line-height: 15px;
+                    }
+                    textarea {
+                        font-size: 12px;
+                        height: 100px;
+                    }
+                }
+
+                div.contact-form-button {
+                    max-height: 50px;
+                    margin: 0;
+                    height: auto;
+                }
+            }
         }
     }
 }
