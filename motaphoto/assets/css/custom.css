@@ -544,7 +544,6 @@ button#btn-load-more {
   height: 50px;
   background-color: #D8D8D8;
   border: none;
-  transition: 0.4s ease scale(0);
   text-transform: none;
 }
 .btn-contact a,
@@ -571,10 +570,6 @@ button#btn-load-more:hover a {
   flex: 1;
   display: flex;
   justify-content: center;
-  transition: 0.4s ease scale(0);
-}
-.navigation-row a:hover {
-  transform: scale(1.2);
 }
 
 div.contact-form-button {
@@ -595,13 +590,11 @@ div.contact-form-button p input {
   font-size: 12px;
   font-weight: 400;
   border-radius: 5px;
-  transition: 0.4s ease scale(0);
 }
 div.contact-form-button p input:hover {
   font-weight: 700;
   background-color: black;
   color: white;
-  transform: scale(1.2);
 }
 
 .dropbtn {
@@ -1301,7 +1294,7 @@ section.photo-catalogue > .photo-filters .sorting-options {
 }
 #contact-modal .wpcf7 form.wpcf7-form {
   max-width: 100%;
-  align-items: left;
+  align-items: flex-start;
 }
 #contact-modal .wpcf7 form.wpcf7-form div.contact-form-entries {
   text-align: left;
@@ -1506,7 +1499,6 @@ button#btn-load-more {
   height: 50px;
   background-color: #D8D8D8;
   border: none;
-  transition: 0.4s ease scale(0);
   text-transform: none;
 }
 .btn-contact a,
@@ -1533,10 +1525,6 @@ button#btn-load-more:hover a {
   flex: 1;
   display: flex;
   justify-content: center;
-  transition: 0.4s ease scale(0);
-}
-.navigation-row a:hover {
-  transform: scale(1.2);
 }
 
 div.contact-form-button {
@@ -1557,13 +1545,11 @@ div.contact-form-button p input {
   font-size: 12px;
   font-weight: 400;
   border-radius: 5px;
-  transition: 0.4s ease scale(0);
 }
 div.contact-form-button p input:hover {
   font-weight: 700;
   background-color: black;
   color: white;
-  transform: scale(1.2);
 }
 
 .dropbtn {
@@ -1932,7 +1918,6 @@ div.load-more {
     width: 100%;
     height: auto;
     margin: 50px auto;
-    padding: auto;
     display: flex;
     position: relative;
     box-sizing: border-box;

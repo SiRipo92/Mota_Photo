@@ -9,7 +9,6 @@ button#btn-load-more {
     height: 50px;
     background-color: map-get($colors, "btn-contact-bg-color");
     border: none;
-    transition: 0.4s ease scale(0);
     text-transform: none;
 
     a {
@@ -34,10 +33,6 @@ button#btn-load-more {
         flex: 1;
         display: flex;
         justify-content: center;
-        transition: 0.4s ease scale(0);
-        &:hover {
-            transform: scale(1.2);
-        }
     }
 }
 
@@ -62,12 +57,10 @@ div.contact-form-button {
             font-size: 12px;
             font-weight: 400;
             border-radius: 5px;
-            transition: 0.4s ease scale(0);
             &:hover {
                 font-weight: 700;
                 background-color: black;
                 color: white;
-                transform: scale(1.2);
 
             }
         }
