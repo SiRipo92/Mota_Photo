@@ -1,4 +1,15 @@
-<?php get_header(); ?>
+<?php 
+/**
+ * The template for displaying a single photo custom post type for the custom theme MotaPhoto.
+ *
+ *
+ * @package WordPress
+ * @subpackage MotaPhoto
+ * @since 1.0.0
+ */
+
+
+get_header(); ?>
 
 <main id="site-content" role="main">
 <section id="photo-page">
@@ -97,6 +108,35 @@
 
                     <!-- Navigation Arrows Row -->
                     <div class="navigation-row">
+                         <?php
+                            $args = array(
+                                'post_type' => 'photo', // Change to your post type
+                                'posts_per_page' => -1, // Get all posts
+                                'order' => 'DESC', // 
+                            );
+
+                            $posts = get_posts($args);
+                            $current_post_key = array_search(get_the_ID(), wp_list_pluck($posts, 'ID'));
+
+                            // Determine previous and next post
+                            $prev_post_key = $current_post_key - 1;
+                            $next_post_key = $current_post_key + 1;
+
+                            // If current post is the first, set $prev_post to the last post
+                            if ($prev_post_key < 0) {
+                                $prev_post = $posts[count($posts) - 1];
+                            } else {
+                                $prev_post = $posts[$prev_post_key];
+                            }
+
+                            // If current post is the last, set $next_post to the first post
+                            if ($next_post_key >= count($posts)) {
+                                $next_post = $posts[0];
+                            } else {
+                                $next_post = $posts[$next_post_key];
+                            }
+                        ?>
+
                         <!-- Left Arrow for Previous Post -->
                         <?php if ($prev_post): ?>
                             <a href="<?php echo get_permalink($prev_post->ID); ?>" class="prev-post" data-thumbnail="<?php echo get_the_post_thumbnail_url($prev_post->ID); ?>">
