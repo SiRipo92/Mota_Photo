@@ -1,4 +1,30 @@
-(jQuery)(document).ready(function($) {
+/*
+ * This script initializes various functionalities for Mota Photo's photo gallery webpage,
+ * including photo loading, filtering, and lightbox features. The main blocks
+ * of code are divided as follows:
+ * 
+ * - Global Variable Initialization
+ * - Initial Function Call
+ * - AJAX Photo Loading
+ *      - Button Click Handler to Load More Photos
+ *      - Function to Load More Photos via AJAX
+ * - AJAX Photo Filtering
+ *      - Function to Fetch Filtered Photos and Reset Filters
+ * - Event Handlers for Menu Filters
+ *      - Hide Dropdowns on Page Load
+ *      - Event Handler for Clicking on Dropdown Button
+ *      - Event Handler for Clicking an Item in Dropdown
+ * - Lightbox Functions
+ *      - Function to Open Lightbox Modal
+ *      - Function to Fetch Lightbox Data via AJAX
+ *      - Functions to Show Previous/Next Photos
+ *      - Event Handlers for Lightbox Actions
+ * - Reinitialization of JavaScript Functionalities
+ *     - Function to Initialize/Reapply JavaScript Functionalities (Lightbox) on newly loaded photos
+ * 
+ */ 
+jQuery.noConflict();
+jQuery(document).ready(function($) {
     // Set Global Variables
     let currentPhotoIndex = 0;
     let totalPhotos = 0;
