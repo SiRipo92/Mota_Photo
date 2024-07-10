@@ -1,7 +1,10 @@
 <?php 
 
-/** This custom banner shortcode allows us to recover ONLY the landscape photos from the database to be used for the custom banner
-**  It replaces the background photo of the banner on the homepage with a random landscape photo from the database each time the page is loaded
+/** Custom Banner PHP Snippet *
+ * 
+ * This custom banner shortcode allows us to recover ONLY the landscape photos from the database to be used for the custom banner
+ * It replaces the background photo of the banner on the homepage with a random landscape photo from the database each time the page is loaded
+ * 
 **/
 
 function get_landscape_photos() {
