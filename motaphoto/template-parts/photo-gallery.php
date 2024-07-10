@@ -87,11 +87,8 @@ if ($photo_query->have_posts()) :
                         <?php
                         $categories = get_field('Categorie');
                         if ($categories) {
-                            $category_names = array();
-                            foreach ($categories as $category) {
-                                $category_names[] = $category->name;
-                            }
-                            echo implode(', ', $category_names);
+                            $category_name = $categories[0]->name;
+                            echo $category_name;
                         }
                         ?>
                     </span>
