@@ -1,7 +1,4 @@
-/* Navigation styling for the header and footer navbars and menus */
-
-
-/* Navigation styling */
+// Navigation styling
 .main-navigation {
     flex-grow: 1;
     display: flex;
@@ -25,21 +22,4 @@
             }
         }
     }
-}
-
-ul,
-li,
-a {
-  list-style: none;
-  text-decoration: none;
-  font-family: 'Space-Mono', monospace;
-  padding: 0;
-  margin: 0;
-}
-
-a {
-  &:hover,
-  &:focus {
-    font-weight: 700;
-  }
 }

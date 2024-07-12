@@ -22,6 +22,9 @@
                     'walker' => new Motaphoto_Nav_Walker()
                 )); ?>
             </nav>
+            <span class="copyright">
+                <p class="copyright-mention">Tous Droits Résérvés</p>
+            </span>
             <?php get_template_part('template-parts/modal-contact'); ?>
 
             <!-- Lightbox Modal -->

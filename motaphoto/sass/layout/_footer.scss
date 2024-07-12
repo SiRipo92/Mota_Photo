@@ -1,47 +1,74 @@
-/* Footer menu styling */
-.footer-nav {
-    border-top: 1px solid black;
+// Footer menu styling 
+footer {
     width: 100%;
+    border-top: 1px solid black;
     display: flex;
     justify-content: center;
     height: 80px;
+    align-items: center;
 
-    ul#footer-menu {
-        display: flex;
-        flex-shrink: 1;
-        margin: auto;
+    .footer-nav{
+        ul#footer-menu {
+            display: flex;
+            flex-shrink: 1;
+            margin: auto;
 
-        li {
-            margin: 0 15px;
-            min-width: fit-content;
+            li {
+                margin: 0 15px;
+                min-width: fit-content;
 
-            a {
-                text-decoration: none;
-                color: black;
-                padding: 10px;
-                display: block;
+                a {
+                    text-decoration: none;
+                    color: black;
+                    padding: 10px;
+                    display: block;
 
-                &:hover,
-                &:focus {
-                    font-weight: 700;
+                    &:hover,
+                    &:focus {
+                        font-weight: 700;
+                    }
                 }
             }
         }
     }
+/* Removed 'Tous Droits Réservés' as a link/page and incorporated the text
+* directly into the footer and added typography changes to /base/_typography.scss */
+    .copyright {
+        display: flex;
+        justify-content: center;
+        margin: 0 15px;
+    }
 }
 
-/* Responsive styling */
+// Responsive styling
 @media screen and (max-width: 768px) {
-    .footer-nav {
+
+    footer {
+        flex-direction: column;
         height: auto;
-        border-top: 1px solid black;
-        ul#footer-menu {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            max-height: 100px;
-            margin-top: 30px;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        .footer-nav {
+            height: auto;
+                ul#footer-menu {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    max-height: 100px;
+                    margin-top: 30px;
+                }
+        }
+        .copyright {
+            margin: 0;
+            padding: 0;
+
+            p {
+                font-size: 12px;
+                padding: 0;
+                margin: 0;
+            }
         }
     }
 }
