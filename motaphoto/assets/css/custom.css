@@ -1630,13 +1630,13 @@ div.photo-contact-wrapper {
   margin-top: 20px;
   flex-direction: row;
   height: 118px;
-  width: 100%;
+  width: calc(80% - 20px);
   align-items: center;
   justify-content: center;
 }
 div.photo-contact-wrapper .sub-photo-container {
   border-bottom: 2px solid #000;
-  width: calc(80% - 20px);
+  width: calc(80% - 10px);
   display: flex;
   gap: 20px;
   justify-content: space-between;
@@ -1661,7 +1661,6 @@ div.photo-contact-wrapper .sub-photo-container article.preview-wrapper {
 
 .content-block {
   position: relative;
-  margin-right: 5%;
   display: flex;
   width: 81px;
   height: 90%;
@@ -1708,10 +1707,17 @@ h3.related-photos__title {
   height: 20%;
 }
 
+.photo-display {
+  display: flex;
+  justify-content: flex-start;
+  align-self: first baseline;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
 .photo-display img {
   min-height: 500px;
   max-height: 800px;
-  width: 100%;
   object-fit: cover;
   object-position: center;
   height: 100%;

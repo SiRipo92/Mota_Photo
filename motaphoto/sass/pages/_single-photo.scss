@@ -35,7 +35,6 @@
   }
   
   
-  
   // Entry Meta Styling
   .entry-meta {
     text-align: left;
@@ -65,13 +64,13 @@ div.photo-contact-wrapper {
     margin-top: 20px;
     flex-direction: row;
     height: 118px;
-    width: 100%;
+    width: calc(80% - 20px);
     align-items: center;
     justify-content: center;
   
     .sub-photo-container {
       border-bottom: 2px solid $border-color;
-      width: calc(80% - 20px); // Adjusted width to match the combined width of two divs in the first row
+      width: calc(80% - 10px); // Adjusted width to match the combined width of two divs in the first row
       display: flex;
       gap: 20px;
       justify-content: space-between;
@@ -102,7 +101,6 @@ div.photo-contact-wrapper {
 
   .content-block {
     position: relative;
-    margin-right: 5%;
     display: flex;
     width: 81px;
     height: 90%;
@@ -154,13 +152,21 @@ section#related-photos{
       height: 20%;
   }
 
-.photo-display img {
-  min-height: 500px;
-  max-height: 800px;
+.photo-display{
+  display: flex;
+  justify-content: flex-start;
+  align-self: first baseline;
   width: 100%;
-  object-fit: cover;
-  object-position: center;
-  height: 100%;
+  margin: 0;
+  padding: 0;
+
+    img {
+      min-height: 500px;
+      max-height: 800px;
+      object-fit: cover;
+      object-position: center;
+      height: 100%;
+    }
 }
   
 // Media Queries
