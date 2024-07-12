@@ -1,6 +1,7 @@
 @import 'colors';
 @import 'fonts';
-// Import the colors
+
+// Main styles
 body,
 a,
 button {
@@ -18,6 +19,23 @@ input {
     font-weight: 300;
     font-style: normal;
     font-size: 14px;
+}
+
+ul,
+li,
+a {
+  list-style: none;
+  text-decoration: none;
+  font-family: 'Space-Mono';
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  &:hover,
+  &:focus {
+    font-weight: 700;
+  }
 }
 
 h1,
@@ -105,6 +123,41 @@ h4, h5 {
 
 }
 
+span.photo_category {
+    font-family: 'Space-Mono';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: white;
+    line-height: 21px;
+}
+
+span.photo_reference {
+    font-family: 'Poppins';
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    text-transform: uppercase;
+    color: white;
+}
+
+span.copyright{
+    p.copyright-mention {
+        font-family: 'Space-Mono';
+            font-size: 16px;
+            text-transform: uppercase;
+            color: black;
+            line-height: 21px;
+            padding: 10px;
+
+            &:hover,
+            &:focus {
+                font-weight: 700;
+            }
+    }
+}
+
 @media (max-width: 1200px) {
     h1 {
         font-size: calc(66px + 2vw);
@@ -131,21 +184,3 @@ h4, h5 {
     }
 }
 
-span.photo_category {
-    font-family: 'Space-Mono';
-    font-weight: normal;
-    font-style: normal;
-    font-size: 14px;
-    text-transform: uppercase;
-    color: white;
-    line-height: 21px;
-}
-
-span.photo_reference {
-    font-family: 'Poppins';
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 21px;
-    text-transform: uppercase;
-    color: white;
-}
