@@ -126,11 +126,9 @@ jQuery(document).ready(function($) {
         if ($dropdownContent.hasClass('open')) {
             // Show border on active button when dropdown is open
             $(this).css('border-color', '#215AFF');
-            console.log("Opened dropdown");
         } else {
             // Remove border when dropdown is closed
             $(this).css('border-color', 'black');
-            console.log("Closed dropdown");
         }
     });
 
@@ -246,7 +244,7 @@ jQuery(document).ready(function($) {
     }
 
     // Event handler for opening lightbox on icon click
-    $('.icon-fullscreen, .icon-eye').on('click', function(e) {
+    $('.icon-fullscreen').on('click', function(e) {
         e.preventDefault();
         var referenceId = $(this).closest('.gallery-photo').data('reference-id');
         openLightbox(referenceId);
