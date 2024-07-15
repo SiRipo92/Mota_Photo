@@ -102,6 +102,18 @@
                 }
             }
 
+            &.sent {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+
+                .textarea {
+                    max-width: 362.734px;
+                }
+            }
+
             div.contact-form-entries {
                 text-align: left;
                 
@@ -207,6 +219,12 @@
                     max-height: 50px;
                     margin: 0;
                     height: auto;
+                }
+            }
+
+            &.sent {
+                .textarea {
+                    max-width: 362.734px;
                 }
             }
         }

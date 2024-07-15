@@ -50,7 +50,7 @@ html {
 }
 @font-face {
   font-family: "Poppins";
-  src: url("../../assets/fonts/Poppins/poppins-bold-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-bold-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-bold-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-bold-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-bold-mota-photo-font.svg#poppinsbold") format("svg");
+  src: url("../../assets/fonts/Poppins/poppins-bold-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-bold-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-bold-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-bold-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-bold-mota-photo-font.svg") format("svg");
   font-weight: 700;
   font-style: normal;
 }
@@ -349,7 +349,7 @@ span.copyright p.copyright-mention:hover, span.copyright p.copyright-mention:foc
 }
 @font-face {
   font-family: "Poppins";
-  src: url("../../assets/fonts/Poppins/poppins-bold-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-bold-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-bold-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-bold-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-bold-mota-photo-font.svg#poppinsbold") format("svg");
+  src: url("../../assets/fonts/Poppins/poppins-bold-mota-photo-font.eot") format("eot"), url("../../assets/fonts/Poppins/poppins-bold-mota-photo-font.woff2") format("woff2"), url("../../assets/fonts/Poppins/poppins-bold-mota-photo-font.woff") format("woff"), url("../../assets/fonts/Poppins/poppins-bold-mota-photo-font.ttf") format("truetype"), url("../../assets/fonts/Poppins/poppins-bold-mota-photo-font.svg") format("svg");
   font-weight: 700;
   font-style: normal;
 }
@@ -1339,6 +1339,16 @@ footer .copyright {
   left: 20%;
   top: 0;
 }
+#contact-modal .wpcf7 form.wpcf7-form.sent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+#contact-modal .wpcf7 form.wpcf7-form.sent .textarea {
+  max-width: 362.734px;
+}
 #contact-modal .wpcf7 form.wpcf7-form div.contact-form-entries {
   text-align: left;
 }
@@ -1430,6 +1440,9 @@ footer .copyright {
     max-height: 50px;
     margin: 0;
     height: auto;
+  }
+  #contact-modal .wpcf7.sent .textarea {
+    max-width: 362.734px;
   }
 }
 div.gallery-photos__container {
