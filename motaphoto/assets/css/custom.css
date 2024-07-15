@@ -1328,6 +1328,17 @@ footer .copyright {
   max-width: 100%;
   align-items: flex-start;
 }
+#contact-modal .wpcf7 form.wpcf7-form.invalid {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#contact-modal .wpcf7 form.wpcf7-form.invalid .contact-form-entries {
+  position: relative;
+  left: 20%;
+  top: 0;
+}
 #contact-modal .wpcf7 form.wpcf7-form div.contact-form-entries {
   text-align: left;
 }
@@ -1343,12 +1354,25 @@ footer .copyright {
   font-size: 14px;
   height: 40px;
   width: 100%;
+  min-width: 100px;
+  max-width: 362.734px;
   margin-top: 10px;
+}
+#contact-modal .wpcf7 form.wpcf7-form div.contact-form-entries input.wpcf7-form-control.wpcf7-not-valid {
+  max-width: 362.734px;
 }
 #contact-modal .wpcf7 form.wpcf7-form div.contact-form-entries textarea {
   width: 100%;
   height: 200px;
   font-size: 14px;
+}
+#contact-modal .wpcf7 form.wpcf7-form div.contact-form-entries textarea.wpcf7-not-valid {
+  max-width: 362.734px;
+}
+#contact-modal .wpcf7 form.wpcf7-form div.contact-form-entries span.wpcf7-not-valid-tip {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 @media screen and (max-width: 768px) {
