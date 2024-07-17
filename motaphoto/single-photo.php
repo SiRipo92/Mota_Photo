@@ -75,9 +75,7 @@ get_header(); ?>
                     <div class="thumbnail-row">
                         <img class="dynamic-thumbnail">
                     </div>
-
                     <!------- Loop through posts when clicking arrows ------->
-
                     <?php
                     // Attempt to get the previous and next posts
                     $prev_post = get_adjacent_post(false, '', true);
@@ -105,7 +103,6 @@ get_header(); ?>
                         $next_post = $first_post ? $first_post[0] : null;
                     }
                     ?>
-
                     <!-- Navigation Arrows Row -->
                     <div class="navigation-row">
                          <?php
