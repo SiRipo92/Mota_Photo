@@ -44,6 +44,8 @@ add_action('wp_enqueue_scripts', 'add_motaphoto_styles');
  * Enqueue theme scripts
  * --- jQuery
  * --- Index.js script for homepage
+ * --- Inline script to recover Post's ID and ReferenceID for use in contact modal on single-photo.php pages
+ * --- Custom banner script with localized data
  * --- AJAX scripts for fetching and loading photos
  * --- Localize script with dynamic data for photo gallery
  */
@@ -59,6 +61,12 @@ function add_motaphoto_scripts() {
     } else {
         wp_add_inline_script('motaphoto-custom-script', 'const customData = ' . json_encode(array('referenceID' => '')) . ';', 'before');
     }
+
+    // Enqueue custom banner script with localized data
+    wp_enqueue_script('motaphoto-custom-banner', get_template_directory_uri() . '/assets/js/index.js', array('jquery'), '1.0', true);
+    wp_localize_script('motaphoto-custom-banner', 'customBannerData', array(
+        'photos' => get_landscape_photos(),
+    ));
 
     // Enqueue your custom scripts for AJAX
     wp_enqueue_script('motaphoto-ajax-scripts', get_template_directory_uri() . '/assets/js/ajax-scripts.js', array('jquery'), null, true);
@@ -130,8 +138,6 @@ add_action('wp_enqueue_scripts', 'add_motaphoto_scripts');
  * Theme setup.
  * --- Custom Logo
  * --- Custom Theme Menus
- * --- Nav Walker
- * -- Custom Banner Header
  */
 
 function motaphoto_theme_setup() {
@@ -153,21 +159,3 @@ function motaphoto_theme_setup() {
     add_theme_support('menus');
 }
 add_action('after_setup_theme', 'motaphoto_theme_setup');
-
-
-function register_navwalker() {
-    if (!file_exists(get_template_directory() . '/inc/menus.php')) {
-        return;
-    }
-    require_once get_template_directory() . '/inc/menus.php';
-}
-add_action('after_setup_theme', 'register_navwalker');
-
-function motaphoto_custom_banner_scripts() {
-    wp_enqueue_script('motaphoto-custom-banner', get_template_directory_uri() . '/assets/js/index.js', array('jquery'), '1.0', true);
-    wp_localize_script('motaphoto-custom-banner', 'customBannerData', array(
-        'photos' => get_landscape_photos(),
-    ));
-}
-
-add_action('wp_enqueue_scripts', 'motaphoto_custom_banner_scripts');
