@@ -41,10 +41,11 @@ button#btn-load-more {
 div.contact-form-button {
     display: flex;
     justify-content: center;
-    margin: 10px 0;
+    margin: 3% 0;
     width: 100%;
-    
+    height: 80px;
     p {
+        max-height: 50px;
         input {
             display: flex;
             justify-content: center;
