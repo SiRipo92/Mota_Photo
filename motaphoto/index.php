@@ -2,7 +2,6 @@
 // Get the header
 get_header();
 
-
 // Function to generate dropdown filter menus
 function generate_dropdown($items, $label, $taxonomy) {
     ?>
@@ -21,18 +20,16 @@ function generate_dropdown($items, $label, $taxonomy) {
     </div>
     <?php
 }
+    // Get categories and formats
+    $categories = get_terms(array(
+        'taxonomy' => 'categorie',
+        'hide_empty' => false,
+    ));
 
-// Get categories and formats
-$categories = get_terms(array(
-    'taxonomy' => 'categorie',
-    'hide_empty' => false,
-));
-
-$formats = get_terms(array(
-    'taxonomy' => 'format',
-    'hide_empty' => false,
-));
-
+    $formats = get_terms(array(
+        'taxonomy' => 'format',
+        'hide_empty' => false,
+    ));
 ?>
 
 <main id="site-content" role="main">
