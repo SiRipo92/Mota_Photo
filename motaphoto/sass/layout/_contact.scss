@@ -153,6 +153,11 @@
                 }
             }
         }
+
+        div.wpcf7-response-output {
+            padding: 0;
+            margin: 0;
+        }
     }
 }
 
@@ -218,7 +223,11 @@
                 div.contact-form-button {
                     max-height: 50px;
                     margin: 0;
-                    height: auto;
+                    height: 50px;
+
+                    wpcf7-spinner {
+                        display: none;
+                    }
                 }
             }
 
