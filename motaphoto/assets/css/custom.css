@@ -586,8 +586,12 @@ button#btn-load-more:hover a {
 div.contact-form-button {
   display: flex;
   justify-content: center;
-  margin: 10px 0;
+  margin: 3% 0;
   width: 100%;
+  height: 80px;
+}
+div.contact-form-button p {
+  max-height: 50px;
 }
 div.contact-form-button p input {
   display: flex;
@@ -1384,6 +1388,10 @@ footer .copyright {
   display: flex;
   justify-content: center;
 }
+#contact-modal .wpcf7 div.wpcf7-response-output {
+  padding: 0;
+  margin: 0;
+}
 
 @media screen and (max-width: 768px) {
   #contact-modal {
@@ -1439,7 +1447,10 @@ footer .copyright {
   #contact-modal .wpcf7 form.wpcf7-form div.contact-form-button {
     max-height: 50px;
     margin: 0;
-    height: auto;
+    height: 50px;
+  }
+  #contact-modal .wpcf7 form.wpcf7-form div.contact-form-button wpcf7-spinner {
+    display: none;
   }
   #contact-modal .wpcf7.sent .textarea {
     max-width: 362.734px;
@@ -1599,8 +1610,12 @@ button#btn-load-more:hover a {
 div.contact-form-button {
   display: flex;
   justify-content: center;
-  margin: 10px 0;
+  margin: 3% 0;
   width: 100%;
+  height: 80px;
+}
+div.contact-form-button p {
+  max-height: 50px;
 }
 div.contact-form-button p input {
   display: flex;

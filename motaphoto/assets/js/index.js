@@ -35,12 +35,10 @@ jQuery(document).ready(function($) {
         mobileMenu.toggleClass('open');
     
         if (burgerBtn.hasClass('open') && mobileMenu.hasClass('open')) {
-            console.log("Menu should be open now");
             burgerBtn.attr('aria-expanded', 'true');
             $('body').css('overflow', 'hidden');
           } else {
           // Open the menu
-          console.log("Menu should be closed now");
           burgerBtn.attr('aria-expanded', 'false');
           $('body').css('overflow', 'auto');
         }

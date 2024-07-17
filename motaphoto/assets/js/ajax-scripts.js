@@ -105,7 +105,6 @@ jQuery(document).ready(function($) {
     }
 
    ///////////// EVENT HANDLERS FOR MENU FILTERS /////////////
-
     // Hide dropdowns on page load
     $('.dropdown-content').hide();
     $('.arrow').removeClass('rotate');
